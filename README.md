@@ -82,7 +82,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|references|null: false, foreign_key: true|
+|purchase_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 
 ### Association
