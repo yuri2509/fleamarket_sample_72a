@@ -3,17 +3,17 @@
 |------|----|-------|
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
-|user_password|string|null: false|
-|user_image|string|null: false|
+|password|string|null: false|
+|avatar|string||
 |family_name|string|null: false|
 |first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
+|family_name_reading|string|null: false|
+|first_name_reading|string|null: false|
 |birth_day|integer|null: false|
-|introduction|text|null: false|
+|introduction|text||
 
 ### Association
-- belongs_to :card
+- has_one :card
 - has_many :items
 
 
@@ -28,10 +28,13 @@
 |size|integer|null: false|
 |cost|string|null: false|
 |days|string|null: false|
-|prefecture_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
+|prefecture|integer|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
+|brand|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+
+### prefecturenについて
+active_hashのgemを使う
 
 
 ### Association
@@ -53,7 +56,7 @@
 ## cards
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, unique: true|
+|user|references|null: false, unique: true|
 |card_id|integer|null: false, unique: true|
 
 ### Association
@@ -64,15 +67,15 @@
 |------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
+|family_name_reading|string|null: false|
+|first_name_reading|string|null: false|
 |post_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture|ineteger|null: false|
 |city|string|null: false|
 |adress|string|null: false|
 |building_name|string||
 |phone_number|integer|null: false, unique: true|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -82,8 +85,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|purchase_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -97,6 +99,10 @@
 
 ### Association
 - has_many :items
+has_ancestry
+
+### ancestryについて
+ancestryのgemを使う
 
 
 
