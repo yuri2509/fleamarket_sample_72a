@@ -1,25 +1,72 @@
-%h2 会員入力情報
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .fieled
-    = f.label :nickname, "ニックネーム"
-    %span.require 必須
-    %br/
-    = f.text_field :nickname, autofocus: true, placeholder: "例）太郎"
-  .field
-    = f.label :email, "メールアドレス"
-    %span.require 必須
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
-  .field
-    = f.label :password, "パスワード"
-    %span.require 必須
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} )
-    %br/
-    = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字"
+%header.furima-header
+  %h1
+    %a{href: "/"}
+      = image_tag ""
+%main.furima-main
+  %h2 会員入力情報
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .fieled
+      = f.label :nickname, "ニックネーム"
+      %span.require 必須
+      %br/
+      = f.text_field :nickname, autofocus: true, placeholder: "例）フリマ太郎"
+    .field
+      = f.label :email, "メールアドレス"
+      %span.require 必須
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+    .field
+      = f.label :password, "パスワード"
+      %span.require 必須
+      - if @minimum_password_length
+        %em
+      %br/
+      = f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字"
+      %p.note-text ※英字と数字の両方を含めて設定してください
+    .password-relation
+      %input{:type => "checkbox", :id => "reveal_password"}
+      = f.label :reveal_password, "パスワードを表示する"
+    .field
+      %h3 本人確認
+      %p.single-text 
+      安心・安全にご利用いただくために、お客さまの本人
+      情報の登録にご協力ください。他のお客さまに公開さ
+      れることはありません。
+    .field
+      %label お名前（全角）
+      %span.require 必須
+      %br/
+      = f.text_field :family_name, autofocus: true, placeholder: "例）山田"
+      = f.text_field :first_name, autofocus: true, placeholder: "例）太朗"
+    .field
+      = f.label :name_reading, "お名前カナ（全角）"
+      %span.require 必須
+      %br/
+      = f.text_field :family_name_reading, autofocus: true, placeholder: "例）ヤマダ"
+      = f.text_field :first_name_reading, autofocus: true, placeholder: "例）タロウ"
+    .field
+      = f.label :birthday, "生年月日"
+      %span.require 必須
+      %br/
+      != sprintf(f.date_select(:birth_day,start_year: Time.now.year, end_year: 1900, use_month_numbers: true, prompt: "--", date_separator: "%s"), "年", "月") + "日"
+      %p.info-text
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+    .actions
+      = f.submit "次へ進む"
+    .text-link
+      %p
+        %a{href: "/"} 本人情報の登録について
+%footer.furima-footer
+  %nav
+    %ul
+      %li
+        %a{href: "/"} プライバシーポリシー
+      %li
+        %a{href: "/"} メルカリ利用規約
+      %li
+        %a{href: "/"} 特定商品取引に関する表記
+  = link_to "/" 
+    
 
-  .actions
-    = f.submit "Sign up"
 = render "devise/shared/links"
