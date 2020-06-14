@@ -1,17 +1,33 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%header.furima-header
+  %h1
+    %a{href: "/"}
+      = image_tag "logo.png", alt: "フリマ"
+%main.furima-main
+  .login-panel
+    .login-no-account
+      %p アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", "/" 
+    .login-form-inner
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+      %br/
+      .field
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+      - if devise_mapping.rememberable?
+        .field
+        .actions
+          = f.submit "ログイン", class: "login-submit"
+        = link_to "パスワードをお忘れの方", "/"
+%footer.furima-footer
+  %nav
+    %ul
+      %li
+        %a{href: "/"} プライバシーポリシー
+      %li
+        %a{href: "/"} フリマ利用規約
+      %li
+        %a{href: "/"} 特定商品特定商品取引に関する表記
+  = link_to "/", class: "footer-logo" do
+    = image_tag "logo.png", alt: "フリマ"
+  = render "devise/shared/links"

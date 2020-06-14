@@ -1,7 +1,7 @@
 %header.furima-header
   %h1
     %a{href: "/"}
-      = image_tag ""
+      = image_tag "logo.png", alt: "フリマ"
 %main.furima-main
   %h2 会員入力情報
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -63,10 +63,9 @@
       %li
         %a{href: "/"} プライバシーポリシー
       %li
-        %a{href: "/"} メルカリ利用規約
+        %a{href: "/"} フリマ利用規約
       %li
         %a{href: "/"} 特定商品取引に関する表記
-  = link_to "/" 
-    
-
+  %a{href: "/"}
+    = image_tag "logo.png", alt: "フリマ"
 = render "devise/shared/links"
