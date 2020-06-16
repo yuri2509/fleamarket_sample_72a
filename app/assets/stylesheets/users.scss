@@ -73,14 +73,17 @@ body {
     #user_birth_day_1i {
       height: 48px;
       padding: 0 5px;
+      cursor: pointer;
     }
     #user_birth_day_2i {
       height: 48px;
       padding: 0 10px;
+      cursor: pointer;
     }
     #user_birth_day_3i {
       height: 48px;
       padding: 0 10px;
+      cursor: pointer;
     }
   }
   &__relation {
@@ -100,5 +103,49 @@ body {
   &__actions {
     margin: 0 auto;
     max-width: 270px;
+    .form-btn {
+      background-color: #ea352e;
+      color: #ffffff;
+      border: 1px solid #ea352e;
+      width: 100%;
+      cursor: pointer;
+      line-height: 48px;
+      border-radius: 4px;
+      margin: 24px 0 0;
+    }
+    .text-link {
+      margin: 40px 0 0;
+      text-align: right;
+      a {
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.furima-footer {
+  display: block;
+  width: 456px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  img {
+    width: 185px;
+    height: 49px;
+    margin-top: 40px;
+  }
+  nav {
+    ul {
+      display: flex;
+      li {
+        font-size: 12px;
+        margin: 0 0 0 16px;
+        a {
+          color: #333333;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
