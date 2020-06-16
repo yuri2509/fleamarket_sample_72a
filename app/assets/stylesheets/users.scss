@@ -1,0 +1,104 @@
+
+body {
+  background-color: rgb(182, 179, 179);
+}
+
+.furima-header {
+  height: 128px;
+  h1{
+    a{
+      display: inline-block;
+      width: 185px;
+      height: 49px;
+      margin: 40px 20px 0px 200px;
+    }
+    img {
+      width: 185px;
+      height: 49px;
+    }
+  }
+}
+
+.furima-main{
+  margin: 0 auto;
+  width: 700px;
+  background-color: #ffffff;
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    padding: 32px;
+    font-weight: bold;
+  }
+  .new_user {
+    border-top: 1px solid #f5f5f5;
+  }
+  &__form {
+    margin: auto;
+    max-width: 270px;
+    label {
+      font-weight: 600;
+      display: inline-block;
+      margin: 12px 0 0;
+    }
+    .require {
+      background-color: red;
+      color: #ffffff;
+      padding: 2px 4px;
+      font-size: 12px;
+      margin: 0 0 0 8px;
+    }
+    .form-input {
+      width: 100%;
+      margin: 8px 0 0;
+      height: 48px;
+      padding-left: 5px;
+      &__half {
+        width: 50%;
+        margin-right: 8px;
+        height: 48px;
+        padding-left: 5px;
+      }
+    }
+    p {
+      color: #888888;
+      margin: 8px 0 0;
+      text-align: start;
+    }
+    .text-single {
+      font-weight: bold;
+    }
+    &__name {
+      display: flex;
+    }
+    #user_birth_day_1i {
+      height: 48px;
+      padding: 0 5px;
+    }
+    #user_birth_day_2i {
+      height: 48px;
+      padding: 0 10px;
+    }
+    #user_birth_day_3i {
+      height: 48px;
+      padding: 0 10px;
+    }
+  }
+  &__relation {
+    margin: 10px 0 0;
+    text-align: center;
+    #reveal_password {
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+      height: 17px;
+    }
+  }
+  &__actions {
+    margin: 0 auto;
+    max-width: 270px;
+  }
+}
