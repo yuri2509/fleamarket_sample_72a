@@ -8,7 +8,7 @@
         .searchBox
           %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
             %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+            %input.searchBox__input{:name => "key", :placeholder => "キーワードから探す"}/
             %button{:type => "submit"}
               = image_tag "icon/icon-search 1.png", class: "image_icon"
             %input{:name => "authenticity_token", :type => "hidden", :value => "uRr6kPx3vsdV1GNvXtVmwEuh9jMO9BR2uRWsQ6oORDnc2gzFwKVp+40TAXFEsbx5YiaO/c52i+YJaFLNiLCNKQ=="}/
