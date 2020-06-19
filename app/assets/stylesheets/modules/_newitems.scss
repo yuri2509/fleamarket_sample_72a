@@ -461,6 +461,19 @@
         text-align: center;
       }
     }
+
+    &__note {
+      height: 32px;
+      width: 620px;
+      font-size: 12px;
+      margin: auto;
+
+      .p {
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.4em;
+      }
+    }
   }
 }
 
@@ -468,5 +481,5 @@
   height: 220px;
   width: 100%;
   background-color: green
-  
+
 }
