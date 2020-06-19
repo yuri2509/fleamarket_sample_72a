@@ -17,7 +17,26 @@
   padding: 0 4px;
   line-height: 1.4em;
 }
+@mixin input-form () {
+  background-color: rgb(245, 245, 245);
+  height: 48px;
+  width: 620px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0;
+  margin-top: 16px;
+  outline: none;
 
+  // 入力フォームの中身仮置き
+  color: gray;
+  line-height: 48px;
+  padding: 0 16px;
+}
+@mixin box-size () {
+  height: 83px;
+  width: 620px;
+  margin-top: 32px;
+}
 @mixin under-line () {
   height: 1px;
   width: 700px;
@@ -38,7 +57,6 @@
 .top-bar {
   height: 128px;
   width: 100%;
-  background-color: red;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -59,7 +77,6 @@
 .furima-item {
   height: 2210px;
   width: 100%;
-  background-color: yellow;
   background-color: #f8f8f8;
   @include type-form;
 
@@ -107,13 +124,74 @@
     .image-under-line {
       @include under-line;
     }
-  }
-}
    
 
+    &__description {
+      height: 416px;
+      background-color:#fff;
+      padding: 40px;
+
+      &__name {
+        height: 83px;
+        width: 620px;
+      
+        &__title {
+          @include  type-title;
+          
+          &-must {
+            @include type-must;
+          }
+        }
+        &__title-input {
+          @include input-form;
+        }
+      }
+      &__text {
+        height: 221px;
+        width: 620px;
+        margin-top: 32px;
+
+        &__name {
+          @include  type-title;
+          &-must {
+            @include type-must;
+          }
+        }
+
+        &__main {
+          height: 154px;
+          width: 620px;
+          margin-top: 16px;
+          background-color: rgb(245, 245, 245);
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+          padding: 13px 16px;
+
+          // 入力フォームの中身仮置き
+          color: gray;
+        }
+        
+        &__count {
+          height: 16px;
+          width: 620px;
+          margin: auto;
+          color: rgb(136, 136, 136);
+          text-align: right;
+          margin-top: 16px;
+          font-size: 12px;
+          line-height: 1.4em;
+        }
+      }  
+    }
+    .description-under-line {
+      @include under-line;
+    }
+  }
+} 
 
 .bottom-bar {
   height: 220px;
   width: 100%;
-  background-color: green;
+  background-color: green
 }
