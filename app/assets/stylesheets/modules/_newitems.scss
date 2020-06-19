@@ -311,8 +311,118 @@
     .delivery-under-line {
       @include under-line;
     }
+
+    &__price {
+      height: 270px;
+      width: 700px;
+      padding: 40px 40px 0px;
+      background-color: #fff;
+      
+      &-example {
+        height: 19px;
+        width: 620px;
+        color: rgb(136, 136, 136);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.4em;
+        margin-bottom: 24px;
+      }
+      &__title {
+        height: 187px;
+        width: 620px;
+        padding-bottom: 12px; 
+
+        &-a {
+         display: flex;
+          
+          &-left {
+            height: 46px;
+            width: 620px;
+            padding-bottom: 12px;
+
+            &-box {
+              height: 19px;
+              width: 96px;
+
+              &__price{
+                @include  type-title;
+                // line-height: 46px;
+                &-must {
+                  @include type-must;
+                  
+                }
+              }
+            }
+          }
+          &-right {
+            float: right;
+            height: 46px;
+            width: 300px;
+            
+            &__mark {
+              font-size: 12px;
+              margin-right: 8px;
+              position: relative;
+              right: 23px;
+            }
+
+            &__text {
+              height: 46px;
+              width: 285px;
+              background-color: rgb(245, 245, 245);
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              text-align: right;
+              line-height: 46px;
+              padding: 0 16px;
+              position: relative;
+              left: 20px;
+              bottom: 23px;
+            }
+          }
+        }
+      }
+      &__fee {
+        height: 70px;
+        width: 620px;
+        display: flex;
+        justify-content: space-between; 
+        padding: 12px 0;
+        line-height: 46px;
+
+        &__title,&-text  {
+          font-size: 14px;
+        }
+      }
+      .price-under-line {
+        border-top-width: 1px;
+        border-top-color: #efefef;
+        border-left: 0 solid #efefef;
+        border-bottom: 0 solid #efefef;
+        border-right: 0 solid #efefef;
+        border-top-style: solid;
+        margin: 0;
+      }
+
+      &__profit {
+        height: 70px;
+        width: 620px;
+        display: flex;
+        justify-content: space-between; 
+        padding: 12px 0;
+        line-height: 46px;
+
+        &__title {
+          font-size: 14px;
+          &-text {
+            font-size: 14px;
+          }
+        }
+      }
+    }
   }
 }
+
 
 .bottom-bar {
   height: 220px;
