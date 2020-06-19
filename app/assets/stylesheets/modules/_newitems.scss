@@ -250,6 +250,67 @@
     .detail-under-line {
       @include under-line;
     }
+
+    &__delivery {
+      height: 479px;
+      width: 700px;
+      padding: 40px;
+      background-color: #fff;
+      color: rgb(136, 136, 136);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+
+      &__cost {
+        @include box-size;
+        &__title {
+          @include type-form;
+          margin-top: 24px;
+          @include  type-title;
+          &-must {
+            @include type-must;
+          }
+        }
+        &__choose {
+          @include type-form;
+          @include input-form;
+        }
+      }
+      &__prefecture {
+        @include box-size;
+        &__title {
+          color: black;
+          margin-top: 24px;
+          @include  type-title;
+          &-must {
+            @include type-must;
+          }
+        }
+        &__choose {
+          color: black;
+          @include input-form;
+        }
+      }
+
+      &__days {
+        @include box-size;
+        &__title {
+          color: black;
+          margin-top: 24px;
+          @include  type-title;
+          &-must {
+            @include type-must;
+          }
+        }
+        &__choose {
+          color: black;
+          @include input-form;
+        }
+      }
+    }
+    .delivery-under-line {
+      @include under-line;
+    }
   }
 }
 
