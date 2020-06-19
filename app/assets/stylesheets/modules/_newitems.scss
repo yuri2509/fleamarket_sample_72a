@@ -187,8 +187,71 @@
     .description-under-line {
       @include under-line;
     }
+    
+    
+    &__detail{
+      height: 444px;
+      padding: 40px;
+      color: rgb(136, 136, 136);
+      background-color: #fff;
+
+      &__category {
+        color: black;
+        @include box-size;
+      
+        &__title {
+          color: black;
+          @include  type-title;
+
+          &-must {
+            @include type-must;
+          } 
+        }
+        &__choose {
+          @include input-form;
+        }
+      }
+      
+      &__brand {
+        @include box-size;
+        &__title {
+          color: black;
+          @include  type-title;
+          &-any {
+            background-color: #fff;
+            color: #FFF;
+            border-radius: 2px;
+            font-size: 12px;
+            margin-left: 8px;
+            padding: 0 4px;
+            line-height: 1.4em;
+          }
+        }
+        &__text {
+          @include input-form;
+        }
+      }
+      
+      &__status {
+        @include box-size;
+        &__title {
+          color: black;
+          @include  type-title;
+          &-must {
+            @include type-must;
+          }
+        }
+        &__choose {
+          color: black;
+          @include input-form;
+        }
+      }
+    }
+    .detail-under-line {
+      @include under-line;
+    }
   }
-} 
+}
 
 .bottom-bar {
   height: 220px;
