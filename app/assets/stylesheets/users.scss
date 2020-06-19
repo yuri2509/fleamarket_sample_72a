@@ -1,6 +1,6 @@
 
 body {
-  background-color: rgb(182, 179, 179);
+  background-color: #f5f5f5;
 }
 
 .furima-header {
@@ -20,6 +20,7 @@ body {
   }
 }
 .furima-contents {
+  display: block;
   .furima-main{
     margin: 0 auto;
     width: 700px;
@@ -128,12 +129,47 @@ body {
     max-width: none;
     width: 456px;
     margin: auto;
-    text-align: center;
     background-color: #ffffff;
     &__no {
+      text-align: center;
       padding: 40px 64px;
       p {
         font-size: 14px;
+      }
+      a {
+        display: block;
+        color: #ffffff;
+        background-color: #0099e8;
+        margin: 8px 0 0;
+        text-decoration: none;
+        line-height: 40px;
+        border-radius: 4px;
+      }
+    }
+    &__form {
+      border-top: 1px solid #eeeeee;
+      padding: 24px 64px 32px;
+      &__first {
+        margin: 0;
+        .login-form {
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #cccccc;
+          line-height: 1.5;
+          width: 90%;
+        }
+      }
+      &__input {
+        margin: 24px 0 0;
+        .login-form {
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #cccccc;
+          line-height: 1.5;
+          width: 90%;
+        }
       }
     }
   }
