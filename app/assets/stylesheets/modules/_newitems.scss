@@ -480,6 +480,35 @@
 .bottom-bar {
   height: 220px;
   width: 100%;
-  background-color: green
+  padding: 40px 0px 41px;
+  background-color: #f8f8f8ff;
 
+  &__privacy-policy {
+    height: 54px;
+    width: 400px;
+    display: flex;
+    margin: auto;
+
+    .privacy-policy,.terms-of-service,.specific-transaction {
+      display: inline;
+      font-size: 12px;
+      margin: 16px 0px 0px 16px;
+    }
+  }
+  &__logo {
+    height: 50px;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    .bottom-logo {
+      height: 49px;
+      width: 185px;
+    }
+  }
+  &__copyright {
+    height: 13px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
 }
