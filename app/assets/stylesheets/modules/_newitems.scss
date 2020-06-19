@@ -3,13 +3,24 @@
 }
 
 
-
-
 .top-bar {
   height: 128px;
   width: 100%;
   background-color: red;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8f8;
 
+  .furima-logo {
+    height: 49px;
+    width: 185px;
+    
+    .img-logo {
+      height: 49px;
+      width: 185px;
+    }
+  }
 }
 
 .furima-item {
