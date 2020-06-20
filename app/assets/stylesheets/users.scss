@@ -2,6 +2,7 @@ $form-color: #ffffff;
 $sub-color: #ea352d;
 $link-color: #0099e8;
 $main-color: #f5f5f5;
+$footer-color: #333333;
 
 @mixin logo {
   width: 185px;
@@ -218,9 +219,18 @@ body {
         font-size: 12px;
         margin: 0 0 0 16px;
         a {
-          color: #333333;
+          color: $footer-color;
           text-decoration: none;
         }
       }
+  }
+  p{
+    margin: 8px 0 0;
+    small {
+      display: inline-block;
+      color: $footer-color;
+      font-size: 13px;
+      pointer-events: none;
+    }
   }
 }
