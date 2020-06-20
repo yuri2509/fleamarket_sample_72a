@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 @mixin type-title () {
   font-size: 14px;
   font-weight: 600;
@@ -18,7 +19,7 @@
   line-height: 1.4em;
 }
 @mixin input-form () {
-  background-color: rgb(245, 245, 245);
+  background-color:  #fff;
   height: 48px;
   width: 620px;
   border: 1px solid #ccc;
@@ -69,7 +70,6 @@
     .img-logo {
       height: 49px;
       width: 185px;
-     
     }
   }
 }
@@ -83,7 +83,7 @@
   &__input-form {
     height: 2210px;
     width: 700px;
-    background-color: white;
+    background-color: #fff;
     margin: auto;
 
     &__image {
@@ -115,8 +115,17 @@
           border-style: dashed;
 
           font-size: 12px;
-          line-height: 1.4em;
           text-align: center;
+
+          .camera-icon {
+            color: black;
+            position: relative;
+            top: 35px;
+          }
+          .fhoto-text {
+            height: 32px;
+            width: 618px;
+          }
         }
       }
      }  
@@ -162,7 +171,7 @@
           height: 154px;
           width: 620px;
           margin-top: 16px;
-          background-color: rgb(245, 245, 245);
+          background-color:  #fff;
           border: 1px solid #ccc;
           border-radius: 4px;
           font-size: 16px;
@@ -334,7 +343,9 @@
 
         &-a {
          display: flex;
-          
+         height: 46px;
+         width: 620px;
+
           &-left {
             height: 46px;
             width: 620px;
@@ -346,10 +357,10 @@
 
               &__price{
                 @include  type-title;
-                // line-height: 46px;
+                position: relative;
+                top: 10px;
                 &-must {
                   @include type-must;
-                  
                 }
               }
             }
@@ -360,23 +371,25 @@
             width: 300px;
             
             &__mark {
+              height: 7.8px;
+              width: 14px;
               font-size: 12px;
               margin-right: 8px;
               position: relative;
               right: 23px;
+              top: 10px;
             }
 
             &__text {
               height: 46px;
               width: 285px;
-              background-color: rgb(245, 245, 245);
+              background-color:  #fff;
               border: 1px solid #ccc;
               border-radius: 4px;
               text-align: right;
               line-height: 46px;
               padding: 0 16px;
               position: relative;
-              left: 20px;
               bottom: 23px;
             }
           }
