@@ -6,9 +6,9 @@
   .furima-item
     .furima-item__input-form
       .furima-item__input-form__image
-        %label.furima-item__input-form__image-title
+        %label.image-title
           出品画像
-          %span.furima-item__input-form__image-title__must
+          %span.image-title__must
             必須
         .furima-item__input-form__image-fhoto
           最大10枚までアップロードできます
@@ -24,16 +24,16 @@
 
       .furima-item__input-form__description
         .furima-item__input-form__description__name
-          %label.furima-item__input-form__description__name__title
+          %label.description__name__title
             商品名
-            %span.furima-item__input-form__description__name__title-must
+            %span.description__name__title-must
               必須
           .furima-item__input-form__description__name__title-input
             40文字まで
         .furima-item__input-form__description__text
-          %label.furima-item__input-form__description__text__name
+          %label.description__text__title
             商品の説明
-            %span.furima-item__input-form__description__text__name-must
+            %span.description__text__title-must
               必須
           .furima-item__input-form__description__text__main
             商品の説明（必須 1,000文字以内）
@@ -49,25 +49,25 @@
       .furima-item__input-form__detail
         商品の詳細
         .furima-item__input-form__detail__category
-          %label.furima-item__input-form__detail__category__title
+          %label.category__title
             カテゴリー
-            %span.furima-item__input-form__detail__category__title-must
+            %span.category__title-must
               必須
           .furima-item__input-form__detail__category__choose
             選択してください
 
         .furima-item__input-form__detail__brand
-          %label.furima-item__input-form__detail__brand__title
+          %label.brand__title
             ブランド
-            %span.furima-item__input-form__detail__brand__title-any
+            %span.brand__title-any
               任意
           .furima-item__input-form__detail__brand__text
             例） シャネル
 
         .furima-item__input-form__detail__status
-          %label.furima-item__input-form__detail__status__title
+          %label.status__title
             商品の状態
-            %span.furima-item__input-form__detail__status__title-must
+            %span.status__title-must
               必須
           .furima-item__input-form__detail__status__choose
             選択してください
@@ -76,46 +76,46 @@
       .furima-item__input-form__delivery
         配送について
         .furima-item__input-form__delivery__cost
-          %label.furima-item__input-form__delivery__cost__title
+          %label.cost__title
             配送料の負担
-            %span.furima-item__input-form__delivery__cost__title-must
+            %span.cost__title-must
               必須
           .furima-item__input-form__delivery__cost__choose
             選択してください
 
         .furima-item__input-form__delivery__prefecture
-          %label.furima-item__input-form__delivery__prefecture__title
+          %label.prefecture__title
             発送元の地域
-            %span.furima-item__input-form__delivery__prefecture__title-must
+            %span.prefecture__title-must
               必須
           .furima-item__input-form__delivery__prefecture__choose
             選択してください
 
         .furima-item__input-form__delivery__days
-          %label.furima-item__input-form__delivery__days__title
+          %label.days__title
             発送までの日数
-            %span.furima-item__input-form__delivery__days__title-must
+            %span.days__title-must
               必須
           .furima-item__input-form__delivery__days__choose
             選択してください
       %hr.delivery-under-line
 
       .furima-item__input-form__price
-        %p.furima-item__input-form__price-example
+        %p.price-example
           価格 (¥300~9,999,999)
-        .furima-item__input-form__price__title
-          .furima-item__input-form__price__title-a
-            .furima-item__input-form__price__title-a-left
-              .furima-item__input-form__price__title-a-left-box
-                .furima-item__input-form__price__title-a-left-box__price
+        .furima-item__input-form__price__sell
+          .furima-item__input-form__price__sell__title
+            .furima-item__input-form__price__sell__title-left
+              .furima-item__input-form__price__sell__title-left-box
+                %label.sell__price
                   販売価格
-                  .furima-item__input-form__price__title-a-left-box__price-must
+                  %span.sell__price-must
                     必須
 
-            .furima-item__input-form__price__title-a-right
-              %span.furima-item__input-form__price__title-a-right__mark
+            .furima-item__input-form__price__sell__title-right
+              %span.price-mark
                 ¥
-              .furima-item__input-form__price__title-a-right__text
+              .furima-item__input-form__price__sell__title-right__text
                 0
 
           .furima-item__input-form__price__fee

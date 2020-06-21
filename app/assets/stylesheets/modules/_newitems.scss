@@ -55,6 +55,7 @@
 }
 
 
+// 上部ロゴ
 .top-bar {
   height: 128px;
   width: 100%;
@@ -74,6 +75,7 @@
   }
 }
 
+// メイン出品情報登録
 .furima-item {
   height: 2210px;
   width: 100%;
@@ -86,23 +88,20 @@
     background-color: #fff;
     margin: auto;
 
+    // 画像投稿
     &__image {
       height: 300px;
       background-color: #fff;
       padding: 40px;
-
-      &-title {
+      .image-title {
         @include type-title;
-
         &__must {
           @include type-must;
         }
       }
-
       &-fhoto {
         @include type-form;
         margin-top: 16px;
-        
         &__box {
           height: 150px;
           width: 620px;
@@ -113,10 +112,8 @@
           border-color: rgb(204, 204, 204);
           border-width: 1px;
           border-style: dashed;
-
           font-size: 12px;
           text-align: center;
-
           .camera-icon {
             color: black;
             position: relative;
@@ -129,22 +126,20 @@
         }
       }
      }  
-      
     .image-under-line {
       @include under-line;
     }
    
-
     &__description {
       height: 416px;
       background-color:#fff;
       padding: 40px;
 
+      // 商品名
       &__name {
         height: 83px;
         width: 620px;
-      
-        &__title {
+        .description__name__title {
           @include  type-title;
           
           &-must {
@@ -155,18 +150,17 @@
           @include input-form;
         }
       }
+      // 商品の説明
       &__text {
         height: 221px;
         width: 620px;
         margin-top: 32px;
-
-        &__name {
+        .description__text__title {
           @include  type-title;
           &-must {
             @include type-must;
           }
         }
-
         &__main {
           height: 154px;
           width: 620px;
@@ -180,7 +174,7 @@
           // 入力フォームの中身仮置き
           color: gray;
         }
-        
+        // 文字数カウント
         &__count {
           height: 16px;
           width: 620px;
@@ -197,21 +191,20 @@
       @include under-line;
     }
     
-    
+    // 商品詳細
     &__detail{
       height: 444px;
       padding: 40px;
       color: rgb(136, 136, 136);
       background-color: #fff;
 
+      // カテゴリー
       &__category {
         color: black;
         @include box-size;
-      
-        &__title {
+        .category__title {
           color: black;
           @include  type-title;
-
           &-must {
             @include type-must;
           } 
@@ -221,13 +214,14 @@
         }
       }
       
+      // ブランド
       &__brand {
         @include box-size;
-        &__title {
+        .brand__title {
           color: black;
           @include  type-title;
           &-any {
-            background-color: #fff;
+            background-color: #bfbfbf;
             color: #FFF;
             border-radius: 2px;
             font-size: 12px;
@@ -241,9 +235,10 @@
         }
       }
       
+      // 商品の状態
       &__status {
         @include box-size;
-        &__title {
+        .status__title {
           color: black;
           @include  type-title;
           &-must {
@@ -260,6 +255,7 @@
       @include under-line;
     }
 
+    // 配送関係
     &__delivery {
       height: 479px;
       width: 700px;
@@ -270,9 +266,10 @@
       font-weight: 600;
       line-height: 1.4em;
 
+      // 配送料の負担
       &__cost {
         @include box-size;
-        &__title {
+        .cost__title {
           @include type-form;
           margin-top: 24px;
           @include  type-title;
@@ -285,9 +282,11 @@
           @include input-form;
         }
       }
+
+      // 発送元の地域
       &__prefecture {
         @include box-size;
-        &__title {
+        .prefecture__title {
           color: black;
           margin-top: 24px;
           @include  type-title;
@@ -301,9 +300,10 @@
         }
       }
 
+      // 配送までの日数
       &__days {
         @include box-size;
-        &__title {
+        .days__title {
           color: black;
           margin-top: 24px;
           @include  type-title;
@@ -321,13 +321,15 @@
       @include under-line;
     }
 
+    // 価格について
     &__price {
       height: 270px;
       width: 700px;
       padding: 40px 40px 0px;
       background-color: #fff;
       
-      &-example {
+      // 価格設定の範囲
+      .price-example {
         height: 19px;
         width: 620px;
         color: rgb(136, 136, 136);
@@ -336,26 +338,24 @@
         line-height: 1.4em;
         margin-bottom: 24px;
       }
-      &__title {
+
+      // 販売価格
+      &__sell {
         height: 187px;
         width: 620px;
         padding-bottom: 12px; 
-
-        &-a {
+        &__title {
          display: flex;
          height: 46px;
          width: 620px;
-
           &-left {
             height: 46px;
             width: 620px;
             padding-bottom: 12px;
-
             &-box {
               height: 19px;
               width: 96px;
-
-              &__price{
+              .sell__price {
                 @include  type-title;
                 position: relative;
                 top: 10px;
@@ -369,8 +369,7 @@
             float: right;
             height: 46px;
             width: 300px;
-            
-            &__mark {
+            .price-mark {
               height: 7.8px;
               width: 14px;
               font-size: 12px;
@@ -379,7 +378,6 @@
               right: 23px;
               top: 10px;
             }
-
             &__text {
               height: 46px;
               width: 285px;
@@ -395,6 +393,8 @@
           }
         }
       }
+
+      //  販売手数料
       &__fee {
         height: 70px;
         width: 620px;
@@ -417,6 +417,7 @@
         margin: 0;
       }
 
+      // 販売利益
       &__profit {
         height: 70px;
         width: 620px;
@@ -425,11 +426,8 @@
         padding: 12px 0;
         line-height: 46px;
 
-        &__title {
+        &__title,&-text  {
           font-size: 14px;
-          &-text {
-            font-size: 14px;
-          }
         }
       }
     }
@@ -440,6 +438,7 @@
       background-color: #fff;
       margin: 0 170px 32px;
 
+      // 出品ボタン
       &__exhibition {
         height: 48px;
         width: 360px;
@@ -452,6 +451,8 @@
         border-radius: 4px;
         border: 1px solid transparent;
       }
+
+      // 下書きに保存ボタン
       &__draft {
         height: 48px;
         width: 360px;
@@ -465,6 +466,8 @@
         border-color: transparent;
         color: #222;
       }
+
+      // もどるボタン
       &__return {
         height: 20x;
         width: 360px;
@@ -475,12 +478,12 @@
       }
     }
 
+    // 注意事項
     &__note {
       height: 32px;
       width: 620px;
       font-size: 12px;
       margin: auto;
-
       .p {
         text-align: center;
         font-size: 11px;
@@ -490,6 +493,7 @@
   }
 }
 
+// 下部ロゴやコピーライトなど
 .bottom-bar {
   height: 220px;
   width: 100%;
