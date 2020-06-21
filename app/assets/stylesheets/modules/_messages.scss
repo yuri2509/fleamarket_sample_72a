@@ -122,3 +122,65 @@ button {
 .main {
   background: #f8f8f8;
 }
+
+.mainVisual {
+  width: 100%;
+  height: 560px;
+  background-image: url(pict/bg-mainVisual-pict_pc.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.content {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 35px 0 0 0;
+}
+
+.content__subtitle {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  font-size: 60px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.content__text {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.77778;
+  margin: 16px 0 0 0;
+}
+
+.content__btn {
+  display: flex;
+  margin: 24px 0 0 0;
+}
+
+.aBtn {
+  width: 180px;
+  margin-right: 10px;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.gBtn {
+  width: 180px;
+}
