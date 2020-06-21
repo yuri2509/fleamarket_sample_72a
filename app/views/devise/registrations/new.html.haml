@@ -6,7 +6,6 @@
   .furima-main
     %h2.furima-main__title 会員入力情報
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/links"
       = render "devise/shared/error_messages", resource: resource
       .furima-main__form
         = f.label :nickname, "ニックネーム"
@@ -27,6 +26,11 @@
         %input{:type => "checkbox", :id => "reveal_password"}
         = f.label :reveal_password, "パスワードを表示する"
       .furima-main__form
+        = f.label :password_confirmation, "パスワード再入力"
+        %span.require 必須
+        - if @minimum_password_length
+          -# %em
+        = f.password_field :password_confirmation, autocomplete: "password_confirmation", placeholder: "パスワードを再入力してください", class: "form-input"
         %h3.text-single 本人確認
         %p.text-single__body 
         安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
@@ -67,4 +71,4 @@
     = image_tag "logo-white.png", alt: "フリマ"
     %p
       %small © FURIMA
-
+= render "devise/shared/links"
