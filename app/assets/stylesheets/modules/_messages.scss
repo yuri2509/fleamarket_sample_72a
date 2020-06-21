@@ -140,8 +140,6 @@ h2 {
   display: block;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
 }
 
 .content {
@@ -260,4 +258,38 @@ img {
 
 .list__text span {
   color: #3ccace;
+}
+
+.topMiddle {
+  background-image: url(pict/bg-topMiddleDl-pict.jpg);
+  background-position: bottom right;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.topMiddle__inner__subtitle {
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.topMiddle__inner__text {
+  font-size: 18px;
+  margin: 20px 0 30px;
+  line-height: 1.5;
+}
+
+.topMiddle__btn {
+  display: flex;
 }
