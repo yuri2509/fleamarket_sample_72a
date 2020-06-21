@@ -149,26 +149,26 @@ h2 {
   width: 100%;
   margin: 0 auto;
   padding: 35px 0 0 0;
-}
 
-.content__subtitle {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-  font-size: 60px;
-  line-height: 1.2;
-  color: #fff;
-}
+  &__subtitle {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    font-size: 60px;
+    line-height: 1.2;
+    color: #fff;
+  }
 
-.content__text {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-  font-size: 18px;
-  color: #fff;
-  line-height: 1.77778;
-  margin: 16px 0 0 0;
-}
+  &__text {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.77778;
+    margin: 16px 0 0 0;
+  }
 
-.content__btn {
-  display: flex;
-  margin: 24px 0 0 0;
+  &__btn {
+    display: flex;
+    margin: 24px 0 0 0;
+  }
 }
 
 .aBtn {
