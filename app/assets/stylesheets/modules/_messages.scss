@@ -197,8 +197,7 @@ img {
   padding-bottom: 15px;
   position: relative;
 
-  &::after {
-    content: "";
+  &:after {
     width: 70px;
     height: 4px;
     background-color: #3ccace;
@@ -292,4 +291,69 @@ img {
 
 .topMiddle__btn {
   display: flex;
+}
+
+.topKeyFeatures {
+  padding: 60px 100px;
+  background-color: #fff;
+}
+
+.head {
+  font-size: 27px;
+  text-align: center;
+  margin: 0 0 40px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+
+  &::after {
+    width: 70px;
+    height: 4px;
+    background-color: #3ccace;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.topKeyFeatures .items {
+  max-width: calc(1040px + 20px);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.topKeyFeatures .items .item {
+  display: flex;
+  flex-direction: column;
+  width: calc(1 / 3 * 100%);
+  text-align: center;
+  padding: 0 20px;
+}
+
+.topKeyFeatures .items .item__img {
+  width: 70%;
+  margin: 0 auto;
+  line-height: 120px;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.item__subtitle {
+  margin: 38px 0 10px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.item__detail {
+  margin: 0 0 40px;
+  font-size: 17px;
+  font-weight: 200;
+  text-align: left;
 }
