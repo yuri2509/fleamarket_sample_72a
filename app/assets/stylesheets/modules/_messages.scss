@@ -452,3 +452,35 @@ img {
   font-size: 10px;
   text-align: left;
 }
+
+.appBanner {
+  background-image: url(pict/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.inner {
+  color: #fff;
+  text-align: center;
+}
+
+.inner__title {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.inner__text {
+  font-size: 35px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.inner__icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  margin-right: 10px;
+}
