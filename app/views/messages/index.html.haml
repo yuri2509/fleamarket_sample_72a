@@ -17,34 +17,6 @@
         %ul.listsLeft
           %li.listsLeft__item.listsLeft__item--first
             %a#catBtn{:href => "#"} カテゴリー
-          -#   .tree.displayNone
-          -#     %ul.categoryTree
-          -#       %li.categoryTree--item
-          -#         %a#1{:href => "#"} レディース
-          -#       %li.categoryTree--item
-          -#         %a#2{:href => "#"} メンズ
-          -#       %li.categoryTree--item
-          -#         %a#3{:href => "#"} ベビー・キッズ
-          -#       %li.categoryTree--item
-          -#         %a#4{:href => "#"} インテリア・住まい・小物
-          -#       %li.categoryTree--item
-          -#         %a#5{:href => "#"} 本・音楽・ゲーム
-          -#       %li.categoryTree--item
-          -#         %a#6{:href => "#"} おもちゃ・ホビー・グッズ
-          -#       %li.categoryTree--item
-          -#         %a#7{:href => "#"} コスメ・香水・美容
-          -#       %li.categoryTree--item
-          -#         %a#8{:href => "#"} 家電・スマホ・カメラ
-          -#       %li.categoryTree--item
-          -#         %a#9{:href => "#"} スポーツ・レジャー
-          -#       %li.categoryTree--item
-          -#         %a#10{:href => "#"} ハンドメイド
-          -#       %li.categoryTree--item
-          -#         %a#11{:href => "#"} チケット
-          -#       %li.categoryTree--item
-          -#         %a#12{:href => "#"} 自動車・オートバイ
-          -#       %li.categoryTree--item
-          -#         %a#13{:href => "#"} その他
           %li.listsLeft__item
             %a#brandBtn{:href => "#"} ブランド
             %ul.brandsPulldown.displayNone
@@ -136,12 +108,25 @@
           %p.item__detail
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
     %section.pickupContainer
-      %h2.head ピックアップカテゴリー
+      %h2.pickupContainer__head ピックアップカテゴリー
       .productBox
         .productHead
           %a{:href => "#"}
             %h3.title 新規投稿商品
         .productLists
+          .productList
+            %a{:href => "/products/8"}
+              %figure.productList--img
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}/
+              .productList--body
+                %h3.name ee
+                .details
+                  %ul
+                    %li 1000円
+                    %li
+                      %i.fa.fa-star.likeIcon
+                      0
+                  %p (税込)
           .productList
             %a{:href => "/products/3"}
               %figure.productList--img
@@ -182,12 +167,25 @@
                       0
                   %p (税込)
     %section.pickupContainer
-      %h2.head ピックアップブランド
+      %h2.pickupContainer__head ピックアップブランド
       .productBox
         .productHead
           %a{:href => "#"}
             %h3.title アーカイバ
         .productLists
+          .productList
+            %a{:href => "/products/8"}
+              %figure.productList--img
+                %img{:src => "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}/
+              .productList--body
+                %h3.name ee
+                .details
+                  %ul
+                    %li 1000円
+                    %li
+                      %i.fa.fa-star.likeIcon
+                      0
+                  %p (税込)
           .productList
             %a{:href => "/products/3"}
               %figure.productList--img

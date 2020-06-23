@@ -136,12 +136,6 @@ button {
   align-items: center;
 }
 
-h2 {
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-}
-
 .content {
   max-width: 1280px;
   width: 100%;
@@ -355,5 +349,106 @@ img {
   margin: 0 0 40px;
   font-size: 17px;
   font-weight: 200;
+  text-align: left;
+}
+
+.pickupContainer {
+  padding: 80px 0 0;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.pickupContainer__head {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+// .productBox {
+//   margin: 0;
+//   padding: 0;
+// }
+
+.productHead {
+  text-align: center;
+}
+
+.productHead a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
+
+.productHead a h3 {
+  font-weight: bold;
+}
+
+.productLists {
+  width: 780px;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.productList {
+  width: 220px;
+  display: inline-block;
+  float: left;
+}
+
+.productList a {
+  background-color: #fff;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.productList--img {
+  width: 220px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  z-index: auto;
+}
+
+.productList--img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: auto;
+  height: 150px;
+  object-fit: cover;
+}
+
+.productList--body {
+  background-color: white;
+  color: #333;
+  padding: 16px;
+}
+
+.productList--body .name {
+  overflow: hidden;
+  line-height: 1.5;
+  font-size: 16px;
+  text-align: left;
+}
+
+.details {
+  font-size: 16px;
+}
+
+.details ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details p {
+  font-size: 10px;
   text-align: left;
 }
