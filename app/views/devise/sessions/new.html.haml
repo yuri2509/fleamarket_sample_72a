@@ -18,7 +18,7 @@
         - if devise_mapping.rememberable?
           .login-panel__form__sub
             = f.submit "ログイン", class: "login-submit"
-          = link_to "パスワードをお忘れの方", "/"
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name)
 %footer.furima-footer
   %nav
     %ul
