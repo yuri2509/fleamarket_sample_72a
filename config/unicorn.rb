@@ -1,6 +1,6 @@
 app_path = File.expand_path('../../', __FILE__)
 
-worker_processes 3
+worker_processes 1
 
 working_directory app_path
 
