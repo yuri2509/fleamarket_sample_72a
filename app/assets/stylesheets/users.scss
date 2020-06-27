@@ -213,6 +213,7 @@ body {
   img {
     @include logo;
     margin-top: 40px;
+    background-color: aqua;
   }
   nav ul {
     display: flex;
