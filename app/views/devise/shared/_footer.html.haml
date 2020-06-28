@@ -2,11 +2,11 @@
   %nav
     %ul
       %li
-        %a{href: "/"} プライバシーポリシー
+        = link_to "プライバシーポリシー", "/"
       %li
-        %a{href: "/"} フリマ利用規約
+        = link_to "フリマ利用規約", "/"
       %li
-        %a{href: "/"} 特定商品特定商品取引に関する表記
+        = link_to "特定商品特定商品取引に関する表記", "/"
   = link_to "/", class: "footer-logo" do
     = image_tag "logo-white.png", alt: "フリマ"
   %p
