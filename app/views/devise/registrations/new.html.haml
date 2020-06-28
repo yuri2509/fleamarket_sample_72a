@@ -1,7 +1,4 @@
-%header.furima-header
-  %h1
-    %a{href: "/"}
-      = image_tag "logo.png", alt: "フリマ"
+= render "devise/shared/header"
 %main.furima-contents
   .furima-main
     %h2.furima-main__title 会員入力情報
@@ -23,7 +20,7 @@
         = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "form-input"
         %p.note-text ※英字と数字の両方を含めて設定してください
       .furima-main__relation
-        %input{:type => "checkbox", :id => "reveal_password"}
+        %input{type: "checkbox", id: "reveal_password"}
         = f.label :reveal_password, "パスワードを表示する"
       .furima-main__form
         = f.label :password_confirmation, "パスワード再入力"
@@ -56,17 +53,4 @@
         .text-link
           %p
             %a{href: "/"} 本人情報の登録について
-%footer.furima-footer
-  %nav
-    %ul
-      %li
-        %a{href: "/"} プライバシーポリシー
-      %li
-        %a{href: "/"} フリマ利用規約
-      %li
-        %a{href: "/"} 特定商品取引に関する表記
-  %a{href: "/"}
-    = image_tag "logo-white.png", alt: "フリマ"
-    %p
-      %small © FURIMA
-
+= render "devise/shared/footer"
