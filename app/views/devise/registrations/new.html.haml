@@ -50,5 +50,5 @@
         = f.submit "次へ進む", class: "form-btn"
         .text-link
           %p
-            %a{href: "/"} 本人情報の登録について
+            = link_to "本人情報の登録について", "/"
 = render "devise/shared/footer"
