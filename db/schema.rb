@@ -25,4 +25,24 @@ ActiveRecord::Schema.define(version: 20200607080629) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nickname",                                          null: false
+    t.string   "email",                                default: "", null: false
+    t.string   "encrypted_password",                   default: "", null: false
+    t.string   "avatar"
+    t.string   "family_name",                                       null: false
+    t.string   "first_name",                                        null: false
+    t.string   "family_name_reading",                               null: false
+    t.string   "first_name_reading",                                null: false
+    t.integer  "birth_day",                                         null: false
+    t.text     "introduction",           limit: 65535
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
 end
