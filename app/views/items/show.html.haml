@@ -1,0 +1,212 @@
+.pcHeader
+ .headerInner
+  .mainHeader
+   .icon
+    = link_to '' do
+     = image_tag 'logo.png'
+   .searchBox
+    .form
+     .input
+     %input#searchInput.searchBox--input{name: "key", placeholder:  "キーワードから探す"}
+     .button{type: 'submit'}
+      .searchBox__icon
+       = image_tag 'icon-search 1.png'
+    .resultLists
+
+
+
+  .nav
+   %ul.listLeft
+    %li.listsLeft__itemlistsLeft__item--first
+     = link_to '#' do 
+      カテゴリー
+    %li.listsLeft__item
+     = link_to '#' do 
+      ブランド
+   %ul.listRight
+    %li.listsRight__itemlistsRight__item--login
+     = link_to '' do 
+      ログイン
+    %li.listsRight__itemlistsRight__item--new
+     = link_to '' do 
+      新規会員登録
+
+
+.breadCrumbs
+ %ul.clearfix
+  %li
+   = link_to '#' do
+    FURIMA
+
+.main
+ .showMain
+  .contentLeft
+  .contentRight
+   .topContent
+    .itemBox
+     %h2.itemBox__name 商品
+     .itemBox__body
+      %ul
+       %li
+        = image_tag 'sample.fish'
+     .itemBox__price
+      %span
+       ¥1,500
+      .itemBox__price-detail
+       %span
+        (税込)
+       %span
+        送料込み
+
+     .itemDetail
+      コメントコメントコメントコメント
+      コメントコメントコメントコメント
+
+     .table
+      %table
+       %tbody
+        %tr
+         %th 出品者
+         %td hoge
+        %tr
+         %th カテゴリー
+         %td 
+          = link_to '#' do
+           ベビー・キッズ 
+        %tr
+         %th ブランド
+         %td 
+        %tr
+         %th 商品のサイズ
+         %td 
+        %tr
+         %th 商品の状態
+         %td 未使用に近い
+        %tr
+         %th 配送料の負担
+         %td 送料込み（出品者負担）
+        %tr
+         %th 発送元の地域
+         %td 
+          = link_to '#' do
+           愛知県
+        %tr
+         %th 発送日の目安
+         %td 4日
+
+     .optionalArea
+      %ul
+       %li.optionalBtnlikeBtn
+        = icon('fas', 'star')
+        お気に入り 0
+      %ul.optional
+       %li.optionalBtn
+        = link_to '' do
+         = icon('fas', 'flag')
+         不適切な商品の通報
+
+
+    .commentBox
+     %ul.commmentContents
+     %form.new_comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}
+      %input{name: "authenticity_token", type: "hidden", value: "#"}
+      %textarea#comment_body{name: "comment[body]", required: "required"}
+      %P.noticeMsg
+       相手のことを考え丁寧なコメントを心がけましょう。
+       %br 
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %button.commentBtn{name: 'button',type: 'submit'}
+       = icon('fas', 'comment')
+       コメントする
+
+   %ul.links.clearfix
+    %li.left
+     = link_to '' do
+      = icon('fas', 'angle-left')
+      %span 前の商品
+    %li.right
+     = link_to '' do
+      %span 後ろの商品
+      = icon('fas', 'angle-right')
+    
+   .relatedItems
+    = link_to '#' do
+     ベビー・キッズをもっと見る
+    .productLists.clearfix
+     .productList
+      = link_to '' do
+       .productList--img
+        = image_tag 'sample.food.jpeg'
+       .productList--body
+        %h3.name aa
+        .details
+         %ul
+          %li.prise 1,000円
+          %li
+           = icon('fas', 'star likeIcon')
+           0
+         %p (税込)
+
+
+
+%aside.appBanner
+ .inner
+  %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+  %p.inner__text 今すぐ無料ダウンロード！
+  .inner__icon
+   = link_to '#' do
+    = image_tag 'app-store.svg'
+   = link_to '#' do
+    = image_tag 'google-play.svg'
+
+.footer
+ %ul.contents
+  %li.content
+   %h2.content__head FURIMAについて
+   %ul
+    %li 
+     = link_to '#' do 
+      会社概要(運営会社)
+    %li 
+     = link_to '#' do
+      プライバシーポリシー
+    %li 
+     = link_to '#' do
+      FURIMA利用規約
+    %li 
+     = link_to '#' do
+      ポイントに関する特約
+  %li.content
+   %h2.content__head FURIMAを見る
+   %ul
+    %li 
+     = link_to '#' do
+      カテゴリー一覧
+    %li 
+     = link_to '#' do
+      ブランド一覧
+  %li.content
+   %h2.content__head ヘルプ&ガイド
+   %ul
+    %li 
+     = link_to '#' do
+      FURIMAガイド
+    %li 
+     = link_to '#' do
+      FURIMAロゴ利用ガイドライン
+    %li 
+     = link_to '#' do
+      お知らせ
+     
+ .footer__logo
+  = link_to '#' do
+   = image_tag 'logo-white.png'
+ .p ©︎FURIMA
+
+
+= link_to '#' do
+ .purchaseBtn
+  %span.purchaseBtn__text 出品する
+  %img.purchaseBtn__icon{src: '/assets/icon_camera.png'}
+
