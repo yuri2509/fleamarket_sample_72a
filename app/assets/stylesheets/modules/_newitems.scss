@@ -27,6 +27,7 @@
   margin: 0;
   margin-top: 16px;
   outline: none;
+  font-weight: 400;
 
   // 入力フォームの中身仮置き
   color: gray;
@@ -197,6 +198,7 @@
       padding: 40px;
       color: rgb(136, 136, 136);
       background-color: #fff;
+      font-weight: 600;
 
       // カテゴリー
       &__category {
@@ -436,7 +438,7 @@
       height: 164px;
       width: 360px;
       background-color: #fff;
-      margin: 0 170px 32px;
+      margin: 0 170px;
 
       // 出品ボタン
       &__exhibition {
@@ -452,8 +454,8 @@
         border: 1px solid transparent;
       }
 
-      // 下書きに保存ボタン
-      &__draft {
+      // 戻るに保存ボタン
+      &__return {
         height: 48px;
         width: 360px;
         margin-top: 24px;
@@ -465,16 +467,6 @@
         background-color: #ccc;
         border-color: transparent;
         color: #222;
-      }
-
-      // もどるボタン
-      &__return {
-        height: 20x;
-        width: 360px;
-        margin-top: 24px;
-        color: #0095ee;
-        font-size: 14px;
-        text-align: center;
       }
     }
 
@@ -520,6 +512,7 @@
     .bottom-logo {
       height: 49px;
       width: 185px;
+      background: #3CCACE;
     }
   }
   &__copyright {
