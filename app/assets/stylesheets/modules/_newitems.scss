@@ -32,6 +32,7 @@
   color: gray;
   line-height: 48px;
   padding: 0 16px;
+  font-weight: 400;
 }
 @mixin box-size () {
   height: 83px;
@@ -77,13 +78,13 @@
 
 // メイン出品情報登録
 .furima-item {
-  height: 2210px;
+  height: 2178px;
   width: 100%;
   background-color: #f8f8f8;
   @include type-form;
 
   &__input-form {
-    height: 2210px;
+    height: 2178px;
     width: 700px;
     background-color: #fff;
     margin: auto;
@@ -197,6 +198,8 @@
       padding: 40px;
       color: rgb(136, 136, 136);
       background-color: #fff;
+      font-size: 14px;
+      font-weight: 600;
 
       // カテゴリー
       &__category {
@@ -436,7 +439,7 @@
       height: 164px;
       width: 360px;
       background-color: #fff;
-      margin: 0 170px 32px;
+      margin: 0 170px;
 
       // 出品ボタン
       &__exhibition {
@@ -452,8 +455,8 @@
         border: 1px solid transparent;
       }
 
-      // 下書きに保存ボタン
-      &__draft {
+      // 戻るボタン
+      &__return {
         height: 48px;
         width: 360px;
         margin-top: 24px;
@@ -465,16 +468,6 @@
         background-color: #ccc;
         border-color: transparent;
         color: #222;
-      }
-
-      // もどるボタン
-      &__return {
-        height: 20x;
-        width: 360px;
-        margin-top: 24px;
-        color: #0095ee;
-        font-size: 14px;
-        text-align: center;
       }
     }
 
@@ -520,6 +513,7 @@
     .bottom-logo {
       height: 49px;
       width: 185px;
+      background: #3CCACE;
     }
   }
   &__copyright {
