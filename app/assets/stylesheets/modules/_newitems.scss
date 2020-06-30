@@ -107,6 +107,7 @@
           height: 150px;
           width: 620px;
           margin: 8px 4px 0px;
+          display: inline-block;
           background-color: rgb(245, 245, 245);
           cursor: pointer;
           border-style: dashed;
@@ -119,10 +120,15 @@
             color: black;
             position: relative;
             top: 35px;
+            #images_src {
+              display: none;
+            }
           }
           .fhoto-text {
             height: 32px;
             width: 618px;
+            position: relative;
+            top: 50px;
           }
         }
       }

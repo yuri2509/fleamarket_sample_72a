@@ -11,13 +11,14 @@
           %span.image-title__must
             必須
         .furima-item__input-form__image-fhoto
-          最大10枚までアップロードできます
-          .furima-item__input-form__image-fhoto__box
-            %i.fas.fa-camera.camera-icon.fa-2x
-            %p.fhoto-text
-            <br>
-            またはクリックしてファイルをダウンロード
-
+          最大10枚までアップロードできます<br>
+          %label.furima-item__input-form__image-fhoto__box
+            = form_for @item do |f|
+              %i.fas.fa-camera.camera-icon.fa-2x
+                = fields_for :images do |i|
+                  = i.file_field :src
+              %p.fhoto-text
+                クリックしてファイルをダウンロード
       %hr.image-under-line
 
       .furima-item__input-form__description
