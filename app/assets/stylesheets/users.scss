@@ -1,0 +1,202 @@
+
+
+
+
+body {
+  background-color: $main-color;
+}
+
+.furima-header {
+  height: 128px;
+  text-align: center;
+   h1 a{
+      display: inline-block;
+      @include logo;
+      margin: 40px 0 0;
+    }
+   h1 img {
+      @include logo;
+    }
+}
+
+.furima-contents {
+  display: block;
+  .furima-main{
+    margin: 0 auto;
+    width: 700px;
+    background-color: $form-color;
+    &__title {
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+    }
+    .new_user {
+      border-top: 1px solid $main-color;
+    }
+    &__form {
+      margin: auto;
+      max-width: 270px;
+      label {
+        font-weight: 600;
+        display: inline-block;
+        margin: 12px 0 0;
+      }
+      .require {
+        background-color: $sub-color;
+        color: $form-color;
+        padding: 2px 4px;
+        font-size: 12px;
+        margin: 0 0 0 8px;
+      }
+      .form-input {
+        width: 100%;
+        margin: 8px 0 0;
+        @include new-form;
+        &__half {
+          width: 50%;
+          margin-right: 8px;
+          @include new-form;
+        }
+      }
+      p {
+        color: #888888;
+        margin: 8px 0 0;
+        text-align: start;
+      }
+      .text-single {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      &__name {
+        display: flex;
+      }
+      #user_birth_day_1i {
+        @include day;
+        padding: 0 5px;
+      }
+      #user_birth_day_2i {
+        @include day;
+        padding: 0 10px;
+      }
+      #user_birth_day_3i {
+        @include day;
+        padding: 0 10px;
+      }
+    }
+    &__relation {
+      margin: 10px 0 0;
+      text-align: center;
+      #reveal_password {
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+      }
+      label {
+        display: inline-block;
+        margin-bottom: 10px;
+        height: 17px;
+      }
+    }
+    &__actions {
+      margin: 0 auto;
+      max-width: 270px;
+      .form-btn {
+       @include btn;
+        margin: 24px 0 0;
+      }
+      .text-link {
+        margin: 40px 0 0;
+        text-align: right;
+        a {
+          color: $link-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .login-panel {
+    max-width: none;
+    width: 456px;
+    margin: auto;
+    background-color: $form-color;
+    &__no {
+      text-align: center;
+      padding: 40px 64px;
+      p {
+        font-size: 14px;
+      }
+      a {
+        display: block;
+        color: $form-color;
+        background-color: $link-color;
+        margin: 8px 0 0;
+        text-decoration: none;
+        line-height: 40px;
+        border-radius: 4px;
+      }
+    }
+    &__form {
+      border-top: 1px solid #eeeeee;
+      padding: 24px 64px 32px;
+      &__first {
+        margin: 0;
+        .login-form {
+          @include login;
+        }
+      }
+      &__input {
+        margin: 24px 0 0;
+        .login-form {
+          @include login;
+        }
+      }
+      &__sub {
+        margin: 24px 0 0;
+        .login-submit {
+          @include btn;
+        }
+      }
+      a {
+        display: block;
+        margin: 40px 0 0;
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.furima-footer {
+  display: block;
+  width: 456px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  img {
+    @include logo;
+    margin-top: 40px;
+    background-color: #3ccace;
+  }
+  nav ul {
+    display: flex;
+      li {
+        font-size: 12px;
+        margin: 0 0 0 16px;
+        a {
+          color: $footer-color;
+          text-decoration: none;
+        }
+      }
+  }
+  p{
+    margin: 8px 0 0;
+    small {
+      display: inline-block;
+      color: $footer-color;
+      font-size: 13px;
+      pointer-events: none;
+    }
+  }
+}

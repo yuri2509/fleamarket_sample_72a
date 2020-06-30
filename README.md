@@ -15,6 +15,7 @@
 ### Association
 - has_one :card
 - has_many :items
+- has_one :destination
 
 
 ## itemsテーブル
@@ -28,7 +29,7 @@
 |size|integer|null: false|
 |cost|string|null: false|
 |days|string|null: false|
-|prefecture|integer|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |brand|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
@@ -57,10 +58,14 @@ active_hashのgemを使う
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, unique: true|
+|payjp|string|null: false|
 |card_id|integer|null: false, unique: true|
 
 ### Association
 - belongs_to :user
+
+### payjpについて
+カード情報の暗号化にこのgemを使う
 
 ## destinationsテーブル
 |Column|Type|Options|
