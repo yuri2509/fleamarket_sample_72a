@@ -15,7 +15,7 @@
 ### Association
 - has_one :card
 - has_many :items
-- has_one :destinations
+- has_one :destination
 
 
 ## itemsテーブル
