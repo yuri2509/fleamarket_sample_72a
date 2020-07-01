@@ -8,4 +8,5 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images
   mount_uploader :image, ImageUploader
+  accepts_nested_attributes_for :images, allow_destroy: true
 end

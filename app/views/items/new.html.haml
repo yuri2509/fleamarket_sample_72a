@@ -15,7 +15,7 @@
           %label.furima-item__input-form__image-fhoto__box
             = form_for @item do |f|
               %i.fas.fa-camera.camera-icon.fa-2x
-                = fields_for :images do |i|
+                = f.fields_for :images do |i|
                   = i.file_field :src
               %p.fhoto-text
                 クリックしてファイルをダウンロード
