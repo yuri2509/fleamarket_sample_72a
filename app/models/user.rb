@@ -7,4 +7,5 @@ class User < ApplicationRecord
          validates :nickname, :family_name, :first_name, :family_name_reading, :first_name_reading, :birth_day, presence: true
          has_one :card
          has_many :items
+         has_one :destination
 end
