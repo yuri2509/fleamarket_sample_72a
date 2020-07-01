@@ -18,8 +18,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @ = @user.build_
-    render :new_
+    @destination = @user.build_destination
+    render :new_destination
   end
 
   # GET /resource/edit
