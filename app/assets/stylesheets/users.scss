@@ -19,14 +19,9 @@ body {
 .furima-contents {
   display: block;
   .furima-main{
-    margin: 0 auto;
-    width: 700px;
-    background-color: $form-color;
+    @include new-back;
     &__title {
-      text-align: center;
-      font-size: 22px;
-      padding: 32px;
-      font-weight: bold;
+      @include new-title;
     }
     .new_user {
       border-top: 1px solid $main-color;
@@ -161,6 +156,13 @@ body {
         color: $link-color;
         text-decoration: none;
       }
+    }
+  }
+
+  .address-panel {
+    @include new-back;
+    &__title {
+      @include new-title;
     }
   }
 }

@@ -1,4 +1,8 @@
 = render "devise/shared/header"
 %main.furima-contents
-  .furima
-  %h2 商品送付先住所情報
+  .address-panel
+    %h2.address-panel__title 商品送付先住所情報
+    = form_for @destination do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .address-panel__form
+        = f.label

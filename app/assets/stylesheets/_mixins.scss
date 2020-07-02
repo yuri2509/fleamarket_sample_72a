@@ -31,3 +31,16 @@
   color: $form-color;
   width: 100%;
 }
+
+@mixin new-back {
+  margin: 0 auto;
+  width: 700px;
+  background-color: $form-color;
+}
+
+@mixin new-title {
+  text-align: center;
+  font-size: 22px;
+  padding: 32px;
+  font-weight: bold;
+}
