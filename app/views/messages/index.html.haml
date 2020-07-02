@@ -1,7 +1,7 @@
 
 .header
   .headermain
-    .headermain__head
+    .headermain__top
       %h1.icon
         %a{:href => "/"}
         = image_tag "logo/logo.png", class: "image_logo"
@@ -22,9 +22,9 @@
           %ul.brandsPulldown.displayNone
       %ul.headermain__foot__right
         %li.headermain__foot__right__item
-          %a{:href => "#"} ログイン
+          = link_to "ログイン" , "/"
         %li.headermain__foot__right__item
-          %a{:href => "#"} 新規会員登録
+          = link_to "新規会員登録" , "/"
 
 .main
   %section.mainVisual
@@ -112,7 +112,7 @@
     %h2.mainPickup__head ピックアップカテゴリー
     .productBox
       .productHead
-        %a{:href => "#"}
+        = link_to "#" do
           %h3.title 新規投稿商品
       .productLists
         .productList
@@ -171,7 +171,7 @@
     %h2.mainPickup__head ピックアップブランド
     .productBox
       .productHead
-        %a{:href => "#"}
+        = link_to "#" do
           %h3.title アーカイバ
       .productLists
         .productList
@@ -242,29 +242,29 @@
       %h2.content__head FURIMAについて
       %ul
         %li
-          %a{:href => "#"} 会社概要（運営会社）
+          = link_to "会社概要（運営会社)" , "/"
         %li
-          %a{:href => "#"} プライバシーポリシー
+          = link_to "プライバシーポリシー" , "/"
         %li
-          %a{:href => "#"} FURIMA利用規約
+          = link_to "FURIMA利用規約" , "/"
         %li
-          %a{:href => "#"} ポイントに関する特約
+          = link_to "ポイントに関する特約" , "/"
     %li.content
       %h2.content__head FURIMAを見る
       %ul
         %li
-          %a{:href => "#"} カテゴリー一覧
+          = link_to "カテゴリー一覧" , "/"
         %li
-          %a{:href => "#"} ブランド一覧
+          = link_to "ブランド一覧" , "/"
     %li.content
       %h2.content__head ヘルプ＆ガイド
       %ul
         %li
-          %a{:href => "#"} FURIMAガイド
+          = link_to "FURIMAガイド" , "/"
         %li
-          %a{:href => "#"} FURIMAロゴ利用ガイドライン
+          = link_to "FURIMAロゴ利用ガイドライン" , "/"
         %li
-          %a{:href => "#"} お知らせ
+          = link_to "お知らせ" , "/"
   .footer__logo
     %a{:href => "/"}
       = image_tag "logo/logo-white.png"
