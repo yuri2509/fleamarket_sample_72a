@@ -2,8 +2,8 @@
 %main.furima-contents
   .furima-main
     %h2.furima-main__title 会員入力情報
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
       .furima-main__form
         = f.label :nickname, "ニックネーム"
         %span.require 必須
@@ -47,7 +47,7 @@
         %p.info-text
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .furima-main__actions
-        = f.submit "次へ進む", class: "form-btn"
+        = f.submit "次へ進む", class: "form-btn", url: "destination_path"
         
         .text-link
           %p
