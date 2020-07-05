@@ -2,7 +2,7 @@
 %main.furima-contents
   .address-panel
     %h2.address-panel__title 商品送付先住所情報
-    = form_for(@destination, url: destination_path, method: :post) do |f|
+    = form_for(@destination, url: destinationss_path, method: :get) do |f|
       = render "devise/shared/error_messages", resource: @destination
-      .address-panel__form
-        = f.label
+      
+= render "devise/shared/footer"

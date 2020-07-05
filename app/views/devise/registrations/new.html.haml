@@ -40,7 +40,7 @@
           = f.text_field :family_name_reading, autofocus: true, placeholder: "例）ヤマダ", class: "form-input__half"
           = f.text_field :first_name_reading, autofocus: true, placeholder: "例）タロウ", class: "form-input__half"
       .furima-main__form
-        = f.label :birthday, "生年月日"
+        = f.label :birth_day, "生年月日"
         %span.require 必須
         %br/
         != sprintf(f.date_select(:birth_day,start_year: Time.now.year, end_year: 1900, use_month_numbers: true, prompt: "--", date_separator: "%s"), "年", "月") + "日"
