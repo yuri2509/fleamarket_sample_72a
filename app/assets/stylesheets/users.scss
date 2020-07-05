@@ -19,12 +19,20 @@ body {
 .furima-contents {
   display: block;
   .furima-main{
-    @include new-back;
+    margin: 0 auto;
+    width: 700px;
+    background-color: $form-color;
     &__title {
-      @include new-title;
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
     }
     .new_user {
-      border-top: 1px solid $main-color;
+      @include border;
+    }
+    .new_destination {
+      @include border;
     }
     &__form {
       margin: auto;
@@ -36,10 +44,11 @@ body {
       }
       .require {
         background-color: $sub-color;
-        color: $form-color;
-        padding: 2px 4px;
-        font-size: 12px;
-        margin: 0 0 0 8px;
+        @include span;
+      }
+      .optional {
+        background-color: grey;
+        @include span;
       }
       .form-input {
         width: 100%;
@@ -96,6 +105,10 @@ body {
       .form-btn {
        @include btn;
         margin: 24px 0 0;
+      }
+      .action-btn {
+        @include btn;
+        margin: 24px 0;
       }
       .text-link {
         margin: 40px 0 0;
@@ -156,13 +169,6 @@ body {
         color: $link-color;
         text-decoration: none;
       }
-    }
-  }
-
-  .address-panel {
-    @include new-back;
-    &__title {
-      @include new-title;
     }
   }
 }

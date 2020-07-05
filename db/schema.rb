@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20200629162112) do
     t.integer  "prefecture",          null: false
     t.string   "city",                null: false
     t.string   "address",             null: false
-    t.string   "building_name",       null: false
+    t.string   "building_name"
     t.integer  "phone_number",        null: false
     t.integer  "user_id",             null: false
     t.datetime "created_at",          null: false
