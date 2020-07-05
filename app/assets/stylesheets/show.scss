@@ -13,9 +13,9 @@
         display: flex;
         align-items: center;
         .icon{
-         padding-bottom: 10px;
-         margin-right: 30px;
-         border-radius: 4px;
+            padding-bottom: 10px;
+            margin-right: 30px;
+            border-radius: 4px;
          a{
             width: 140px;
             display: block;
@@ -28,25 +28,24 @@
         
         }
         .searchBox{
-         margin-left: auto;
-         width: 100%;
+            margin-left: auto;
+            width: 100%;
           .form{
-             width: 100%;
-             display: flex;
-             margin-bottom: 5px;
+                width: 100%;
+                display: flex;
+                margin-bottom: 5px;
 
           .searchBox--input{
               width: calc(100% - 26px);
-              height: 36px;
               padding: 0 0 0 5px;
            }
          
          .button{
-             width: 25px;
-             border: 0;
-             cursor: pointer;
-             background-color: #3ccace;
-             padding: 8px;
+                width: 36px;
+                border: 0;
+                cursor: pointer;
+                background-color: #3ccace;
+                padding: 8px;
 
             img{
                 width: 100%;
@@ -54,35 +53,28 @@
             }
          }
         }
-         .resultList{
-           display: flex;
-           position: absolute;
-           right: 0;
-           top: 36px;
-           z-index: 2;
-         }
         }
-        .resultList{
-         display: flex;
-         position: absolute;
-         right: 0;
-         top: 36px;
-         z-index: 2;
-        }
+        .resultLists{
+            display: flex;
+            position: absolute;
+            right: 0;
+            top: 36px;
+            z-index: 2;
+          }
      }
 
 }
 
      .nav{
-      font-size: 14px;
-      display: flex;
-      margin-bottom: 10px;
+        font-size: 14px;
+        display: flex;
+        margin-bottom: 10px;
 
-      .listLeft{
+      .listsLeft{
           position: relative;
           display: flex;
 
-        .listsLeft__itemlistsLeft__item--first{
+        &__itemlistsLeft__item--first{
             text-decoration: none;
             padding: 0;
          a{
@@ -95,7 +87,7 @@
             padding-right: 30px;
           }
         }
-        .listsLeft__item{
+        &__item{
             display: flex;
             line-height: 30px;
             padding: 0 0 0 16px;
@@ -110,14 +102,14 @@
          }
         }
       }
-     .listRight{
-         margin-left: auto;
-         display: flex;
+     .listsRight{
+            margin-left: auto;
+            display: flex;
 
-         .listsRight__itemlistsRight__item--login{
-          color: #333;
-          line-height: 38px;
-          padding: 0 0 0 16px;
+         &__itemlistsRight__item--login{
+            color: #333;
+            line-height: 38px;
+            padding: 0 0 0 16px;
           a{
               display: flex;
               align-items: center;
@@ -126,10 +118,10 @@
               line-height: 32px;
           }
          }
-         .listsRight__itemlistsRight__item--new{
-          color: #333;
-          line-height: 38px;
-          padding: 0 0 0 16px;
+         &__itemlistsRight__item--new{
+            color: #333;
+            line-height: 38px;
+            padding: 0 0 0 16px;
           a{
             display: flex;
             align-items: center;
@@ -151,10 +143,10 @@
     padding: 0 60px;
     ul{
         padding: 17px 0 16px;
-    width: 100%;
-    max-width: 1040px;
-    font-size: 14px;
-    margin: 0 auto;
+        width: 100%;
+        max-width: 1040px;
+        font-size: 14px;
+        margin: 0 auto;
      li{
         padding: 0 10px 0 0;
         float: left;
@@ -169,31 +161,31 @@
 .main{
     background-color: #f8f8f8;
  .showMain{
-  padding: 40px;
-  margin: 0 auto;
+    padding: 40px;
+    margin: 0 auto;
   .contentRight{
       width: 700px;
       margin: 0 auto;
     .topContent{
      .itemBox{
-      background-color: #fff;
-      padding: 24px 40px 40px;
+        background-color: #fff;
+        padding: 24px 40px 40px;
       h2{
           text-align: center;
           font-weight: bold;
           font-size: 24px;
       }
-      .itemBox__body{
+      &__body{
           margin: 16px 0 0;
         ul{
             display: flex;
             position: relative;
          li{
-          display: flex;
-          flex-direction: column;
-          width: 560px;
-          align-items: center;
-          margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 560px;
+            align-items: center;
+            margin: 0 auto;
           img{
               object-fit: cover;
               height: 346px;
@@ -212,7 +204,7 @@
             font-weight: bold;
             margin: 0 10px 0 0;
          }
-          .itemBox__price-detail{
+         .itemBox__price-detail{
             font-size: 16px;
              span{
                 font-size: 16px;
@@ -233,8 +225,8 @@
           border: 1px solid #f8f8f8;
             tbody{
                 display: table-row-group;
-              vertical-align: middle;
-              border-color: inherit;
+                vertical-align: middle;
+                border-color: inherit;
               tr{
                 display: table-row;
                 vertical-align: inherit;
@@ -276,8 +268,7 @@
                 color: #3CCACE;
                 border: 1px solid #ffb340;
                 i{
-                    display: inline-block;
-                    
+                    display: inline-block;                  
                     font-size: inherit;
                     text-rendering: auto;
                     -webkit-font-smoothing: antialiased;
@@ -298,8 +289,7 @@
                     border: 1px solid #333;
                     text-decoration: none;
                     i{
-                        display: inline-block;
-                        
+                        display: inline-block;  
                         font-size: inherit;
                         text-rendering: auto;
                         -webkit-font-smoothing: antialiased;
@@ -311,17 +301,17 @@
     }
     .commentBox{
         padding: 24px;
-    background-color: #fff;
-    margin: 10px 0;
-    text-align: center;
+        background-color: #fff;
+        margin: 10px 0;
+        text-align: center;
     ul{
         list-style: none;
     }
     form{
         input{
             font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
+            font-size: inherit;
+            font-weight: inherit;
         }
         textarea{
             width: 100%;
@@ -375,8 +365,7 @@
                 text-decoration: none;
                 color: #3CCACE;
              i{
-                display: inline-block;
-                
+                display: inline-block; 
                 font-size: inherit;
                 text-rendering: auto;
                 -webkit-font-smoothing: antialiased;
@@ -409,15 +398,15 @@
                     margin: 0;
                     z-index: auto;
                    img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    z-index: auto;
-                    height: 150px;
-                    object-fit: cover;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        z-index: auto;
+                        height: 150px;
+                        object-fit: cover;
                    }
                 }
                 .productList--body{
@@ -439,7 +428,6 @@
                         }  
                           i{
                             display: inline-block;
-                            
                             font-size: inherit;
                             text-rendering: auto;
                             -webkit-font-smoothing: antialiased;
@@ -452,11 +440,8 @@
                         }
                     }
                 }
-            
         }
       }
-       
-
     }
   }
  }
@@ -482,7 +467,7 @@ aside.appBanner{
             font-size: 35px;
             text-shadow: 0 0 5px rgba(0,0,0,0.4);
         }
-        .inner__icon{
+        &__icon{
             width: 100%;
             display: flex;
             justify-content: center;
@@ -528,7 +513,7 @@ aside.appBanner{
                 line-height: 32px;
             }
         }
-     }
+      }
      }
     }
 
@@ -561,7 +546,6 @@ a{
      span.purchaseBtn__text{
         color: #fff;
         display: block;
-        font-size: 18px;
         text-decoration: none;
         margin-bottom: 5px;
      }
@@ -577,8 +561,6 @@ a{
     clear: both;
     display: block;
   }
-
-
 
 
 .fas-star:before {
