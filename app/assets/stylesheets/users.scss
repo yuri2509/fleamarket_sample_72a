@@ -128,7 +128,9 @@ body {
         font-size: 14px;
       }
       a {
-        @include link;
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
         background-color: $link-color;
         margin: 8px 0 0;
         line-height: 40px;
