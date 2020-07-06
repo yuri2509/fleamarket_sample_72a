@@ -49,3 +49,15 @@
   padding: 32px;
   font-weight: bold;
 }
+
+@mixin furima {
+  margin: 0 auto;
+  width: 700px;
+  background-color: $form-color;
+}
+
+@mixin link {
+  color: $link-color;
+  text-decoration: none;
+  display: block;
+}

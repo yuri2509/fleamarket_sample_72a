@@ -19,24 +19,9 @@ body {
 .furima-contents {
   display: block;
   .furima-main{
-    margin: 0 auto;
-    width: 700px;
-    background-color: $form-color;
+    @include furima;
     &__title {
       @include main;
-    }
-    &__finish {
-      @include main;
-      border-bottom: 1px solid $main-color;
-    }
-    a {
-      text-decoration: none;
-      display: block;
-      color: $link-color;
-      text-align: center;
-      font-size: 50px;
-      padding: 100px;
-      font-weight: bold;
     }
     .new_user {
       @include border;
@@ -143,11 +128,9 @@ body {
         font-size: 14px;
       }
       a {
-        display: block;
-        color: $form-color;
+        @include link;
         background-color: $link-color;
         margin: 8px 0 0;
-        text-decoration: none;
         line-height: 40px;
         border-radius: 4px;
       }
@@ -174,11 +157,28 @@ body {
         }
       }
       a {
-        display: block;
+        @include link;
         margin: 40px 0 0;
-        color: $link-color;
-        text-decoration: none;
       }
+    }
+  }
+}
+
+.furima-create {
+  display: block;
+  height: 370px;
+  &__main {
+    @include furima;
+    &__finish {
+      @include main;
+      border-bottom: 1px solid $main-color;
+    }
+    .finish-link {
+      @include link;
+      text-align: center;
+      font-size: 30px;
+      padding: 100px;
+      font-weight: bold;
     }
   }
 }

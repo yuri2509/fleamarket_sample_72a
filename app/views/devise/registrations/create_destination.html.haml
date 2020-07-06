@@ -1,6 +1,6 @@
 = render "devise/shared/header"
-%main.furima-contents
-  .furima-main
-    %h2.furima-main__finish 登録が完了しました
-    = link_to "トップページへ戻る", root_path
+%main.furima-create
+  .furima-create__main
+    %h2.furima-create__main__finish 登録が完了しました
+    = link_to "トップページへ戻る", root_path, class: "finish-link"
 =render "devise/shared/footer"
