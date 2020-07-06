@@ -23,9 +23,19 @@ body {
     width: 700px;
     background-color: $form-color;
     &__title {
+      @include main;
+    }
+    &__finish {
+      @include main;
+      border-bottom: 1px solid $main-color;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      color: $link-color;
       text-align: center;
-      font-size: 22px;
-      padding: 32px;
+      font-size: 50px;
+      padding: 100px;
       font-weight: bold;
     }
     .new_user {

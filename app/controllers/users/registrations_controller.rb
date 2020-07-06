@@ -22,6 +22,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_destination
   end
 
+  def create_destination
+    @user = User.new(session["devise.regist_data"]["user"])
+    @destination = Destination.new(destination_params)
+    unless @destination.valid?
+      flash.now[:alert] = @destination.errors.full_messages
+      render :new_destination and return
+    end
+    @user.build_destination(@destination.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
+
   # GET /resource/edit
   # def edit
   #   super
@@ -50,6 +63,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :family_name, :first_name, :family_name_reading, :first_name_reading, :birth_day)
+  end
+
+  def destination_params
+    params.require(:destination).permit(:post_code, :prefecture, :city, :address, :building_name, :phone_number, :family_name, :first_name, :family_name_reading, :first_name_reading)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

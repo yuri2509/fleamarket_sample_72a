@@ -42,3 +42,10 @@
   font-size: 12px;
   margin: 0 0 0 8px;
 }
+
+@mixin main {
+  text-align: center;
+  font-size: 22px;
+  padding: 32px;
+  font-weight: bold;
+}
