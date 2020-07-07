@@ -119,16 +119,30 @@
           .camera-icon {
             color: black;
             position: relative;
-            top: 35px;
+            top: 70px;
             #item_images_attributes_0_src {
-              display: none;
+              // display: none;
             }
           }
+          .img-box-form {
+            display: flex;
+            #image-box {
+              height: 150px;
+              width: 620px;                  
+              #previews {
+                position: relative;
+                top:20px;
+              }
+            }
+          }
+          
           .fhoto-text {
             height: 32px;
-            width: 618px;
             position: relative;
             top: 50px;
+          }
+          .js-file {
+            // display: none;
           }
         }
       }

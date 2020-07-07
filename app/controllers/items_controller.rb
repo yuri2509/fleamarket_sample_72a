@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_product, except: [:index, :new, :create]
+
   def index
     @items = Product.includes(:images).order('created_at DESC')
   end
@@ -6,6 +8,14 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def create
@@ -21,5 +31,9 @@ end
 private
 
 def item_params
-  params.require(:item).permit(images_attributes: [:src])
+  params.require(:item).permit(images_attributes: [:src, :_destroy, :id])
+end
+
+def set_product
+  @item = Item.find(params[:id])
 end
