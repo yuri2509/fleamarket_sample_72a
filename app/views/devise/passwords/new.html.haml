@@ -1,7 +1,4 @@
-%header.furima-header
-  %h1
-    %a{href: "/"}
-      = image_tag "logo.png", alt: "フリマ"
+= render "devise/shared/header"
 %main.furima-contents
   .furima-main
     %h2 パスワードをお忘れの方
@@ -13,4 +10,4 @@
         = f.email_field :email, autofocus: true, autocomplete: "email"
       .actions
         = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+= render "devise/shared/footer"
