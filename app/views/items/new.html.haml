@@ -41,19 +41,15 @@
             商品名
             %span.description__name__title-must
               必須
-          .furima-item__input-form__description__name__title-input
-            40文字まで
+          %input.furima-item__input-form__description__name__title-input{:maxlength => "40", :size => "10", :type => "text", :placeholder => "40文字まで"}/
         .furima-item__input-form__description__text
           %label.description__text__title
             商品の説明
             %span.description__text__title-must
               必須
-          .furima-item__input-form__description__text__main
-            商品の説明（必須 1,000文字以内）
-            <br>
-            （色、素材、重さ、定価、注意点など）
-            <br><br>
-            例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+          %textarea.furima-item__input-form__description__text__main{ :cols => "30", :rows => "3", :maxlength => "10000", :placeholder => "商品の説明（必須 1,000文字以内）"}
+    
+            
             
           .furima-item__input-form__description__text__count
             0/1000
