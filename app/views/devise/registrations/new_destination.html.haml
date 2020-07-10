@@ -5,13 +5,13 @@
     = form_for(@destination, url: destinations_path, method: :post) do |f|
       = render "devise/shared/error_messages", resource: @destination
       .furima-main__form
-        %label お名前（全角）
+        %label 送付先お名前（全角）
         %span.require 必須
         .furima-main__form__name
           = f.text_field :family_name, autofocus: true, placeholder: "例）山田", class: "form-input__half"
           = f.text_field :first_name, autofocus: true, placeholder: "例）太朗", class: "form-input__half"
       .furima-main__form
-        = f.label :name_reading, "お名前カナ（全角）"
+        = f.label :name_reading, "送付先お名前カナ（全角）"
         %span.require 必須
         .furima-main__form__name
           = f.text_field :family_name_reading, autofocus: true, placeholder: "例）ヤマダ", class: "form-input__half"
