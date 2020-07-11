@@ -17,9 +17,6 @@
         %span.require 必須
         = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上の半角英数字", class: "form-input"
         %p.note-text ※英字と数字の両方を含めて設定してください
-      .furima-main__relation
-        %input{type: "checkbox", id: "reveal_password"}
-        = f.label :reveal_password, "パスワードを表示する"
       .furima-main__form
         = f.label :password_confirmation, "パスワード再入力"
         %span.require 必須
