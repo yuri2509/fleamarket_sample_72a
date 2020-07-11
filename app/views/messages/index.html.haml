@@ -263,11 +263,7 @@
     = link_to ""
     = image_tag "logo/logo-white.png"
     %p © FURIMA
-  .fotter__Btn{:style => ""}
-    %span.fotter__Btn__text 出品する
-    = link_to ""
-    = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
-
-
-
-
+  = link_to "/items/new" do
+    .fotter__Btn{:style => ""}
+      %span.fotter__Btn__text 出品する
+      = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
