@@ -96,7 +96,7 @@ active_hashのgemを使う
 - belongs_to :item
 
 
-## categorysテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
