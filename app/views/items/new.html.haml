@@ -13,16 +13,10 @@
         .furima-item__input-form__image-fhoto
           最大5枚までアップロードできます<br>
           .furima-item__input-form__image-fhoto__box
-            = form_for [@item] do |f|
-              = f.text_field :content, class: 'fhoto-text', placeholder: 'クリックしてファイルをダウンロード'
-              .form__mask
-                = f.label :image, class: 'form__mask__image' do
-                  = icon('fas', 'fa-camera', class: 'camera-icon')
-                  = f.file_field :image, class: 'hidden'
-            -# %i.fas.fa-camera.camera-icon.fa-2x
-            -# %p.fhoto-text
-            -# <br>
-            -# クリックしてファイルをダウンロード
+            %i.fas.fa-camera.camera-icon.fa-2x
+            %p.fhoto-text
+            
+            クリックしてファイルをダウンロード
 
                   %i.fas.fa-camera.camera-icon.fa-2x
                   = f.fields_for :images do |image|
