@@ -20,13 +20,17 @@
         %li.headermain__foot__left__item
           = link_to "ブランド", class: "brandBtn"
           %ul.brandsPulldown.displayNone
-      %ul.headermain__foot__right
-        %li.headermain__foot__right__item
-          = link_to "ログイン", new_user_session_path
-        %li.headermain__foot__right__item
-          = link_to "新規会員登録", new_user_registration_path
-          -# 仮置きのログアウトボタン
+      .headermain__foot__right
+      - if user_signed_in?
+        .headermain__foot__right__item
           = link_to "ログアウト", destroy_user_session_path, method: :delete
+        .headermain__foot__right__item
+          = link_to "マイページ", "#"
+      - else
+        .headermain__foot__right__item
+          = link_to "ログイン", new_user_session_path
+        .headermain__foot__right__item
+          = link_to "新規会員登録", new_user_registration_path
 .main
   %section.mainVisual
     .mainVisual__content
