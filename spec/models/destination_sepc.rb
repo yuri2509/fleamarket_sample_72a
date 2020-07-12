@@ -34,7 +34,7 @@ describe Destination do
       end
 
       it '送付先氏名(名前)の未入力' do
-        destination = build(:destinaion, first_name: nil)
+        destination = build(:destination, first_name: nil)
         destination.valid?
         expect(destination.errors[:first_name]).to include('を入力してください')
       end
@@ -66,7 +66,7 @@ describe Destination do
       it '送付先氏名(名前カナ)の不正値入力' do
         destination = build(:destination, first_name_reading: "たろう")
         destination.valid?
-        expect(user.errors[:first_name_reading]).to include('を全角カタカナで入力してください')
+        expect(destination.errors[:first_name_reading]).to include('を全角カタカナで入力してください')
       end
 
       it '郵便番号の未入力' do
