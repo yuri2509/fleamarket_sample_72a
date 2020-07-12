@@ -6,7 +6,7 @@ FactoryBot.define do
     family_name_reading       {"ヤマダ"}
     first_name_reading        {"タロウ"}
     post_code                 {"1234567"}
-    prefecture                {"愛知県:23"}
+    prefecture                {"愛知県"}
     city                      {"名古屋市"}
     address                   {"中区栄3-13-20"}
     building_name             {"栄センタービル3F"}
