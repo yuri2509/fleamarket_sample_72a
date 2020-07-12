@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/factory_bot'
 
 describe User do
   describe '#create' do
@@ -7,6 +8,7 @@ describe User do
         user = build(:user)
         expect(user).to be_valid
       end
+    end
 
     context "無効なテスト" do
       it "ニックネームの未入力" do
@@ -47,7 +49,7 @@ describe User do
       end
 
       it '確認用パスワードの不一致' do
-        user = build(:user, password_confirmation: "00000000")
+        user = build(:user, password_confirmation: "000000")
         user.valid?
         expect(user.errors[:password_confirmation]).to include('とパスワードの入力が一致しません')
       end
@@ -63,3 +65,48 @@ describe User do
         user.valid?
         expect(user.errors[:family_name]).to include('を全角で入力してください')
       end
+
+      it 'ユーザー本名(名前)の未入力' do
+        user = build(:user, first_name: nil)
+        user.valid?
+        expect(user.errors[:first_name]).to include('を入力してください')
+      end
+
+      it 'ユーザー本名(名前)の不正値入力' do
+        user = build(:user, first_name: "ﾀﾛｳ")
+        user.valid?
+        expect(user.errors[:first_name]).to include('を全角で入力してください')
+      end
+
+      it 'ユーザー本名(苗字カナ)の未入力' do
+        user = build(:user, family_name_reading: nil)
+        user.valid?
+        expect(user.errors[:family_name_reading]).to include('を入力してください')
+      end
+
+      it 'ユーザー本名(苗字カナ)の不正値入力' do
+        user = build(:user, family_name_reading: "やまだ")
+        user.valid?
+        expect(user.errors[:family_name_reading]).to include('を全角カタカナで入力してください')
+      end
+
+      it 'ユーザー本名(名前カナ)の未入力' do
+        user = build(:user, first_name_reading: nil)
+        user.valid?
+        expect(user.errors[:first_name_reading]).to include('を入力してください')
+      end
+
+      it 'ユーザー本名(名前カナ)の不正値入力' do
+        user = build(:user, first_name_reading: "たろう")
+        user.valid?
+        expect(user.errors[:first_name_reading]).to include('を全角カタカナで入力してください')
+      end
+
+      it '生年月日の未入力' do
+        user = build(:user, birth_day: nil)
+        user.valid?
+        expect(user.errors[:birth_day]).to include('を入力してください')
+      end
+    end
+  end
+end
