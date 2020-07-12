@@ -2,6 +2,14 @@ class Destination < ApplicationRecord
   belongs_to :user, optional: true
   validates :family_name, :first_name, :family_name_reading, :first_name_reading, 
             :post_code, :prefecture, :city, :address, :phone_number, presence: true
+  validates :family_name,
+    format: {with: /\A[ぁ-んァ-ン一-龥]/, message: 'を全角で入力してください' }
+  validates :first_name,
+    format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'を全角で入力してください' }
+  validates :family_name_reading,
+    format: { with: /\A([ァ-ン]|ー)+\z/, message: 'を全角カタカナで入力してください' }
+  validates :first_name_reading,
+    format: { with: /\A([ァ-ン]|ー)+\z/, message: 'を全角カタカナで入力してください' }
 
   enum prefecture:{
   北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
