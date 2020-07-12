@@ -13,6 +13,11 @@ describe Destination do
         destination = build(:destination, building_name: nil)
         expect(destination).to be_valid
       end
+
+      it '電話番号の未入力' do
+        destination = build(:destination, phone_number: nil)
+        expect(destination).to be_valid
+      end
     end
 
     context "無効なテスト" do
