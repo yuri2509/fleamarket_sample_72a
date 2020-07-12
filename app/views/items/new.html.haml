@@ -11,12 +11,14 @@
           %span.image-title__must
             必須
         .furima-item__input-form__image-fhoto
-          最大5枚までアップロードできます<br>
+          最大5枚までアップロードできます
           .furima-item__input-form__image-fhoto__box
-            %i.fas.fa-camera.camera-icon.fa-2x
-            %p.fhoto-text
-            
-            クリックしてファイルをダウンロード
+            = form_for @item do |f|
+              .img-box-form
+                #image-box
+                  - if @item.persisted?
+                    - @item.images.each_with_index do |image, i|
+                      = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
 
                   %i.fas.fa-camera.camera-icon.fa-2x
                   = f.fields_for :images do |image|
@@ -58,8 +60,7 @@
             %span.category__title-must
               必須
 
-          //《selectタグ その①》
-          %select.furima-item__input-form__detail__category__choose
+          .furima-item__input-form__detail__category__choose
 
         .furima-item__input-form__detail__brand
           %label.brand__title
