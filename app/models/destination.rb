@@ -1,7 +1,7 @@
 class Destination < ApplicationRecord
   belongs_to :user, optional: true
   validates :family_name, :first_name, :family_name_reading, :first_name_reading, 
-            :post_code, :prefecture, :city, :address, :phone_number, presence: true
+            :post_code, :prefecture, :city, :address, presence: true
   validates :family_name,
     format: {with: /\A[ぁ-んァ-ン一-龥]/, message: 'を全角で入力してください' }
   validates :first_name,
