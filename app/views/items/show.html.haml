@@ -1,0 +1,136 @@
+= render partial: 'header'
+.breadCrumbs
+ %ul.clearfix
+  %li
+   = link_to '#' do
+    FURIMA
+
+.main
+ .showMain
+  .contentLeft
+  .contentRight
+   .topContent
+    .itemBox
+     %h2.itemBox__name 商品
+     .itemBox__body
+      %ul
+       %li
+        = image_tag 'sample.fish'
+     .itemBox__price
+      %span
+       ¥1,500
+      .itemBox__price-detail
+       %span
+        (税込)
+       %span
+        送料込み
+
+     .itemDetail
+      コメントコメントコメントコメント
+      コメントコメントコメントコメント
+
+     .table
+      %table
+       %tbody
+        %tr
+         %th 出品者
+         %td hoge
+        %tr
+         %th カテゴリー
+         %td 
+          = link_to '#' do
+           ベビー・キッズ 
+        %tr
+         %th ブランド
+         %td 
+        %tr
+         %th 商品のサイズ
+         %td 
+        %tr
+         %th 商品の状態
+         %td 未使用に近い
+        %tr
+         %th 配送料の負担
+         %td 送料込み（出品者負担）
+        %tr
+         %th 発送元の地域
+         %td 
+          = link_to '#' do
+           愛知県
+        %tr
+         %th 発送日の目安
+         %td 4日
+
+     .optionalArea
+      %ul
+       %li.optionalBtnlikeBtn
+        = icon('fas', 'star')
+        お気に入り 0
+      %ul.optional
+       %li.optionalBtn
+        = link_to '' do
+         = icon('fas', 'flag')
+         不適切な商品の通報
+
+
+    .commentBox
+     %ul.commmentContents
+     %form.new_comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+      %input{name: "utf8", type: "hidden", value: "✓"}
+      %input{name: "authenticity_token", type: "hidden", value: "#"}
+      %textarea#comment_body{name: "comment[body]", required: "required"}
+      %P.noticeMsg
+       相手のことを考え丁寧なコメントを心がけましょう。
+       %br 
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %button.commentBtn{name: 'button',type: 'submit'}
+       = icon('fas', 'comment')
+       コメントする
+
+   %ul.links.clearfix
+    %li.left
+     = link_to '' do
+      = icon('fas', 'angle-left')
+      %span 前の商品
+    %li.right
+     = link_to '' do
+      %span 後ろの商品
+      = icon('fas', 'angle-right')
+    
+   .relatedItems
+    = link_to '#' do
+     ベビー・キッズをもっと見る
+    .productLists.clearfix
+     .productList
+      = link_to '' do
+       .productList--img
+        = image_tag 'sample.food.jpeg'
+       .productList--body
+        %h3.name aa
+        .details
+         %ul
+          %li.prise 1,000円
+          %li
+           = icon('fas', 'star likeIcon')
+           0
+         %p (税込)
+
+
+
+%aside.appBanner
+ .inner
+  %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+  %p.inner__text 今すぐ無料ダウンロード！
+  .inner__icon
+   = link_to '#' do
+    = image_tag 'app-store.svg'
+   = link_to '#' do
+    = image_tag 'google-play.svg'
+
+= render partial: 'footer'
+
+= link_to '#' do
+ .purchaseBtn
+  %span.purchaseBtn__text 出品する
+  %img.purchaseBtn__icon{src: '/assets/icon_camera.png'}
+

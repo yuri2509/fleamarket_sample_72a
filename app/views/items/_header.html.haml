@@ -1,0 +1,33 @@
+.pcHeader
+ .headerInner
+  .mainHeader
+   .icon
+    = link_to '' do
+     = image_tag 'logo.png'
+   .searchBox
+    .form
+     .input
+     %input#searchInput.searchBox--input{name: "key", placeholder:  "キーワードから探す"}
+     .button{type: 'submit'}
+      .searchBox__icon
+       = image_tag 'icon-search 1.png'
+   .resultLists
+
+
+
+  .nav
+   %ul.listsLeft
+    %li.listsLeft__itemlistsLeft__item--first
+     = link_to '#' do 
+      カテゴリー
+    %li.listsLeft__item
+     = link_to '#' do 
+      ブランド
+   %ul.listsRight
+    %li.listsRight__itemlistsRight__item--login
+     = link_to '' do 
+      ログイン
+    %li.listsRight__itemlistsRight__item--new
+     = link_to '' do 
+      新規会員登録
+
