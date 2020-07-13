@@ -1,36 +1,4 @@
-
-.header
-  .headermain
-    .headermain__top
-      %h1.icon
-        = link_to ""
-        = image_tag "logo/logo.png", class: "image_logo"
-      .searchbox
-        %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
-          %input{name: "utf8", type: "hidden", value: "✓"}/
-          %input.searchbox__input{name: "key", placeholder: "キーワードから探す"}/
-          %button{type: "submit"}
-            = image_tag "icon/icon-search 1.png", class: "image_icon"
-          %input{ame: "authenticity_token", type: "hidden", value: "uRr6kPx3vsdV1GNvXtVmwEuh9jMO9BR2uRWsQ6oORDnc2gzFwKVp+40TAXFEsbx5YiaO/c52i+YJaFLNiLCNKQ=="}/
-          %ul.resultLists
-    .headermain__foot
-      %ul.headermain__foot__left
-        %li.headermain__foot__left__item
-          = link_to "カテゴリー", class: "catBtn"
-        %li.headermain__foot__left__item
-          = link_to "ブランド", class: "brandBtn"
-          %ul.brandsPulldown.displayNone
-      .headermain__foot__right
-      - if user_signed_in?
-        .headermain__foot__right__item
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
-        .headermain__foot__right__item
-          = link_to "マイページ", "#"
-      - else
-        .headermain__foot__right__item
-          = link_to "ログイン", new_user_session_path
-        .headermain__foot__right__item
-          = link_to "新規会員登録", new_user_registration_path
+= render "items/header"
 .main
   %section.mainVisual
     .mainVisual__content
@@ -234,42 +202,8 @@
       .inner__icon
         = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
         = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
-
-.footer
-  %ul.contents
-    %li.content
-      %h2.content__head FURIMAについて
-      %ul
-        %li
-          = link_to "会社概要（運営会社)" , "/"
-        %li
-          = link_to "プライバシーポリシー" , "/"
-        %li
-          = link_to "FURIMA利用規約" , "/"
-        %li
-          = link_to "ポイントに関する特約" , "/"
-    %li.content
-      %h2.content__head FURIMAを見る
-      %ul
-        %li
-          = link_to "カテゴリー一覧" , "/"
-        %li
-          = link_to "ブランド一覧" , "/"
-    %li.content
-      %h2.content__head ヘルプ＆ガイド
-      %ul
-        %li
-          = link_to "FURIMAガイド" , "/"
-        %li
-          = link_to "FURIMAロゴ利用ガイドライン" , "/"
-        %li
-          = link_to "お知らせ" , "/"
-  .footer__logo
-    = link_to ""
-    = image_tag "logo/logo-white.png"
-    %p © FURIMA
-    
-  = link_to new_item_path do
-    .fotter__Btn{style: ""}
-      %span.fotter__Btn__text 出品する
-      = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
+= render "items/footer"
+= link_to new_item_path do
+  .fotter__Btn{style: ""}
+    %span.fotter__Btn__text 出品する
+    = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
