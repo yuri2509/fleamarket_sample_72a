@@ -226,7 +226,11 @@
           } 
         }
         &__choose {
-          @include input-form;
+
+          .select-form {
+            @include input-form; 
+         } 
+         
         }
       }
       

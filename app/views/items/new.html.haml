@@ -61,6 +61,10 @@
               必須
 
           .furima-item__input-form__detail__category__choose
+            = form_for @item do |f|
+              = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            -# = form_for @item do |f|
+            -#   = f.collection_select :category, Category.roots, :id, :name, {prompt: "選択してください"}, class: "select-form", id: "parent-form"
 
         .furima-item__input-form__detail__brand
           %label.brand__title

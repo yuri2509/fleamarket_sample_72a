@@ -4,5 +4,7 @@
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title FleamarketSample72a
     = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
   %body
     = yield
