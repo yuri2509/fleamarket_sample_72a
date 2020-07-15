@@ -42,12 +42,6 @@ describe User do
         expect(user.errors[:password]).to include('は7文字以上で入力してください')
       end
 
-      it '確認用パスワードの未入力' do
-        user = build(:user, password_confirmation: nil)
-        user.valid?
-        expect(user.errors[:password_confirmation]).to include('を入力してください')
-      end
-
       it '確認用パスワードの不一致' do
         user = build(:user, password_confirmation: "000000")
         user.valid?
