@@ -3,4 +3,8 @@ class ItemsController < ApplicationController
     end
   def new
   end
+
+  def purchase
+    
+  end
 end
