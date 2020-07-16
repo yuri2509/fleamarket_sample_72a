@@ -23,11 +23,16 @@
     %li.listsLeft__item
      = link_to '#' do 
       ブランド
-   %ul.listsRight
-    %li.listsRight__itemlistsRight__item--login
-     = link_to '' do 
-      ログイン
-    %li.listsRight__itemlistsRight__item--new
-     = link_to '' do 
-      新規会員登録
+   .listsRight
+   - if user_signed_in?
+    .listsRight__itemlistsRight__item--login
+     = link_to "ログアウト", destroy_user_session_path, method: :delete
+    .listsRight__itemlistsRight__item--new
+     = link_to "マイページ", "#"
+   - else
+    .listsRight__itemlistsRight__item--login
+     = link_to "ログイン", new_user_session_path
+    .listsRight__itemlistsRight__item--new
+     = link_to "新規登録", new_user_registration_path
+      
 
