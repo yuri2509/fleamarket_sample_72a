@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: 'messages#index'
   resources :items, only: [:new, :show] do
     collection do
-      post 'purchase'
+      post "purchase", to: "items#purchase"
     end
   end
 
