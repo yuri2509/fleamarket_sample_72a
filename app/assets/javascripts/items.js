@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
@@ -29,8 +29,8 @@ $(document).on('turbolinks:load', ()=> {
     $('item_images_attributes_0_src').trigger('click');
   });
 
-
   $('#image-box').on('change', '.js-file', function(e) {
+    console.log(e)
     const targetIndex = $(this).parent().data('index');
     console.log(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
@@ -64,4 +64,4 @@ $(document).on('turbolinks:load', ()=> {
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
-});
+})
