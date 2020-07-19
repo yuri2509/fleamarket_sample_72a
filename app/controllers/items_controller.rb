@@ -1,15 +1,15 @@
 class ItemsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children]
 
   def index
     @items = Product.includes(:images).order('created_at DESC')
   end
 
   def new
-    @category_parent_array = ["---"]
+    @category_parent_array = []
       #データベースから、親カテゴリーのみ抽出し、配列化
       Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
+        @category_parent_array << parent
       end
     
     # @parents = Category.all.order("id ASC").limit(13)
@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -37,7 +36,8 @@ class ItemsController < ApplicationController
 
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+
+    @category_children = Category.find_by(id: params[:parent_name]).children
  end
 
  # 子カテゴリーが選択された後に動くアクション
@@ -63,6 +63,6 @@ def item_params
   params.require(:item).permit(images_attributes: [:src, :_destroy, :id])
 end
 
-# def set_product
-#   @item = Item.find(params[:id])
-# end
+def set_product
+  @item = Item.find(params[:id])
+end

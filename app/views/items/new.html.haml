@@ -55,7 +55,7 @@
                     %span.category__title-must
                       必須
                   .furima-item__input-form__detail__category__choose
-                    = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                    = f.collection_select :category, @category_parent_array, :id,:name,{include_blank:'---'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
 
                 .furima-item__input-form__detail__brand
                   %label.brand__title
