@@ -213,7 +213,7 @@
                 } 
               }
               &__choose {
-                #parent_category {
+                .listing-select-wrapper__box--select {
                   @include input-form; 
               } 
               
