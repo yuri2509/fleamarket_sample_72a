@@ -28,7 +28,7 @@
 |judgment|text||
 |size|integer|null: false|
 |cost|string|null: false|
-|days|string|null: false|
+|day|string|null: false|
 |prefecture|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |brand|references|null: false, foreign_key: true|
