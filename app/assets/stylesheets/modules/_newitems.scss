@@ -419,9 +419,10 @@
         text-align: center;
         border-radius: 4px;
         border: 1px solid transparent;
+        cursor: pointer;
       }
 
-      // 戻るに保存ボタン
+      // 戻るボタン
       &__return {
         height: 48px;
         width: 360px;
@@ -434,6 +435,8 @@
         background-color: #ccc;
         border-color: transparent;
         color: #222;
+        text-decoration: none;
+        display: inline-block;
       }
     }
 

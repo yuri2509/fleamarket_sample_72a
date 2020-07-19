@@ -56,6 +56,7 @@
                       必須
                   .furima-item__input-form__detail__category__choose
                     = f.collection_select :category, @category_parent_array, :id,:name,{include_blank:'---'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                     
 
                 .furima-item__input-form__detail__brand
                   %label.brand__title
@@ -116,11 +117,8 @@
                       %input.furima-item__input-form__price__sell__title-right__text{maxlength: "7", size: "10", type: "text", placeholder: "0"}/
                   
               .furima-item__input-form__btn
-                -# = f.submit "登録", class: "items__container__bottom__center__card--submit"
-                .furima-item__input-form__btn__exhibition
-                  出品する
-                .furima-item__input-form__btn__return
-                  もどる
+                = f.submit "出品する", class: "furima-item__input-form__btn__exhibition"
+                = link_to "もどる", :back, class: "furima-item__input-form__btn__return"
 
               .furima-item__input-form__note
                 %p.note-text
