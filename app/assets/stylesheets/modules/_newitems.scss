@@ -204,7 +204,8 @@
             // カテゴリー
             &__category {
               color: black;
-              @include box-size;
+              width: 620px;
+              margin-top: 32px;
               .category__title {
                 color: black;
                 @include  type-title;
@@ -215,8 +216,14 @@
               &__choose {
                 .listing-select-wrapper__box--select {
                   @include input-form; 
-              } 
-              
+                }  
+              }
+              .listing-select-wrapper__added {
+                .listing-select-wrapper__box {
+                  #child_category,#grandchild_category  {
+                    @include input-form; 
+                  }
+                }
               }
             }
             
