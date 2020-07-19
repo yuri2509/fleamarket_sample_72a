@@ -1,5 +1,5 @@
-// $(function(){
-  $(document).on('turbolinks:load', ()=> {
+$(function(){
+  // $(document).on('turbolinks:load', ()=> {
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
     var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
@@ -51,5 +51,5 @@
       $('#brand_wrapper').remove();
     }
   });
-  });
+});
 // });
