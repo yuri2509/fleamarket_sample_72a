@@ -75,20 +75,19 @@
 
 // メイン出品情報登録
 .furima-item {
-  height: 2160pxpx;
+  height: 2000pxpx;
   width: 100%;
   background-color: #f8f8f8;
   @include type-form;
 
   &__input-form {
-    height: 2160px;
+    height: 2000px;
     width: 700px;
     background-color: #fff;
     margin: auto;
 
     // 画像投稿
     &__image {
-      // height: 300px;
       background-color: #fff;
       padding: 40px;
       .image-title {
@@ -146,10 +145,10 @@
             @include under-line;
           }
         
-          &__description {
+          .furima-item__input-form__description {
             height: 416px;
             background-color:#fff;
-            padding: 40px;
+            padding: 40px 0px;
             
 
             // 商品名
@@ -188,17 +187,6 @@
                 font-size: 16px;
                 padding: 13px 16px;
               }
-              // 文字数カウント
-              &__count {
-                height: 16px;
-                width: 620px;
-                margin: auto;
-                color: rgb(136, 136, 136);
-                text-align: right;
-                margin-top: 16px;
-                font-size: 12px;
-                line-height: 1.4em;
-              }
             }  
           }
           .description-under-line {
@@ -206,9 +194,9 @@
           }
           
           // 商品詳細
-          &__detail{
+          .furima-item__input-form__detail{
             height: 444px;
-            padding: 40px;
+            padding: 40px 0px;
             color: rgb(136, 136, 136);
             background-color: #fff;
             font-weight: 600;
@@ -225,8 +213,7 @@
                 } 
               }
               &__choose {
-
-                .select-form {
+                #parent_category {
                   @include input-form; 
               } 
               
@@ -275,10 +262,9 @@
           }
 
           // 配送関係
-          &__delivery {
+          .furima-item__input-form__delivery {
             height: 479px;
-            width: 700px;
-            padding: 40px;
+            padding: 40px 0px;
             background-color: #fff;
             color: rgb(136, 136, 136);
             font-size: 14px;
@@ -341,10 +327,9 @@
           }
 
           // 価格について
-          &__price {
-            height: 270px;
-            width: 700px;
-            padding: 40px 40px 0px;
+          .furima-item__input-form__price {
+            height: 170px;
+            padding: 40px 0px;
             background-color: #fff;
             
             // 価格設定の範囲
@@ -412,43 +397,6 @@
                 }
               }
             }
-
-            //  販売手数料
-            &__fee {
-              height: 70px;
-              width: 620px;
-              display: flex;
-              justify-content: space-between; 
-              padding: 12px 0;
-              line-height: 46px;
-
-              &__title,&-text  {
-                font-size: 14px;
-              }
-            }
-            .price-under-line {
-              border-top-width: 1px;
-              border-top-color: #efefef;
-              border-left: 0 solid #efefef;
-              border-bottom: 0 solid #efefef;
-              border-right: 0 solid #efefef;
-              border-top-style: solid;
-              margin: 0;
-            }
-
-            // 販売利益
-            &__profit {
-              height: 70px;
-              width: 620px;
-              display: flex;
-              justify-content: space-between; 
-              padding: 12px 0;
-              line-height: 46px;
-
-              &__title,&-text  {
-                font-size: 14px;
-              }
-            }
           }
         }
       }
@@ -457,7 +405,7 @@
       height: 164px;
       width: 360px;
       background-color: #fff;
-      margin: 0 170px;
+      margin: 0 130px;
 
       // 出品ボタン
       &__exhibition {
