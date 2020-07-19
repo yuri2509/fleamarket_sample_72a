@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
@@ -30,7 +30,6 @@ $(function(){
   });
 
   $('#image-box').on('change', '.js-file', function(e) {
-    console.log(e)
     const targetIndex = $(this).parent().data('index');
     console.log(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
