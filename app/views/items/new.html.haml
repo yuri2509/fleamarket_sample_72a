@@ -48,7 +48,8 @@
               %hr.description-under-line
 
               .furima-item__input-form__detail
-                商品の詳細
+                %P.detail-concretely-title
+                  商品の詳細
                 .furima-item__input-form__detail__category
                   %label.category__title
                     カテゴリー
@@ -74,7 +75,8 @@
               %hr.detail-under-line
 
               .furima-item__input-form__delivery
-                配送について
+                %p.delivery-concretely-title
+                  配送について
                 .furima-item__input-form__delivery__cost
                   %label.cost__title
                     配送料の負担
@@ -100,7 +102,7 @@
               %hr.delivery-under-line
 
               .furima-item__input-form__price
-                %p.price-example
+                %p.price-concretely-title
                   価格 (¥300~9,999,999)
                 .furima-item__input-form__price__sell
                   .furima-item__input-form__price__sell__title
@@ -110,10 +112,13 @@
                           販売価格
                           %span.sell__price-must
                             必須
-
-                    .furima-item__input-form__price__sell__title-right
                       %span.price-mark
                         ¥
+
+                    .furima-item__input-form__price__sell__title-right
+                      -# %span.price-mark
+                      -#   ¥
+                      -# = f.text_field :price, maxlength: "7", placeholder: "0", class:"furima-item__input-form__price__sell__title-right__text"
                       %input.furima-item__input-form__price__sell__title-right__text{maxlength: "7", size: "10", type: "text", placeholder: "0"}/
                   
               .furima-item__input-form__btn

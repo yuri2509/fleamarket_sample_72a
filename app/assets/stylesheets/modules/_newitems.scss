@@ -30,11 +30,19 @@
   font-weight: 400;
   line-height: 48px;
   padding: 0 16px;
+  font-size: 16px;
 }
 @mixin box-size () {
   height: 83px;
   width: 620px;
   margin-top: 32px;
+}
+@mixin concretely-title () {
+  color: rgb(136, 136, 136);
+  font-weight: 600;
+  margin-bottom: 24px;
+  font-size: 14px;
+  text-align: left;
 }
 @mixin under-line () {
   height: 1px;
@@ -75,13 +83,11 @@
 
 // メイン出品情報登録
 .furima-item {
-  height: 2000pxpx;
   width: 100%;
   background-color: #f8f8f8;
   @include type-form;
 
   &__input-form {
-    height: 2000px;
     width: 700px;
     background-color: #fff;
     margin: auto;
@@ -195,11 +201,11 @@
           
           // 商品詳細
           .furima-item__input-form__detail{
-            height: 444px;
             padding: 40px 0px;
-            color: rgb(136, 136, 136);
-            background-color: #fff;
-            font-weight: 600;
+
+            .detail-concretely-title {
+              @include concretely-title;
+            }
 
             // カテゴリー
             &__category {
@@ -270,13 +276,10 @@
 
           // 配送関係
           .furima-item__input-form__delivery {
-            height: 479px;
             padding: 40px 0px;
-            background-color: #fff;
-            color: rgb(136, 136, 136);
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 1.4em;
+            .delivery-concretely-title {
+              @include concretely-title;
+            }
 
             // 配送料の負担
             &__cost {
@@ -340,16 +343,9 @@
             background-color: #fff;
             
             // 価格設定の範囲
-            .price-example {
-              height: 19px;
-              width: 620px;
-              color: rgb(136, 136, 136);
-              font-size: 12px;
-              font-weight: 600;
-              line-height: 1.4em;
-              margin-bottom: 24px;
+            .price-concretely-title {
+              @include concretely-title;
             }
-
             // 販売価格
             &__sell {
               height: 187px;
@@ -362,44 +358,43 @@
                 &-left {
                   height: 46px;
                   width: 620px;
-                  padding-bottom: 12px;
                   &-box {
                     height: 19px;
                     width: 96px;
                     .sell__price {
                       @include  type-title;
                       position: relative;
-                      top: 10px;
+                      top: 15px;
                       &-must {
                         @include type-must;
                       }
                     }
                   }
-                }
-                &-right {
-                  float: right;
-                  height: 46px;
-                  width: 300px;
                   .price-mark {
                     height: 7.8px;
                     width: 14px;
                     font-size: 12px;
                     margin-right: 8px;
+                    float: right;
                     position: relative;
-                    right: 23px;
-                    top: 10px;
+                    bottom: 5px;
                   }
+                  
+                }
+                &-right {
+                  float: right;
+                  height: 46px;
+                  width: 300px;
                   &__text {
                     height: 46px;
                     width: 285px;
+                    font-size: 16px;
                     background-color:  #fff;
                     border: 1px solid #ccc;
                     border-radius: 4px;
                     text-align: right;
                     line-height: 46px;
                     padding: 0 16px;
-                    position: relative;
-                    bottom: 23px;
                   }
                 }
               }
