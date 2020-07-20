@@ -1,4 +1,5 @@
 = render "devise/shared/header"
+
 .furima-item
   .furima-item__input-form
     .furima-item__input-form__image
@@ -7,139 +8,124 @@
         %span.image-title__must
           必須
       .furima-item__input-form__image-fhoto
-        最大10枚までアップロードできます
+        最大5枚までアップロードできます
         .furima-item__input-form__image-fhoto__box
-          %i.fas.fa-camera.camera-icon.fa-2x
-          %p.fhoto-text
-          <br>
-          クリックしてファイルをダウンロード
+          = form_for @item do |f|
+            .img-box-form
+              #image-box
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
 
-  .furima-item
-    .furima-item__input-form
-      .furima-item__input-form__image
-        %label.image-title
-          出品画像
-          %span.image-title__must
-            必須
-        .furima-item__input-form__image-fhoto
-          最大5枚までアップロードできます
-          .furima-item__input-form__image-fhoto__box
-            = form_for @item do |f|
-              .img-box-form
-                #image-box
+                %i.fas.fa-camera.camera-icon.fa-2x
+                = f.fields_for :images do |image|
+                  .js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :src, class: 'js-file'
+          
                   - if @item.persisted?
-                    - @item.images.each_with_index do |image, i|
-                      = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  - if @item.persisted?
+                    .js-file_group{"data-index" => "#{@item.images.count}"}
+                      = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                      
+            %hr.image-under-line
+            .furima-item__input-form__description
+              .furima-item__input-form__description__name
+                %label.description__name__title
+                  商品名
+                  %span.description__name__title-must
+                    必須
+                = f.text_field :name, maxlength: "40", placeholder: '40文字まで',class: 'furima-item__input-form__description__name__title-input'
+              .furima-item__input-form__description__text
+                %label.description__text__title
+                  商品の説明
+                  %span.description__text__title-must
+                    必須
+                = f.text_area :description, maxlength: "1000", placeholder: "商品の説明（必須 1,000文字以内）", class: "furima-item__input-form__description__text__main"
+            %hr.description-under-line
 
-                  %i.fas.fa-camera.camera-icon.fa-2x
-                  = f.fields_for :images do |image|
-                    .js-file_group{"data-index" => "#{image.index}"}
-                      = image.file_field :src, class: 'js-file'
-            
-                    - if @item.persisted?
-                      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                    - if @item.persisted?
-                      .js-file_group{"data-index" => "#{@item.images.count}"}
-                        = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
-                       
-              %hr.image-under-line
-              .furima-item__input-form__description
-                .furima-item__input-form__description__name
-                  %label.description__name__title
-                    商品名
-                    %span.description__name__title-must
-                      必須
-                  = f.text_field :name, maxlength: "40", placeholder: '40文字まで',class: 'furima-item__input-form__description__name__title-input'
-                .furima-item__input-form__description__text
-                  %label.description__text__title
-                    商品の説明
-                    %span.description__text__title-must
-                      必須
-                  = f.text_area :description, maxlength: "1000", placeholder: "商品の説明（必須 1,000文字以内）", class: "furima-item__input-form__description__text__main"
-              %hr.description-under-line
+            .furima-item__input-form__detail
+              %P.detail-concretely-title
+                商品の詳細
+              .furima-item__input-form__detail__category
+                %label.category__title
+                  カテゴリー
+                  %span.category__title-must
+                    必須
+                .furima-item__input-form__detail__category__choose
+                  = f.collection_select :category, @category_parent_array, :id,:name,{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                    
 
-              .furima-item__input-form__detail
-                %P.detail-concretely-title
-                  商品の詳細
-                .furima-item__input-form__detail__category
-                  %label.category__title
-                    カテゴリー
-                    %span.category__title-must
-                      必須
-                  .furima-item__input-form__detail__category__choose
-                    = f.collection_select :category, @category_parent_array, :id,:name,{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                     
+              .furima-item__input-form__detail__brand
+                %label.brand__title
+                  ブランド
+                  %span.brand__title-any
+                    任意
+                = f.text_field :brand, maxlength: "40", placeholder: "例） シャネル", class:"furima-item__input-form__detail__brand__text"
 
-                .furima-item__input-form__detail__brand
-                  %label.brand__title
-                    ブランド
-                    %span.brand__title-any
-                      任意
-                  = f.text_field :brand, maxlength: "40", placeholder: "例） シャネル", class:"furima-item__input-form__detail__brand__text"
+              .furima-item__input-form__detail__status
+                %label.status__title
+                  商品の状態
+                  %span.status__title-must
+                    必須
+                = f.select :status, Item.statuses.keys, {}, class: "furima-item__input-form__detail__status__choose"
+            %hr.detail-under-line
 
-                .furima-item__input-form__detail__status
-                  %label.status__title
-                    商品の状態
-                    %span.status__title-must
-                      必須
-                  = f.select :status, Item.statuses.keys, {}, class: "furima-item__input-form__detail__status__choose"
-              %hr.detail-under-line
+            .furima-item__input-form__delivery
+              %p.delivery-concretely-title
+                配送について
+              .furima-item__input-form__delivery__cost
+                %label.cost__title
+                  配送料の負担
+                  %span.cost__title-must
+                    必須
+                = f.select :cost, Item.costs.keys, {}, class: "furima-item__input-form__delivery__cost__choose"
 
-              .furima-item__input-form__delivery
-                %p.delivery-concretely-title
-                  配送について
-                .furima-item__input-form__delivery__cost
-                  %label.cost__title
-                    配送料の負担
-                    %span.cost__title-must
-                      必須
-                  = f.select :cost, Item.costs.keys, {}, class: "furima-item__input-form__delivery__cost__choose"
+              .furima-item__input-form__delivery__prefecture
+                %label.prefecture__title
+                  発送元の地域
+                  %span.prefecture__title-must
+                    必須
+                -# = f.select :prefecture, Item.prefectures.keys, {}, class: "furima-item__input-form__delivery__prefecture__choose"
+                .furima-item__input-form__delivery__prefecture__choose
+                  選択してください
 
-                .furima-item__input-form__delivery__prefecture
-                  %label.prefecture__title
-                    発送元の地域
-                    %span.prefecture__title-must
-                      必須
-                  -# = f.select :prefecture, Item.prefectures.keys, {}, class: "furima-item__input-form__delivery__prefecture__choose"
-                  .furima-item__input-form__delivery__prefecture__choose
-                    選択してください
+              .furima-item__input-form__delivery__days
+                %label.days__title
+                  発送までの日数
+                  %span.days__title-must
+                    必須
+                = f.select :days, Item.days.keys, {}, class: "furima-item__input-form__delivery__days__choose"
+            %hr.delivery-under-line
 
-                .furima-item__input-form__delivery__days
-                  %label.days__title
-                    発送までの日数
-                    %span.days__title-must
-                      必須
-                  = f.select :days, Item.days.keys, {}, class: "furima-item__input-form__delivery__days__choose"
-              %hr.delivery-under-line
+            .furima-item__input-form__price
+              %p.price-concretely-title
+                価格 (¥300~9,999,999)
+              .furima-item__input-form__price__sell
+                .furima-item__input-form__price__sell__title
+                  .furima-item__input-form__price__sell__title-left
+                    .furima-item__input-form__price__sell__title-left-box
+                      %label.sell__price
+                        販売価格
+                        %span.sell__price-must
+                          必須
+                    %span.price-mark
+                      ¥
 
-              .furima-item__input-form__price
-                %p.price-concretely-title
-                  価格 (¥300~9,999,999)
-                .furima-item__input-form__price__sell
-                  .furima-item__input-form__price__sell__title
-                    .furima-item__input-form__price__sell__title-left
-                      .furima-item__input-form__price__sell__title-left-box
-                        %label.sell__price
-                          販売価格
-                          %span.sell__price-must
-                            必須
-                      %span.price-mark
-                        ¥
+                  .furima-item__input-form__price__sell__title-right
+                    -# %span.price-mark
+                    -#   ¥
+                    -# = f.text_field :price, maxlength: "7", placeholder: "0", class:"furima-item__input-form__price__sell__title-right__text"
+                    %input.furima-item__input-form__price__sell__title-right__text{maxlength: "7", size: "10", type: "text", placeholder: "0"}/
+                
+            .furima-item__input-form__btn
+              = f.submit "出品する", class: "furima-item__input-form__btn__exhibition"
+              = link_to "もどる", :back, class: "furima-item__input-form__btn__return"
 
-                    .furima-item__input-form__price__sell__title-right
-                      -# %span.price-mark
-                      -#   ¥
-                      -# = f.text_field :price, maxlength: "7", placeholder: "0", class:"furima-item__input-form__price__sell__title-right__text"
-                      %input.furima-item__input-form__price__sell__title-right__text{maxlength: "7", size: "10", type: "text", placeholder: "0"}/
-                  
-              .furima-item__input-form__btn
-                = f.submit "出品する", class: "furima-item__input-form__btn__exhibition"
-                = link_to "もどる", :back, class: "furima-item__input-form__btn__return"
-
-              .furima-item__input-form__note
-                %p.note-text
-                  禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律に<br>
-                  より処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+            .furima-item__input-form__note
+              %p.note-text
+                禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律に<br>
+                より処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
 = render "devise/shared/footer"
 
