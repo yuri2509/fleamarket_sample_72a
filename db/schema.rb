@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 20200712081431) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+ActiveRecord::Schema.define(version: 20200629162112) do
+
+  create_table "destinations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "family_name",         null: false
+    t.string   "first_name",          null: false
+    t.string   "family_name_reading", null: false
+    t.string   "first_name_reading",  null: false
+    t.integer  "post_code",           null: false
+    t.integer  "prefecture",          null: false
+    t.string   "city",                null: false
+    t.string   "address",             null: false
+    t.string   "building_name"
+    t.integer  "phone_number"
+    t.integer  "user_id",             null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["user_id"], name: "index_destinations_on_user_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -49,7 +66,7 @@ ActiveRecord::Schema.define(version: 20200712081431) do
     t.string   "first_name",                                        null: false
     t.string   "family_name_reading",                               null: false
     t.string   "first_name_reading",                                null: false
-    t.integer  "birth_day",                                         null: false
+    t.date     "birth_day",                                         null: false
     t.text     "introduction",           limit: 65535
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -60,4 +77,5 @@ ActiveRecord::Schema.define(version: 20200712081431) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "destinations", "users"
 end

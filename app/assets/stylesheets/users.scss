@@ -1,9 +1,6 @@
 
-
-
-
 body {
-  background-color: $main-color;
+  background-color: #f8f8f8;
 }
 
 .furima-header {
@@ -22,17 +19,15 @@ body {
 .furima-contents {
   display: block;
   .furima-main{
-    margin: 0 auto;
-    width: 700px;
-    background-color: $form-color;
+    @include furima;
     &__title {
-      text-align: center;
-      font-size: 22px;
-      padding: 32px;
-      font-weight: bold;
+      @include main;
     }
     .new_user {
-      border-top: 1px solid $main-color;
+      @include border;
+    }
+    .new_destination {
+      @include border;
     }
     &__form {
       margin: auto;
@@ -44,17 +39,18 @@ body {
       }
       .require {
         background-color: $sub-color;
-        color: $form-color;
-        padding: 2px 4px;
-        font-size: 12px;
-        margin: 0 0 0 8px;
+        @include span;
+      }
+      .optional {
+        background-color: grey;
+        @include span;
       }
       .form-input {
         width: 100%;
         margin: 8px 0 0;
         @include new-form;
         &__half {
-          width: 50%;
+          width: 90%;
           margin-right: 8px;
           @include new-form;
         }
@@ -105,6 +101,10 @@ body {
        @include btn;
         margin: 24px 0 0;
       }
+      .action-btn {
+        @include btn;
+        margin: 24px 0;
+      }
       .text-link {
         margin: 40px 0 0;
         text-align: right;
@@ -128,11 +128,11 @@ body {
         font-size: 14px;
       }
       a {
+        color: #ffffff;
+        text-decoration: none;
         display: block;
-        color: $form-color;
         background-color: $link-color;
         margin: 8px 0 0;
-        text-decoration: none;
         line-height: 40px;
         border-radius: 4px;
       }
@@ -159,11 +159,28 @@ body {
         }
       }
       a {
-        display: block;
+        @include link;
         margin: 40px 0 0;
-        color: $link-color;
-        text-decoration: none;
       }
+    }
+  }
+}
+
+.furima-create {
+  display: block;
+  height: 370px;
+  &__main {
+    @include furima;
+    &__finish {
+      @include main;
+      border-bottom: 1px solid $main-color;
+    }
+    .finish-link {
+      @include link;
+      text-align: center;
+      font-size: 30px;
+      padding: 100px;
+      font-weight: bold;
     }
   }
 }
@@ -177,7 +194,6 @@ body {
   img {
     @include logo;
     margin-top: 40px;
-    background-color: #3ccace;
   }
   nav ul {
     display: flex;

@@ -137,15 +137,16 @@
         color: #333;
         line-height: 38px;
         padding: 0 0 0 16px;
+        a {
+          display: flex;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+        }
       }
 
-      a {
-        display: flex;
-        align-items: center;
-        color: #333;
-        text-decoration: none;
-        line-height: 32px;
-      }
+      
     }
   }
 }
@@ -554,29 +555,29 @@
     }
     @include imgs();
   }
-
-  .fotter__Btn {
-    width: 120px;
-    background: #3ccace;
-    text-align: center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
-
-    &__text {
-      color: #fff;
-      display: block;
-      font-size: 18px;
-      text-decoration: none;
-      margin-bottom: 5px;
-    }
-
-    .fotter__Btn__icon {
-      width: 60%;
-    }
-  }
 }
 
 /*フッダー 終わり*/
+
+.fotter__Btn {
+  width: 120px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+
+  .fotter__Btn__icon {
+    width: 60%;
+  }
+}

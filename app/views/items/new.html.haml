@@ -1,7 +1,18 @@
-%html
-  .top-bar
-    .furima-logo
-      = image_tag 'logo.png', class: 'img-logo'
+= render "devise/shared/header"
+.furima-item
+  .furima-item__input-form
+    .furima-item__input-form__image
+      %label.image-title
+        出品画像
+        %span.image-title__must
+          必須
+      .furima-item__input-form__image-fhoto
+        最大10枚までアップロードできます
+        .furima-item__input-form__image-fhoto__box
+          %i.fas.fa-camera.camera-icon.fa-2x
+          %p.fhoto-text
+          <br>
+          クリックしてファイルをダウンロード
 
   .furima-item
     .furima-item__input-form
@@ -130,16 +141,9 @@
                   禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律に<br>
                   より処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
-  .bottom-bar
-    %ul.bottom-bar__privacy-policy
-      %li.privacy-policy
-        プライバシーポリシー
-      %li.terms-of-service
-        FURIMA利用規約
-      %li.specific-transaction
-        特定商取引に関する表記
-    .bottom-bar__logo
-      = image_tag 'logo-white.png', class: 'bottom-logo'
-    .bottom-bar__copyright
-      © Furima, Inc.
+    .furima-item__input-form__note
+      %p.note-text
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律に<br>
+        より処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+= render "devise/shared/footer"
 
