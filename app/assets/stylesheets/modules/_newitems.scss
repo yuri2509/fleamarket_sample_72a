@@ -310,8 +310,10 @@
                 }
               }
               &__choose {
-                color: black;
-                @include input-form;
+                #item_prefecture_id {
+                  color: black;
+                  @include input-form;
+                }
               }
             }
 
