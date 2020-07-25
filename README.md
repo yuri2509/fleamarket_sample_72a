@@ -40,17 +40,6 @@ active_hashのgemを使う
 - belongs_to :user
 - has_many :images
 - belongs_to :category
-- belongs_to :brand
-
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :items
-
 
 ## cards
 |Column|Type|Options|
