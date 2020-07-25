@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children,:get_category_grandchildren]
+  before_action :set_product, except: [@products, :index, :new, :create, :get_category_children,:get_category_grandchildren]
+
+  def set_product
+    @products = Category.where(ancestry: nil)
+  end
 
   def index
     @items = Product.includes(:images).order('created_at DESC')
@@ -12,7 +16,6 @@ class ItemsController < ApplicationController
         @category_parent_array << parent
       end
     
-    # @parents = Category.all.order("id ASC").limit(13)
     @item = Item.new
     @item.images.new
   end
@@ -34,9 +37,9 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-
     @category_children = Category.find_by(id: params[:parent_name]).children
  end
 
@@ -47,20 +50,10 @@ class ItemsController < ApplicationController
  end
 end
 
-# def search
-#   respond_to do |format|
-#     format.html
-#     format.json do
-#      @children = Category.find(params[:parent_id]).children
-#      #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
-#     end
-#   end
-# end
-
 private
 
 def item_params
-  params.require(:item).permit(images_attributes: [:src, :_destroy, :id])
+  params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
 end
 
 def set_product
