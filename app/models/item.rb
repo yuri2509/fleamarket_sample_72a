@@ -5,12 +5,11 @@ class Item < ApplicationRecord
   has_many :images
   belongs_to :user
   belongs_to :category
-  belongs_to :brand
 
-  validates :name, :price, :description, :status, :size, :cost, :day, :prefecture, :category, :brand, :user, presence: true
+  validates :name, :price, :description, :status, :cost, :day, :prefecture, :category, :user, presence: true
 
-  accepts_nested_attributes_for :images
-  mount_uploader :image, ImageUploader
+  # accepts_nested_attributes_for :images
+  # mount_uploader :image, ImageUploader
   accepts_nested_attributes_for :images, allow_destroy: true
 
   # 商品の状態

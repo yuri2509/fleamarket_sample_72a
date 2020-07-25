@@ -76,7 +76,7 @@ active_hashのgemを使う
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
+|src|string|null: false|
 |item|references|null: false, foreign_key: true|
 
 ### Association
