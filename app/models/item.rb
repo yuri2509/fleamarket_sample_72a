@@ -8,8 +8,6 @@ class Item < ApplicationRecord
 
   validates :name, :price, :description, :status, :cost, :day, :prefecture, :category, :user, presence: true
 
-  # accepts_nested_attributes_for :images
-  # mount_uploader :image, ImageUploader
   accepts_nested_attributes_for :images, allow_destroy: true
 
   # 商品の状態
