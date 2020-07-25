@@ -53,9 +53,8 @@
                   %span.category__title-must
                     必須
                 .furima-item__input-form__detail__category__choose
-                  = f.collection_select :category, @category_parent_array, :id,:name,{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                  = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                     
-
               .furima-item__input-form__detail__brand
                 %label.brand__title
                   ブランド
@@ -86,16 +85,15 @@
                   発送元の地域
                   %span.prefecture__title-must
                     必須
-                -# = f.select :prefecture, Item.prefectures.keys, {}, class: "furima-item__input-form__delivery__prefecture__choose"
                 .furima-item__input-form__delivery__prefecture__choose
-                  選択してください
+                  = f.collection_select(:prefecture_id, Prefecture.all, :id, :name,{include_blank: "選択してください"} )
 
               .furima-item__input-form__delivery__days
                 %label.days__title
                   発送までの日数
                   %span.days__title-must
                     必須
-                = f.select :days, Item.days.keys, {}, class: "furima-item__input-form__delivery__days__choose"
+                = f.select :day, Item.days.keys, {}, class: "furima-item__input-form__delivery__days__choose"
             %hr.delivery-under-line
 
             .furima-item__input-form__price
@@ -113,10 +111,7 @@
                       ¥
 
                   .furima-item__input-form__price__sell__title-right
-                    -# %span.price-mark
-                    -#   ¥
-                    -# = f.text_field :price, maxlength: "7", placeholder: "0", class:"furima-item__input-form__price__sell__title-right__text"
-                    %input.furima-item__input-form__price__sell__title-right__text{maxlength: "7", size: "10", type: "text", placeholder: "0"}/
+                    = f.text_field :price, maxlength: "7", placeholder: "0", class:"furima-item__input-form__price__sell__title-right__text"
                 
             .furima-item__input-form__btn
               = f.submit "出品する", class: "furima-item__input-form__btn__exhibition"
