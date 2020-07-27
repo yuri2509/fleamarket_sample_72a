@@ -2,15 +2,16 @@
 
 .furima-item
   .furima-item__input-form
-    .furima-item__input-form__image
-      %label.image-title
-        出品画像
-        %span.image-title__must
-          必須
-      .furima-item__input-form__image-fhoto
-        最大5枚までアップロードできます
-        .furima-item__input-form__image-fhoto__box
-          = form_for @item do |f|
+    = form_for @item do |f|
+      = render 'layouts/error_messages', model: f.object
+      .furima-item__input-form__image
+        %label.image-title
+          出品画像
+          %span.image-title__must
+            必須
+        .furima-item__input-form__image-fhoto
+          最大5枚までアップロードできます
+          .furima-item__input-form__image-fhoto__box
             .img-box-form
               #image-box
                 - if @item.persisted?

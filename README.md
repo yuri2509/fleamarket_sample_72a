@@ -23,15 +23,16 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
+|trading_status|integer|null: false|
 |description|text|null: false|
 |status|string|null: false|
-|judgment|text||
 |brand|text||
 |cost|string|null: false|
 |day|string|null: false|
-|prefecture|references|null: false, foreign_key: true|
+|prefecture_id|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
+
 ### prefecturenについて
 active_hashのgemを使う
 
