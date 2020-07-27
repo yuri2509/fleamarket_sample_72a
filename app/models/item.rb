@@ -31,6 +31,15 @@ class Item < ApplicationRecord
   validates :status,
   format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
 
+  # 出品状況
+  enum trading_status: {
+    "選択してください":0,
+    "出品中":1,
+    "売却済み":2,
+  }, _prefix:true
+  validates :trading_status,
+  format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
+
   # 配送料の負担
   enum cost: {
     "選択してください":0,

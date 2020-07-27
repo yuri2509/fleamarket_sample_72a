@@ -33,6 +33,13 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @category_parent_array = []
+      #データベースから、親カテゴリーのみ抽出し、配列化
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent
+      end
+      @item.images = []
+      @item.images.new
       render :new
     end
   end
@@ -53,7 +60,7 @@ end
 private
 
 def item_params
-  params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
+  params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id, trading_status: 1)
 end
 
 def set_product
