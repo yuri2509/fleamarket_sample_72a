@@ -10,8 +10,6 @@
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "login-form"
         .login-panel__form__input
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "login-form"
-        .login-panel__form__input
-          = f.password_field :password_confirmation, autocomplete: "password-confirm", placeholder: "パスワード再入力", class: "login-form"
         - if devise_mapping.rememberable?
           .login-panel__form__sub
             = f.submit "ログイン", class: "login-submit"
