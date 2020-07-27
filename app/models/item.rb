@@ -6,7 +6,15 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates :name, :price, :description, :status, :cost, :day, :prefecture, :category, :user, presence: true
+  validates :name, :price, :trading_status, :description, :status, :cost, :day, :prefecture_id, :category, :user, presence: true
+
+  validates_associated :images
+  validates :images, presence: {message: "を最低1枚選択してください"}
+
+  validates_numericality_of :price, message: "は半角数字を入力してください"
+
+  validates :price, numericality: { greater_than_or_equal_to: 300, message: "は300円以上にしてください" }
+  validates :price, numericality: { less_than_or_equal_to: 9999999, message: "は9,999,999円以下にしてください" }
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
