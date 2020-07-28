@@ -32,6 +32,9 @@ body {
     &__form {
       margin: auto;
       max-width: 270px;
+      .field_with_errors {
+        display: inline;
+      }
       label {
         font-weight: 600;
         display: inline-block;

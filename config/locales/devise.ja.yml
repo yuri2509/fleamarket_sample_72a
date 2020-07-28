@@ -10,6 +10,12 @@ ja:
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
         email: Eメール
+        nickname: ニックネーム
+        birth_day: 生年月日
+        family_name: 苗字
+        first_name: 名前
+        family_name_reading: 苗字(カナ)
+        first_name_reading: 名前(カナ)
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
@@ -25,8 +31,17 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      destination:
+        family_name: 送付先苗字
+        first_name: 送付先名前
+        family_name_reading: 送付先苗字(カナ)
+        first_name_reading: 送付先名前(カナ)
+        post_code: 郵便番号
+        city: 市町村
+        address: 番地
     models:
       user: ユーザー
+      destination: 住所情報
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
