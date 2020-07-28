@@ -3,9 +3,7 @@ require 'support/factory_bot'
 
 describe Item do
   describe '#create' do
-
     context '有効なテスト' do
-
       it '全項目の入力' do
         item = build(:item)
         expect(item).to be_valid

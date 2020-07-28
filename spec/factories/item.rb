@@ -9,6 +9,7 @@ FactoryBot.define do
     prefecture_id         {3}
     day                   {"1〜2日で発送"}
     cost                  {"送料込み(出品者負担)"}
+    trading_status        {1}
     association :user
     association :category
     images {[build(:image)]} #item.images = [build(:image)]

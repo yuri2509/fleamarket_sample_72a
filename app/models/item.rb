@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates :name, :price, :trading_status, :description, :status, :cost, :day, :prefecture_id, :category, :user, presence: true
+  validates :name, :price, :description, :status, :cost, :day, :prefecture_id, :category, :user, presence: true
 
   validates_associated :images
   validates :images, presence: {message: "を最低1枚選択してください"}
@@ -15,6 +15,7 @@ class Item < ApplicationRecord
 
   validates :price, numericality: { greater_than_or_equal_to: 300, message: "は300円以上にしてください" }
   validates :price, numericality: { less_than_or_equal_to: 9999999, message: "は9,999,999円以下にしてください" }
+  validates :trading_status, numericality: { egreater_than_or_equal_to: 1}
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -36,9 +37,7 @@ class Item < ApplicationRecord
     "選択してください":0,
     "出品中":1,
     "売却済み":2,
-  }, _prefix:true
-  validates :trading_status,
-  format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
+  }
 
   # 配送料の負担
   enum cost: {
