@@ -91,6 +91,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.2)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -328,6 +330,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  enum_help
   erb2haml
   factory_bot_rails
   fog-aws

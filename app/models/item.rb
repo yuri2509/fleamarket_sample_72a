@@ -21,13 +21,13 @@ class Item < ApplicationRecord
 
   # 商品の状態
   enum status: {
-    "選択してください":0,
-    "新品、未使用":1,
-    "未使用に近い":2,
-    "目立った傷や汚れなし":3,
-    "やや傷や汚れあり":4,
-    "傷や汚れあり":5,
-    "全体的に状態が悪い":6,
+    sentaku:0,
+    sinpin:1,
+    misiyou:2,
+    yogorenasi:3,
+    yayakizuari:4,
+    kizuari:5,
+    zyoutaigawarui:6,
   }, _prefix:true
   validates :status,
   format: {with: /\A(?!選択してください)/ , message: "を選択してください"}

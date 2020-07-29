@@ -68,7 +68,10 @@
                   商品の状態
                   %span.status__title-must
                     必須
-                = f.select :status, Item.statuses.keys, {}, class: "furima-item__input-form__detail__status__choose"
+
+                = f.select :status, Item.statuses.keys.map{ |s| [I18n.t("enums.item.status.#{s}"),s]}, {},{class: "furima-item__input-form__detail__status__choose"}
+                                                      
+
             %hr.detail-under-line
 
             .furima-item__input-form__delivery

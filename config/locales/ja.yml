@@ -18,6 +18,18 @@ ja:
         day: "発送までの日数"
         cost: "発送料の負担"
         price: "販売価格"
+    
+  enums:
+    item:
+      status:
+        sentaku: "選択してください"
+        sinpin: "新品、未使用"
+        misiyou: "未使用に近い"
+        yogorenasi: "目立った傷や汚れなし"
+        yayakizuari: "やや傷や汚れあり"
+        kizuari: "傷や汚れあり"
+        zyoutaigawarui: "全体的に状態が悪い"
+
   date:
     abbr_day_names:
     - 日
