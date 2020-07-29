@@ -97,5 +97,5 @@ $(function(){
         $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
       }
     });
-});
+  });
 });
