@@ -30,6 +30,22 @@ ja:
         kizuari: "傷や汚れあり"
         zyoutaigawarui: "全体的に状態が悪い"
 
+      trading_status:
+        sentaku: "選択してください"
+        syuppintyu: "出品中"
+        baikyakuzumi: "売却済み"
+
+      cost:
+        sentaku: "選択してください"
+        souryoukomi: "送料込み(出品者負担)"
+        tyakubarai: "着払い(購入者負担)"
+      
+      day:
+        sentaku: "選択してください"
+        itiniti: "1〜2日で発送"
+        futuka: "2〜3日で発送"
+        yokka: "4〜7日で発送"
+
   date:
     abbr_day_names:
     - 日

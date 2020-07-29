@@ -34,26 +34,26 @@ class Item < ApplicationRecord
 
   # 出品状況
   enum trading_status: {
-    "選択してください":0,
-    "出品中":1,
-    "売却済み":2,
+    sentaku:0,
+    syuppintyu:1,
+    baikyakuzumi:2,
   }
 
   # 配送料の負担
   enum cost: {
-    "選択してください":0,
-    "送料込み(出品者負担)":1,
-    "着払い(購入者負担)":2,
+    sentaku:0,
+    souryoukomi:1,
+    tyakubarai:2,
   }, _prefix:true
   validates :cost,
   format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
 
   # 発送までの日数
   enum day: {
-    "選択してください":0,
-    "1〜2日で発送":1,
-    "2〜3日で発送":2,
-    "4〜7日で発送":3,
+    sentaku:0,
+    itiniti:1,
+    futuka:2,
+    yokka:3,
   }, _prefix:true
   validates :day,
   format: {with: /\A(?!選択してください)/ , message: "を選択してください"}

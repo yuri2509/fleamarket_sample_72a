@@ -68,7 +68,6 @@
                   商品の状態
                   %span.status__title-must
                     必須
-
                 = f.select :status, Item.statuses.keys.map{ |s| [I18n.t("enums.item.status.#{s}"),s]}, {},{class: "furima-item__input-form__detail__status__choose"}
                                                       
 
@@ -82,7 +81,8 @@
                   配送料の負担
                   %span.cost__title-must
                     必須
-                = f.select :cost, Item.costs.keys, {}, class: "furima-item__input-form__delivery__cost__choose"
+                = f.select :cost, Item.costs.keys.map{ |c| [I18n.t("enums.item.cost.#{c}"),c]}, {},{class: "furima-item__input-form__delivery__cost__choose"}
+             
 
               .furima-item__input-form__delivery__prefecture
                 %label.prefecture__title
@@ -97,7 +97,7 @@
                   発送までの日数
                   %span.days__title-must
                     必須
-                = f.select :day, Item.days.keys, {}, class: "furima-item__input-form__delivery__days__choose"
+                = f.select :day, Item.days.keys.map{ |d| [I18n.t("enums.item.day.#{d}"),d]}, {}, {class: "furima-item__input-form__delivery__days__choose"}
             %hr.delivery-under-line
 
             .furima-item__input-form__price
