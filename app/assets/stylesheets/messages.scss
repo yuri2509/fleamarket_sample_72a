@@ -569,11 +569,14 @@
   position: fixed;
   padding: 15px;
 
+  .btn {
+    text-decoration: none;
+  }
+
   &__text {
     color: #fff;
     display: block;
     font-size: 18px;
-    text-decoration: none;
     margin-bottom: 5px;
   }
 

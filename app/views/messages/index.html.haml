@@ -203,7 +203,14 @@
         = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
         = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
 = render "items/footer"
-= link_to new_item_path do
-  .fotter__Btn{style: ""}
-    %span.fotter__Btn__text 出品する
-    = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
+
+
+.fotter__Btn{style: ""}
+  - if user_signed_in?
+    = link_to new_item_path, class: "btn" do
+      %span.fotter__Btn__text 出品する
+      = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"
+  - else
+    = link_to new_user_session_path, class: "btn" do
+      %span.fotter__Btn__text 出品する
+      = image_tag "icon/icon_camera.png", class: "fotter__Btn__icon"

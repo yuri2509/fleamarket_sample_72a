@@ -23,15 +23,14 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
+|trading_status|integer|null: false|
 |description|text|null: false|
 |status|string|null: false|
-|judgment|text||
-|size|integer|null: false|
+|brand|text||
 |cost|string|null: false|
-|days|string|null: false|
-|prefecture|references|null: false, foreign_key: true|
+|day|string|null: false|
+|prefecture_id|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
-|brand|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 
 ### prefecturenについて
@@ -42,17 +41,6 @@ active_hashのgemを使う
 - belongs_to :user
 - has_many :images
 - belongs_to :category
-- belongs_to :brand
-
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-### Association
-- has_many :items
-
 
 ## cards
 |Column|Type|Options|
@@ -89,7 +77,7 @@ active_hashのgemを使う
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
+|src|string|null: false|
 |item|references|null: false, foreign_key: true|
 
 ### Association
