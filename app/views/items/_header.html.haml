@@ -28,7 +28,7 @@
     .listsRight__itemlistsRight__item--login
      = link_to "ログアウト", destroy_user_session_path, method: :delete
     .listsRight__itemlistsRight__item--new
-     = link_to "マイページ", "#"
+     = link_to "マイページ", user_path(current_user)
    - else
     .listsRight__itemlistsRight__item--login
      = link_to "ログイン", new_user_session_path

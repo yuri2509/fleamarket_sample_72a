@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -6,9 +8,11 @@ Rails.application.routes.draw do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
   end
-  root to: 'messages#index'
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :users, only: [:show]
 
+  root to: 'messages#index'
+  
+  resources :items, only: [:index, :new, :create, :show] do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
