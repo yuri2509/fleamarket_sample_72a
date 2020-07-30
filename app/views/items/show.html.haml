@@ -15,7 +15,7 @@
      .itemBox__body
       %ul
        %li
-        = image_tag 'sample.fish'
+        = image_tag 'icon/sample.fish.png'
      .itemBox__price
       %span
        ¥1,500
@@ -104,7 +104,7 @@
      .productList
       = link_to '' do
        .productList--img
-        = image_tag 'sample.food.jpeg'
+        = image_tag 'icon/banana.png'
        .productList--body
         %h3.name aa
         .details
@@ -131,6 +131,6 @@
 
 = link_to '#' do
  .purchaseBtn
-  %span.purchaseBtn__text 出品する
-  %img.purchaseBtn__icon{src: '/assets/icon_camera.png'}
+  %span.purchaseBtn__text 購入する
+  = icon('fas', 'cart-arrow-down fa-2x')
 
