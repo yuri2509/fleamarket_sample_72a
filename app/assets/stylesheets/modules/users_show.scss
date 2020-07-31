@@ -1,0 +1,38 @@
+.content {
+  margin: 24px auto 0;
+  width: 700px;
+  .content-box {
+    background-color: #3ccace;
+    &__mypage {
+      height: 200px;
+      text-align: center;
+      line-height: 100px;
+      &__name {
+        font-size: 30px;
+      }
+      &__number {
+        font-size: 30px;
+      }
+    }
+  }
+  .content-bottom {
+    margin: 40px 0 0;
+   .mypage-menuy {
+    font-weight: bold;
+    &__list {
+      margin: 8px 0 0;
+      li {
+        border-top: 1px solid #eeeeee;
+        background-color: $form-color;
+        padding: 16px;
+        a {
+          text-decoration: none;
+          color: $footer-color;
+          display: block;
+          font-size: 14px;
+        }
+      }
+    }
+   }
+  }
+}

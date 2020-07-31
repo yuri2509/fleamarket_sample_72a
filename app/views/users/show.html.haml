@@ -1,2 +1,28 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+= render "items/header"
+%main.content
+  .content-box
+    %section.content-box__mypage
+      %h2.content-box__mypage__name 
+        = current_user.nickname
+      .content-box__mypage__number
+        出品数
+        %span.number
+          0
+  .content-bottom
+    %nav.mypage-menuy 
+      設定
+      %ul.mypage-menuy__list
+        %li
+          = link_to "支払い方法", "#"
+        %li
+          = link_to "ログアウト", "#"
+
+.main
+  %section.mainBanner
+    .inner
+      %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text 今すぐ無料ダウンロード！
+      .inner__icon
+        = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
+        = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
+= render "items/footer"
