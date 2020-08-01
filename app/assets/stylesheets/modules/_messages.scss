@@ -445,11 +445,20 @@
           }
           .details {
             font-size: 16px;
-
+            
             ul {
               display: flex;
               align-items: center;
               justify-content: space-between;
+              
+              li {
+                .item__sale__blue {
+                  color: #3ccace;
+                }
+                .item__sale__red {
+                  color: red;
+                }
+              }
             }
 
             p {

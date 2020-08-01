@@ -86,17 +86,25 @@
       .productLists
         - @items_category.each_with_index do |item, n|
           .productList
-            =link_to ""
             %figure.productList__img
-              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}/
+              = link_to item_path(item) do
+                = image_tag item.images[0].src.url, size:'220x150'
             .productList__body
-              %h3.name ee
+              %h3.name
+              = item.name[0,10]
+              - if item.name.size > 9
+                = "..."
               .details
                 %ul
-                  %li 1000円
                   %li
-                    %i.fa.fa-star.likeIcon
-                    0
+                    = number_to_currency(item.price)
+                  %li
+                    - if item.trading_status == "syuppintyu"
+                      .item__sale__blue
+                        出品中
+                    - else
+                      .item__sale__red
+                        売却済
                 %p (税込)
 
   %section.mainPickup
