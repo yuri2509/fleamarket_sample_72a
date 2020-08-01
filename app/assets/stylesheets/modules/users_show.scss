@@ -35,4 +35,25 @@
     }
    }
   }
+  .content-form {
+    background-color: $form-color;
+    &__logbox {
+      padding: 64px;
+      &__out {
+        margin: 0 auto;
+        max-width: 320px;
+        a {
+          color: $form-color;
+          text-decoration: none;
+          background-color: $sub-color;
+          border: 1px solid $sub-color;
+          display: block;
+          text-align: center;
+          line-height: 48px;
+          border-radius: 4px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
