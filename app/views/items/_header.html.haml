@@ -2,7 +2,7 @@
  .headerInner
   .mainHeader
    .icon
-    = link_to '' do
+    = link_to root_path do
      = image_tag 'logo.png'
    .searchBox
     .form
@@ -26,7 +26,6 @@
    .listsRight
    - if user_signed_in?
     .listsRight__itemlistsRight__item--login
-     = link_to "ログアウト", destroy_user_session_path, method: :delete
     .listsRight__itemlistsRight__item--new
      = link_to "マイページ", user_path(current_user)
    - else
