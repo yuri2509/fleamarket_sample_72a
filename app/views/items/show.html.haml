@@ -1,9 +1,4 @@
 = render partial: 'header'
-.breadCrumbs
- %ul.clearfix
-  %li
-   = link_to '#' do
-    FURIMA
 
 .main
  .showMain
@@ -44,9 +39,6 @@
          %th ブランド
          %td 
         %tr
-         %th 商品のサイズ
-         %td 
-        %tr
          %th 商品の状態
          %td 未使用に近い
         %tr
@@ -63,9 +55,7 @@
 
      .optionalArea
       %ul
-       %li.optionalBtnlikeBtn
-        = icon('fas', 'star')
-        お気に入り 0
+
       %ul.optional
        %li.optionalBtn
         = link_to '' do
