@@ -18,14 +18,6 @@ class ItemsController < ApplicationController
     @item.images.new
   end
 
-  def update
-    if @item.update(item_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
-
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -38,6 +30,17 @@ class ItemsController < ApplicationController
       @item.images = []
       @item.images.new
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
