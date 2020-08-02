@@ -17,7 +17,7 @@
        - @item.images.each_with_index do |image, i|
         = image_tag image.src.url, size:'52x52', class: "itemBox__body_sub--child"
       %span
-       ¥1,500
+       = "#{@item.price.to_s(:delimited, delimiter: ",")}"
       .itemBox__price-detail
        %span
         (税込)
