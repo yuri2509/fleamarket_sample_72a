@@ -11,8 +11,11 @@
      .itemBox__body
       %ul
        %li
-        = image_tag 'icon/sample.fish.png'
+        = image_tag @item.images[0].src.url, size:'292x292'
      .itemBox__price
+      .itemBox__body_sub
+       - @item.images.each_with_index do |image, i|
+        = image_tag image.src.url, size:'52x52', class: "itemBox__body_sub--child"
       %span
        ¥1,500
       .itemBox__price-detail
