@@ -84,58 +84,29 @@
         = link_to "#" do
           %h3.title 新規投稿商品
       .productLists
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}/
-          .productList__body
-            %h3.name ee
-            .details
-              %ul
-                %li 1000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}/
-          .productList__body
-            %h3.name product3
-            .details
-              %ul
-                %li 30000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}/
-          .productList__body
-            %h3.name product2
-            .details
-              %ul
-                %li 20000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
-          .productList__body
-            %h3.name product1
-            .details
-              %ul
-                %li 10000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
+        - @items_category.each_with_index do |item, n|
+          .productList
+            %figure.productList__img
+              = link_to item_path(item) do
+                = image_tag item.images[0].src.url, size:'220x150'
+            .productList__body
+              %h3.name
+              = item.name[0,10]
+              - if item.name.size > 9
+                = "..."
+              .details
+                %ul
+                  %li
+                    = number_to_currency(item.price)
+                  %li
+                    - if item.trading_status == "syuppintyu"
+                      .item__sale__blue
+                        出品中
+                    - else
+                      .item__sale__red
+                        売却済
+                %p (税込)
+
   %section.mainPickup
     %h2.mainPickup__head ピックアップブランド
     .productBox
@@ -143,58 +114,30 @@
         = link_to "#" do
           %h3.title アーカイバ
       .productLists
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}/
-          .productList__body
-            %h3.name ee
-            .details
-              %ul
-                %li 1000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}/
-          .productList__body
-            %h3.name product3
-            .details
-              %ul
-                %li 30000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}/
-          .productList__body
-            %h3.name product2
-            .details
-              %ul
-                %li 20000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
-        .productList
-          =link_to ""
-          %figure.productList__img
-            %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}/
-          .productList__body
-            %h3.name product1
-            .details
-              %ul
-                %li 10000円
-                %li
-                  %i.fa.fa-star.likeIcon
-                  0
-              %p (税込)
+        - @items_brand.each_with_index do |item, n|
+          .productList
+            =link_to ""
+            %figure.productList__img
+              = link_to item_path(item) do
+                = image_tag item.images[0].src.url, size:'220x150'
+            .productList__body
+              %h3.name 
+                = item.name[0,10]
+                - if item.name.size > 9
+                  = "..."
+              .details
+                %ul
+                  %li 
+                    = number_to_currency(item.price)
+                  %li
+                    - if item.trading_status == "syuppintyu"
+                      .item__sale__blue
+                        出品中
+                    - else
+                      .item__sale__red
+                        売却済 
+                %p (税込)
+  
   %section.mainBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ

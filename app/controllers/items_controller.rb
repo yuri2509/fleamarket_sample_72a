@@ -5,10 +5,6 @@ class ItemsController < ApplicationController
     @products = Category.where(ancestry: nil)
   end
 
-  def index
-    @items = Product.includes(:images).order('created_at DESC')
-  end
-
   def new
     @category_parent_array =  Category.where(ancestry: nil) do |parent|
       @category_parent_array << parent
