@@ -70,50 +70,49 @@
          = icon('fas', 'flag')
          不適切な商品の通報
 
+-# 今後実装
+  -#   .commentBox
+  -#    %ul.commmentContents
+  -#    %form.new_comment{"accept-charset": "UTF-8", action: "#", method: "post"}
+  -#     %input{name: "utf8", type: "hidden", value: "✓"}
+  -#     %input{name: "authenticity_token", type: "hidden", value: "#"}
+  -#     %textarea#comment_body{name: "comment[body]", required: "required"}
+  -#     %P.noticeMsg
+  -#      相手のことを考え丁寧なコメントを心がけましょう。
+  -#      %br 
+  -#       不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  -#     %button.commentBtn{name: 'button',type: 'submit'}
+  -#      = icon('fas', 'comment')
+  -#      コメントする
 
-    .commentBox
-     %ul.commmentContents
-     %form.new_comment{"accept-charset": "UTF-8", action: "#", method: "post"}
-      %input{name: "utf8", type: "hidden", value: "✓"}
-      %input{name: "authenticity_token", type: "hidden", value: "#"}
-      %textarea#comment_body{name: "comment[body]", required: "required"}
-      %P.noticeMsg
-       相手のことを考え丁寧なコメントを心がけましょう。
-       %br 
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %button.commentBtn{name: 'button',type: 'submit'}
-       = icon('fas', 'comment')
-       コメントする
-
-   %ul.links.clearfix
-    %li.left
-     = link_to '' do
-      = icon('fas', 'angle-left')
-      %span 前の商品
-    %li.right
-     = link_to '' do
-      %span 後ろの商品
-      = icon('fas', 'angle-right')
+  -#  %ul.links.clearfix
+  -#   %li.left
+  -#    = link_to '' do
+  -#     = icon('fas', 'angle-left')
+  -#     %span 前の商品
+  -#   %li.right
+  -#    = link_to '' do
+  -#     %span 後ろの商品
+  -#     = icon('fas', 'angle-right')
     
-   .relatedItems
-    = link_to '#' do
-     ベビー・キッズをもっと見る
-    .productLists.clearfix
-     .productList
-      = link_to '' do
-       .productList--img
-        = image_tag 'icon/banana.png'
-       .productList--body
-        %h3.name aa
-        .details
-         %ul
-          %li.prise 1,000円
-          %li
-           = icon('fas', 'star likeIcon')
-           0
-         %p (税込)
+  -#  .relatedItems
+  -#   = link_to '#' do
+  -#    ベビー・キッズをもっと見る
+  -#   .productLists.clearfix
 
-
+  -#    .productList
+  -#     = link_to '' do
+  -#      .productList--img
+  -#       = image_tag 'icon/banana.png'
+  -#      .productList--body
+  -#       %h3.name aa
+  -#       .details
+  -#        %ul
+  -#         %li.prise 1,000円
+  -#         %li
+  -#          = icon('fas', 'star likeIcon')
+  -#          0
+  -#        %p (税込)
 
 %aside.appBanner
  .inner
