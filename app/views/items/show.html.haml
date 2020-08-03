@@ -67,7 +67,12 @@
 
      .optionalArea
       %ul
-
+       %li.optionalBtnlikeBtn
+        = link_to '#' do
+         %span.purchaseBtn__text
+          = icon('fas', 'cart-arrow-down fa-2x')
+          購入する
+          
       %ul.optional
        %li.optionalBtn
         = link_to '' do
@@ -129,9 +134,3 @@
     = image_tag 'google-play.svg'
 
 = render partial: 'footer'
-
-= link_to '#' do
- .purchaseBtn
-  %span.purchaseBtn__text 購入する
-  = icon('fas', 'cart-arrow-down fa-2x')
-

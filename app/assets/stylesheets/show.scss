@@ -271,20 +271,30 @@
       .optionalArea{
         display: flex;
         justify-content: space-between; 
+
         ul{
             margin: 10px 0 0;
             display: flex;
+            
             li.optionalBtnlikeBtn{
                 margin-right: auto;
-                padding: 6px 10px;
-                border-radius: 40px;
-                color: #3CCACE;
-                border: 1px solid #ffb340;
+                padding: 10px 15px;
+                color: #fff;
+                background-color: #3CCACE;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 20px;
+                a {
+                   text-decoration: none;
+                   color: #fff;
+                   border-radius: 4px;
+                }
                 i{
                     display: inline-block;                  
                     font-size: inherit;
                     text-rendering: auto;
                     -webkit-font-smoothing: antialiased;
+                    text-decoration: none;
                 }
             }
         }
@@ -546,29 +556,6 @@ aside.appBanner{
     }
 }
 
-
-a{
-    .purchaseBtn{
-        width: 100px;
-        background: #3CCACE;
-        text-align: center;
-        border-radius: 4%;
-        bottom: 32px;
-        right: 32px;
-        position: fixed;
-        padding: 15px;
-     span.purchaseBtn__text{
-        color: #fff;
-        display: block;
-        text-decoration: none;
-        margin-bottom: 5px;
-     }
-     .fa-2x {
-        color: #fff;
-     }
-
-    }
-}
 
 .clearfix::after {
     content: "";
