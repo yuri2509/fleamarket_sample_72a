@@ -45,7 +45,11 @@
 
         %tr
          %th ブランド
-         %td 
+         %td
+          - if @item.brand.present?
+           = @item.brand
+          - else
+           = "---"
         %tr
          %th 商品の状態
          %td 未使用に近い
