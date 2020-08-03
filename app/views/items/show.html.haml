@@ -36,9 +36,13 @@
           = @user.nickname
         %tr
          %th カテゴリー
-         %td 
-          = link_to '#' do
-           ベビー・キッズ 
+         %td
+          = @item.category.root.name
+          %br
+          = @item.category.parent.name
+          %br
+          = @item.category.name
+
         %tr
          %th ブランド
          %td 
