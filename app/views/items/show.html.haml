@@ -64,7 +64,8 @@
           = @item.prefecture.name
         %tr
          %th 発送日の目安
-         %td 4日
+         %td
+          = @item.day_i18n
 
      .optionalArea
       %ul
