@@ -69,12 +69,23 @@
 
      .optionalArea
       %ul
-       %li.optionalBtnlikeBtn
-        = link_to '#' do
-         %span.purchaseBtn__text
-          = icon('fas', 'cart-arrow-down fa-2x')
-          購入する
-          
+       - if user_signed_in? && current_user.id = @item.id
+        %li.optionalBtnlikeBtn
+         = link_to '#' do
+          %span.purchaseBtn__text
+           = icon('fas', 'edit fa-2x')
+           編集する
+        %li.optionalBtnlikeBtnDestroy
+         = link_to '#' do
+          %span.purchaseBtn__text
+           = icon('fas', 'trash-alt fa-2x')
+           削除する
+       - else
+        %li.optionalBtnlikeBtn
+         = link_to "#" do
+          %span.purchaseBtn__text
+           = icon('fas', 'cart-arrow-down fa-2x')
+           購入する
       %ul.optional
        %li.optionalBtn
         = link_to '' do

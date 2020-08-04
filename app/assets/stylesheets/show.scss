@@ -278,7 +278,29 @@
             
             li.optionalBtnlikeBtn{
                 margin-right: auto;
-                padding: 10px 15px;
+                padding: 10px 16px;
+                color: #fff;
+                background-color: #3CCACE;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 20px;
+                a {
+                   text-decoration: none;
+                   color: #fff;
+                   border-radius: 4px;
+                }
+                i{
+                    display: inline-block;                  
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    text-decoration: none;
+                }
+            }
+            li.optionalBtnlikeBtnDestroy{
+                margin-right: auto;
+                margin-left: 10px;
+                padding: 10px 16px;
                 color: #fff;
                 background-color: #3CCACE;
                 border-radius: 4px;
@@ -300,7 +322,7 @@
         }
 
         ul.optional{
-            margin: 10px 0 0;
+            margin: 15px 0 0;
             display: flex;
             li.optionalBtn{
                 font-size: 14px;
@@ -470,7 +492,6 @@
   }
  }
 }
-
 
 aside.appBanner{
     background-image: image-url("pict/bg-appBanner-pict.jpg");
