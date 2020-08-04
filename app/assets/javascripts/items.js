@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (num)=> {
     const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
                   <div data-index="${num}" class="js-file_group">
-                  <input class="js-file" type="file" name="product[images_attributes][${num}][src]" id="product_images_attributes_${num}_src"><br>
+                  <input class="js-file" type="file" name="product[images_attributes][${num}][src]" id="product_images_attributes_${num}_src"><br><div class="js-remove">削除</div></div>
                   `;
     return html;
   }
