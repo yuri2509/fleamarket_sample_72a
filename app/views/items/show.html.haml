@@ -56,7 +56,8 @@
           = @item.status_i18n
         %tr
          %th 配送料の負担
-         %td 送料込み（出品者負担）
+         %td
+          = @item.cost_i18n
         %tr
          %th 発送元の地域
          %td 
