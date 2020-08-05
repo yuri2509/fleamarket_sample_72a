@@ -71,12 +71,12 @@
       %ul
        - if user_signed_in? && current_user.id = @item.id
         %li.optionalBtnlikeBtn
-         = link_to '#' do
+         = link_to 'edit_item_path(item)' do
           %span.purchaseBtn__text
            = icon('fas', 'edit fa-2x')
            編集する
         %li.optionalBtnlikeBtnDestroy
-         = link_to '#' do
+         = link_to 'item_path(item), method: :delete' do
           %span.purchaseBtn__text
            = icon('fas', 'trash-alt fa-2x')
            削除する
