@@ -1,7 +1,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false, unique: true|
+|nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |avatar|string||
@@ -25,11 +25,11 @@
 |price|integer|null: false|
 |trading_status|integer|null: false|
 |description|text|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |brand|text||
-|cost|string|null: false|
-|day|string|null: false|
-|prefecture_id|references|null: false, foreign_key: true|
+|cost|integer|null: false|
+|day|integer|null: false|
+|prefecture_id|integer|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 
