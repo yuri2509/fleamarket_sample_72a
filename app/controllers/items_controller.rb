@@ -30,6 +30,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array =  Category.where(ancestry: nil) do |parent|
+      @category_parent_array << parent
+    end
+    
+    @item = Item.new
+    @item.images.new
   end
 
   def update
