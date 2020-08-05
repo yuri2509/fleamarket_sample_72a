@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
       @item.images = []
       @item.images.new
-      render :new
+      render action: :new
     end
   end
 
@@ -33,16 +33,16 @@ class ItemsController < ApplicationController
     @category_parent_array =  Category.where(ancestry: nil) do |parent|
       @category_parent_array << parent
     end
-    
-    @item = Item.new
-    @item.images.new
+    @item = Item.find(params[:id])
+    @item.images.find(params[:id])
   end
 
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
-      render :edit
+      render action: :edit
     end
   end
 
@@ -58,20 +58,20 @@ class ItemsController < ApplicationController
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(id: params[:parent_name]).children
- end
+  end
 
  # 子カテゴリーが選択された後に動くアクション
  def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
  end
-end
 
-private
-def item_params
-  params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id, trading_status: 1)
-end
+  private
+  def item_params
+    params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id, trading_status: 1)
+  end
 
-def set_product
-  @item = Item.find(params[:id])
+  def set_product
+    @item = Item.find(params[:id])
+  end
 end
