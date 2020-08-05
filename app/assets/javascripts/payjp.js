@@ -5,9 +5,9 @@ window.addEventListener('DOMContentLoaded', function(){
     e.preventDefault();
     var card = {
       number: document.getElementById("number").value,
-      cvc: document.getElementById("cvc").value,
+      exp_year: document.getElementById("exp_year").value,
       exp_month: document.getElementById("exp_month").value,
-      exp_year: document.getElementById("exp_year").value
+      cvc: document.getElementById("cvc").value
     };
 
     Payjp.createToken(card, function(status, response) {
