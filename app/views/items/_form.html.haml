@@ -13,14 +13,17 @@
           最大5枚までアップロードできます
           .furima-item__input-form__image-fhoto__box
             .img-box-form
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  .img-preview
+                    = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
+                    .js-remove 
+                      削除
               #image-box
-                - if @item.persisted?
-                  - @item.images.each_with_index do |image, i|
-                    = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-
+                
                 %i.fas.fa-camera.camera-icon.fa-2x
                 = f.fields_for :images do |image|
-                  .js-file_group{"data-index" => "#{image.index}"}
+                  .js-file_group{"data-index": "#{image.index}"}
                     = image.file_field :src, class: 'js-file'
           
                   - if @item.persisted?
