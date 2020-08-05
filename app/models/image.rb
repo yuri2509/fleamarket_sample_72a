@@ -2,6 +2,6 @@ class Image < ApplicationRecord
   validates :src, presence: true
 
   mount_uploader :src, ImageUploader
-  belongs_to :item , optional: true
+  belongs_to :item , dependent: :destroy, optional: true
 end
 
