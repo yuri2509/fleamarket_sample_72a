@@ -46,6 +46,9 @@ class ItemsController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def destroy
+  end
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(id: params[:parent_name]).children
