@@ -1,0 +1,21 @@
+= render "items/header"
+%main.content
+  %section.content-credit
+    .content-credit__message
+      登録が完了しました
+    %ul.content-credit__btns
+      %li.my_page_link
+        = link_to "マイページに戻る", users_path(current_user.id)
+      %li.credit_cards_index_link
+      = link_to "登録カード一覧", card_path(current_user.id)
+
+
+.main
+  %section.mainBanner
+    .inner
+      %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text 今すぐ無料ダウンロード！
+      .inner__icon
+        = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
+        = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
+= render "items/footer"
