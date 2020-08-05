@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_product, except: [@products, :index, :new, :create, :get_category_children,:get_category_grandchildren]
+  before_action :set_product, except: [@products, :index, :new, :create, :show, :get_category_children,:get_category_grandchildren]
 
   def set_product
     @products = Category.where(ancestry: nil)
@@ -35,6 +35,12 @@ class ItemsController < ApplicationController
       @item.images.new
       render :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @user = User.find(@item.user_id)
+    @category = Category.find(params[:id])
   end
 
   def get_category_children
