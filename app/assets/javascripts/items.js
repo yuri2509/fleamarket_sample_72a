@@ -38,10 +38,10 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('#image-box').before(buildImg(targetIndex, blobUrl));
+      $('.img-preview:last').before(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       a = $('.fa-camera').hide()
-      $('#image-box').prepend(buildFileField(fileIndex[0]));
+      $('#img-preview').prepend(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);

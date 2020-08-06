@@ -15,12 +15,12 @@
             .img-box-form
               - if @item.persisted?
                 - @item.images.each_with_index do |image, i|
-                  .img-preview
-                    = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
-                    .js-remove 
-                      削除
+                  - if image.persisted?
+                    .img-preview
+                      = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
+                      .js-remove 
+                        削除
               #image-box
-                
                 %i.fas.fa-camera.camera-icon.fa-2x
                 = f.fields_for :images do |image|
                   .js-file_group{"data-index": "#{image.index}"}
@@ -28,9 +28,10 @@
           
                   - if @item.persisted?
                     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                  - if @item.persisted?
-                    .js-file_group{"data-index" => "#{@item.images.count}"}
-                      = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                  -# - if @item.persisted?
+                  -#   .img-preview
+                  -#     .js-file_group{"data-index" => "#{@item.images.count}"}
+                  -#     = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
                       
             %hr.image-under-line
             .furima-item__input-form__description
@@ -56,6 +57,7 @@
                   カテゴリー
                   %span.category__title-must
                     必須
+
                 .furima-item__input-form__detail__category__choose
                   = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                     

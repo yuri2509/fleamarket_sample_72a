@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
       @category_parent_array << parent
     end
     @item = Item.find(params[:id])
-    @item.images.find(params[:id])
+    @item.images.new
   end
 
   def update
