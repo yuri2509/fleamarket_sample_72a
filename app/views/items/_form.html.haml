@@ -58,9 +58,26 @@
                   %span.category__title-must
                     必須
 
-                .furima-item__input-form__detail__category__choose
-                  = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# .furima-item__input-form__detail__category__choose
+                -#   = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
+
+                - if @item.persisted?
+                  .furima-item__input-form__detail__category__choose
+                    -# 商品編集
+                    = f.select :category_id, options_for_select(@category_parent_array.map{|category| [category.name, category.id]},selected: @item.category.id),{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', value: "#{@item.category.name}"}
+                  -# 商品出品
+                - else
+                  .furima-item__input-form__detail__category__choose
+                    = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
+
                     
+
+
+                    -# - if controller.action_name == 'new'
+                    -# {selected: @item.category.id, include_blank: "---"},
+      
               .furima-item__input-form__detail__brand
                 %label.brand__title
                   ブランド

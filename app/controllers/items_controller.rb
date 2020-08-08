@@ -6,10 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @category_parent_array =  Category.where(ancestry: nil) do |parent|
-      @category_parent_array << parent
-    end
-    
+    @category_parent_array =  Category.where(ancestry: nil)    
     @item = Item.new
     @item.images.new
   end
@@ -19,10 +16,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      @category_parent_array =  Category.where(ancestry: nil) do |parent|
-        @category_parent_array << parent
-      end
-
+      @category_parent_array =  Category.where(ancestry: nil)
       @item.images = []
       @item.images.new
       render action: :new
@@ -30,16 +24,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category_parent_array =  Category.where(ancestry: nil) do |parent|
-      @category_parent_array << parent
-    end
+    @category_parent_array =  Category.where(ancestry: nil)
     @item = Item.find(params[:id])
     @item.images.new
   end
 
   def update
     @item = Item.find(params[:id])
-    if @item.update(item_params)
+    if @item.update!(item_params)
       redirect_to root_path
     else
       render action: :edit

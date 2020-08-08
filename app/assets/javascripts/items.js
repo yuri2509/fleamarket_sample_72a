@@ -23,13 +23,12 @@ $(document).on('turbolinks:load', ()=> {
   // 余裕があればアイコンクリックで画像投稿できるようにすること
   // コメントアウトしているdisplay:none;でファイルを選択を消す
   // 削除ボタンで一旦登録された投稿画像の保存も消せるようにする
-  $('.furima-item__input-form__image-fhoto__box').on('click', function() {
+  $('.img-box-form').on('click', function() {
     $('item_images_attributes_0_src').trigger('click');
   });
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
-    console.log(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -47,9 +46,8 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
-
-  $('.img-box-form').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('.img-preview').on('click', '.js-remove', function() {
+    const targetIndex = $(this).prev().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
