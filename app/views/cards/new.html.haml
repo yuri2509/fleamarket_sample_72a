@@ -3,7 +3,7 @@
   %section.content-credit
     %h2.content-credit__title
       クレジットカード情報入力
-    = form_tag(cards_path, method: :post, id: "card", class: "content-credit__form") do |f|
+    = form_tag(cards_path, method: :post, id: "card", class: "content-credit__form", name: "inputForm") do |f|
       .content-credit__form__number
         %label カード番号
         %span.check 必須
@@ -56,10 +56,12 @@
     %nav.mypage-menuy 
       設定
       %ul.mypage-menuy__list
-        %li
-          = link_to "ログアウト", "/users/:id/logout"
         %li 
           = link_to "マイページ", user_path(current_user)
+        %li
+          = link_to "ログアウト", "/users/:id/logout"
+        %li
+          = link_to "クレジットカード詳細", card_path(current_user)
 .main
   %section.mainBanner
     .inner

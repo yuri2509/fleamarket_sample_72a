@@ -13,9 +13,11 @@
       設定
       %ul.mypage-menuy__list
         %li
+          = link_to "ログアウト", "/users/:id/logout"
+        %li
           = link_to "クレジットカード登録", new_card_path
         %li
-          = link_to "ログアウト", "/users/:id/logout"
+          = link_to "クレジットカード詳細", card_path(current_user)
 
 .main
   %section.mainBanner
