@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/:id/logout', to: 'users#logout'
 
   resources :users, only: [:show]
-  resources :cards, only: [:new, :create, :destroy]
+  resources :cards, only: [:new, :create, :destroy, :show]
 
   root to: 'messages#index'
 
