@@ -40,18 +40,7 @@
         = f.label :phone_number, "電話番号"
         %span.optional 任意
         = f.telephone_field :phone_number, autofocus: true, placeholder: "例）090-1234-5678", class: 'form-input'
-      .furima-main__form
-        %label お名前（全角）
-        %span.require 必須
-        .furima-main__form__name
-          = f.text_field :family_name, autofocus: true, placeholder: "例）山田", class: "form-input__half"
-          = f.text_field :first_name, autofocus: true, placeholder: "例）太朗", class: "form-input__half"
-      .furima-main__form
-        = f.label :name_reading, "お名前カナ（全角）"
-        %span.require 必須
-        .furima-main__form__name
-          = f.text_field :family_name_reading, autofocus: true, placeholder: "例）ヤマダ", class: "form-input__half"
-          = f.text_field :first_name_reading, autofocus: true, placeholder: "例）タロウ", class: "form-input__half"
+
       .furima-main__actions
         = f.submit "登録する", class: "action-btn", url: "destinations"
 = render "devise/shared/footer"
