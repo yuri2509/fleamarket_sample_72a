@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 20200801101720) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
-    t.string   "payjp",      null: false
-    t.integer  "card_id",    null: false
+    t.string   "cutomer_id", null: false
+    t.string   "card_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree

@@ -1,6 +1,6 @@
 class Card < ApplicationRecord
-  validates :user, :payjp, :card_id, presence: true
-  validates :user, :card_id, uniqueness: true
+  validates :user, :customer_id, :card_id, presence: true
+  validates :user, uniqueness: true
 
   belongs_to :user
 end

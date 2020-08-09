@@ -46,8 +46,8 @@ active_hashのgemを使う
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, unique: true|
-|payjp|string|null: false|
-|card_id|integer|null: false, unique: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
