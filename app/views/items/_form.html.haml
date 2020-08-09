@@ -13,10 +13,10 @@
           最大5枚までアップロードできます
           .furima-item__input-form__image-fhoto__box
             .img-box-form
-              - if @item.persisted?
-                - @item.images.each_with_index do |image, i|
-                  - if image.persisted?
-                    .img-preview
+              .img-preview
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    - if image.persisted?
                       = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
                       .js-remove 
                         削除

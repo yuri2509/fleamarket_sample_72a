@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (num)=> {
     const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
                   <div data-index="${num}" class="js-file_group">
-                  <input class="js-file" type="file" name="product[images_attributes][${num}][src]" id="product_images_attributes_${num}_src"><br><div class="js-remove">削除</div></div>`;
+                  <input class="js-file" type="file" name="product[images_attributes][${num}][src]" id="product_images_attributes_${num}_src"><br></div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
@@ -40,13 +40,13 @@ $(document).on('turbolinks:load', ()=> {
       $('.img-preview:last').before(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       a = $('.fa-camera').hide()
-      $('#img-preview').prepend(buildFileField(fileIndex[0]));
+      $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
-  $('.img-preview').on('click', '.js-remove', function() {
+  $('.img-box-form').on('click', '.js-remove', function() {
     const targetIndex = $(this).prev().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
