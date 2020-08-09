@@ -224,12 +224,8 @@
                   @include input-form; 
                 }  
               }
-              .listing-select-wrapper__added {
-                .listing-select-wrapper__box {
-                  #child_category,#grandchild_category  {
-                    @include input-form; 
-                  }
-                }
+              .parent_category_box,.item_input__body__category__children--select,.item_input__body__category__grandchildren--select{
+                @include input-form; 
               }
             }
             

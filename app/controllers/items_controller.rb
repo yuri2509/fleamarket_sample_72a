@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :set_category, only: [:edit, :update]
+  before_action :set_category_child, only: [:edit, :update]
+  before_action :set_category_grandchild, only: [:edit, :update]
+  before_action :set_category_id, only: [:edit, :update]
   before_action :set_product, except: [@products, :index, :new, :create, :show, :edit, :update, :destroy, :get_category_children,:get_category_grandchildren]
 
   def set_product
@@ -69,4 +73,27 @@ class ItemsController < ApplicationController
   def set_product
     @item = Item.find(params[:id])
   end
+
+  def set_category
+    @category_parent_array = Category.where(ancestry: nil)
+  end
+
+  # 子カテゴリの一覧作成(edit,update用)
+  def set_category_child
+    @item = Item.find(params[:id])
+    @category_children_array = @item.category.parent.parent.children
+  end
+
+  # 孫カテゴリの一覧作成(edit,update用)
+  def set_category_grandchild
+    @category_grandchildren_array = @item.category.parent.children
+  end
+
+  #カテゴリーデータ取得(edit,update用)
+  def set_category_id
+    @grandchild = @item.category
+    @child = @grandchild.parent
+    @parent = @child.parent
+  end
+
 end

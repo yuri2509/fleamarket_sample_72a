@@ -28,10 +28,6 @@
           
                   - if @item.persisted?
                     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                  -# - if @item.persisted?
-                  -#   .img-preview
-                  -#     .js-file_group{"data-index" => "#{@item.images.count}"}
-                  -#     = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
                       
             %hr.image-under-line
             .furima-item__input-form__description
@@ -57,27 +53,28 @@
                   カテゴリー
                   %span.category__title-must
                     必須
-
-                -# .furima-item__input-form__detail__category__choose
-                -#   = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-
-
-                - if @item.persisted?
-                  .furima-item__input-form__detail__category__choose
-                    -# 商品編集
-                    = f.select :category_id, options_for_select(@category_parent_array.map{|category| [category.name, category.id]},selected: @item.category.id),{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', value: "#{@item.category.name}"}
-                  -# 商品出品
-                - else
-                  .furima-item__input-form__detail__category__choose
-                    = f.select :category_id, @category_parent_array.map{|category| [category.name, category.id]},{include_blank:'選択してください'}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-
-
-                    
-
-
-                    -# - if controller.action_name == 'new'
-                    -# {selected: @item.category.id, include_blank: "---"},
-      
+                .furima-item__input-form__detail__category__choose
+                  - if @item.persisted?
+                    / editアクションで呼び出すカテゴリ選択
+                    / 親カテゴリ(初期値も設定)
+                    .pulldown#partent_box
+                      =f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}, selected: @parent.id),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+                    / 子カテゴリ(初期値およびカスタム属性data-categoryも設定)
+                    .pulldown.item_input__body__category__children#children_box
+                      =f.select :category_id, options_for_select( @category_children_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }] }, selected: @child.id),{include_blank: "選択してください"}, { class: "item_input__body__category__children--select", id: "children_category"}
+                    / 孫カテゴリ(初期値およびカスタム属性data-categoryも設定)
+                    .pulldown.item_input__body__category__grandchildren#grandchildren_box
+                      =f.select :category_id, options_for_select( @category_grandchildren_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }]}, selected: @grandchild.id),{include_blank: "選択してください"}, { class: "item_input__body__category__grandchildren--select", id: "grandchildren_category"}
+                  - else
+                    / newアクションで呼び出すカテゴリ選択
+                    / 親カテゴリ
+                    .pulldown#partent_box
+                      =f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
+                      / item.jsで子カテゴリを表示
+                    .pulldown.item_input__body__category__children#children_box
+                      / item.jsで孫カテゴリを表示
+                    .pulldown.item_input__body__category__grandchildren#grandchildren_box
+            
               .furima-item__input-form__detail__brand
                 %label.brand__title
                   ブランド
