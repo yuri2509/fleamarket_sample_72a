@@ -1,0 +1,31 @@
+= render "items/header"
+%main.content
+  %section.content-credit
+    %h2.content-credit__title
+      登録クレジットカード情報
+    .content-credit__list
+      %h3.content-credit__list__title
+        クレジットカード一覧
+      .credit-info
+        .credit-info__numbers
+        %p.credit-info__numbers__card
+          = "**** **** ****" + @customer_card.last4
+        %p.expiration_date
+          .expiration_date__title
+            有効期限
+          .expiration_date__info
+            = @exp_month + "/" + @exp_year
+    .destroy__function
+      .destroy__function__link
+        = link_to 
+
+      
+.main
+  %section.mainBanner
+    .inner
+      %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text 今すぐ無料ダウンロード！
+      .inner__icon
+        = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
+        = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
+= render "items/footer"
