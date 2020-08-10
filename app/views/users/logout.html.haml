@@ -7,11 +7,12 @@
   .content-bottom
     %nav.mypage-menuy 
       設定
-      %ul.mypage-menuy__list
-        %li
-          = link_to "クレジットカード登録", new_card_path
-        %li 
-          = link_to "マイページ", user_path(current_user)
+      .mypage-menuy__list
+        = link_to "マイページ", user_path(current_user)
+      - if current_user.card 
+        = link_to "クレジットカード詳細", card_path(current_user)
+      - else
+        = link_to "クレジットカード登録", new_card_path
 .main
   %section.mainBanner
     .inner
