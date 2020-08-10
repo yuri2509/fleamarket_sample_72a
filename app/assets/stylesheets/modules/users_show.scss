@@ -17,14 +17,11 @@
   }
   .content-bottom {
     margin: 40px 0 0;
-   .mypage-menuy {
-    font-weight: bold;
-    &__list {
-      margin: 8px 0 0;
-      li {
-        border-top: 1px solid #eeeeee;
+    .mypage-menuy {
+      font-weight: bold;
+      &__list {
+        margin: 8px 0 0;
         background-color: $form-color;
-        padding: 16px;
         a {
           text-decoration: none;
           color: $footer-color;
@@ -32,8 +29,16 @@
           font-size: 14px;
         }
       }
+      a {
+        text-decoration: none;
+        color: $footer-color;
+        display: block;
+        font-size: 14px;
+        border-top: 1px solid #eeeeee;
+        background-color: $form-color;
+        padding: 16px;
+      }
     }
-   }
   }
   .content-form {
     background-color: $form-color;
