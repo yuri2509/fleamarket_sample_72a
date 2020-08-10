@@ -50,7 +50,6 @@
       .content-credit__form__btn
         #card_token
           = submit_tag "登録", class: "content-credit__form__btn__submit", id: "token_submit", type: 'button'
-
   .content-bottom
     %nav.mypage-menuy 
       設定
@@ -59,8 +58,6 @@
           = link_to "マイページ", user_path(current_user)
         %li
           = link_to "ログアウト", "/users/:id/logout"
-        %li
-          = link_to "クレジットカード詳細", card_path(current_user)
 .main
   %section.mainBanner
     .inner
