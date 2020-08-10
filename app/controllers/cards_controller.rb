@@ -7,14 +7,13 @@ class CardsController < ApplicationController
 
   def new
     @card = Card.new
-    # redirect_to action: "index" if @card.present?
+    redirect_to card_path(current_user.id) if @card.nil?
   end
 
   def create
     Payjp.api_key = 'sk_test_1be3aacbcbcc41ba0aaf616c'
-
     if params['payjp_token'].blank?
-      redirect_to action: "new", error: 'クレジットカードを登録してください'
+      redirect_to action: "new", alert: 'クレジットカードを登録してください'
     else
       customer = Payjp::Customer.create(
         email: current_user.email,
@@ -25,7 +24,7 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to action: "show", id: current_user.id
       else
-        render "new", error: 'クレジットカード情報が正しくありません'
+        render "new", alert: 'クレジットカード情報が正しくありません'
       end
     end
   end
@@ -38,9 +37,10 @@ class CardsController < ApplicationController
       Payjp.api_key = 'sk_test_1be3aacbcbcc41ba0aaf616c'
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
+      @exp_month = @customer_card.exp_month.to_s
+      @exp_year = @customer_card.exp_year.to_s.slice(2,3)
     end
-    @exp_month = @customer_card.exp_month.to_s
-    @exp_year = @customer_card.exp_year.to_s.slice(2,3)
+    
   end
 
   def destroy
@@ -53,9 +53,9 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
       if @card.destroy
-
+        redirect_to user_path(current_user.id)
       else
-        redirect_to card_path(current_user.id), error: "削除できませんでした。"
+        redirect_to card_path(current_user.id), alert: "削除できませんでした。"
       end
     end
   end
