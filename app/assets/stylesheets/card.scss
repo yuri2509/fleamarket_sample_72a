@@ -17,12 +17,7 @@
         display: inline-block;
       }
       .check {
-        background-color: $sub-color;
-        color: $form-color;
-        border-radius: 2px;
-        padding: 2px 4px;
-        font-size: 12px;
-        margin: 0 0 0 8px;
+        @include check-color;
       }
       #number {
         width: 100%;
@@ -40,12 +35,7 @@
         left: 165px;
       }
       .check {
-        background-color: $sub-color;
-        color: $form-color;
-        border-radius: 2px;
-        padding: 2px 4px;
-        font-size: 12px;
-        margin: 0 0 0 8px;
+        @include check-color;
         position: relative;
         left: 165px;
       }
@@ -55,17 +45,13 @@
         margin: 8px 0 0;
         margin: auto;
         #exp_month {
-          height: 48px;
-          width: calc(50% - 38px);
-          padding: 0 16px;
+          @include exp_form;
         }
         &__month {
           margin: 10px;
         }
         #exp_year {
-          height: 48px;
-          width: calc(50% - 38px);
-          padding: 0 16px;
+          @include exp_form;
         }
         &__year {
           margin: 10px;
@@ -81,12 +67,7 @@
           font-weight: 600;
         }
         .check {
-          background-color: $sub-color;
-          color: $form-color;
-          border-radius: 2px;
-          padding: 2px 4px;
-          font-size: 12px;
-          margin: 0 0 0 8px;
+          @include check-color;
         }
       }
       &__code {

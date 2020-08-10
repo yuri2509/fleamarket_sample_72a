@@ -23,17 +23,13 @@
         margin: 8px 0 0;
         background-color: $form-color;
         a {
-          text-decoration: none;
+          @include link_form;
           color: $footer-color;
-          display: block;
-          font-size: 14px;
         }
       }
       a {
-        text-decoration: none;
+        @include link_form;
         color: $footer-color;
-        display: block;
-        font-size: 14px;
         border-top: 1px solid #eeeeee;
         background-color: $form-color;
         padding: 16px;
@@ -49,14 +45,12 @@
         max-width: 320px;
         a {
           color: $form-color;
-          text-decoration: none;
           background-color: $sub-color;
           border: 1px solid $sub-color;
-          display: block;
           text-align: center;
           line-height: 48px;
           border-radius: 4px;
-          font-size: 14px;
+          @include link_form;
         }
       }
     }
