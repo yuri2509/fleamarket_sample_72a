@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
     if @item.update!(item_params)
       redirect_to root_path
     else
+      @item.images = []
       render action: :edit
     end
   end
