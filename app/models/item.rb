@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_many :images
   belongs_to :user
   belongs_to :category
+  has_many :purchases
 
   validates :name, :price, :description, :status, :cost, :day, :prefecture_id, :category, :user, presence: true
 

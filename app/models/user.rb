@@ -16,5 +16,6 @@ class User < ApplicationRecord
          has_one :card
          has_many :items
          has_one :destination
+         has_many :purchases
 
 end
