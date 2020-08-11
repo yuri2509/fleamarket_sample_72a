@@ -1,0 +1,69 @@
+= render "items/header"
+%main.content
+  %section.content-credit
+    %h2.content-credit__title
+      クレジットカード情報入力
+    = form_tag(cards_path, method: :post, id: "card", class: "content-credit__form", name: "inputForm") do |f|
+      .content-credit__form__number
+        %label カード番号
+        %span.check 必須
+        = text_field_tag "number", "", class: "content-credit__form__number__input", type: "text", maxlength: "16", placeholder: "例)1234567891234567"
+      .content-credit__form__days
+        %label 有効期限
+        %span.check 必須
+        .content-credit__form__days__deadline
+          %select#exp_month{name: "exp_month", type: "text"}
+            %option{value: "1"}01
+            %option{value: "2"}02
+            %option{value: "3"}03
+            %option{value: "4"}04
+            %option{value: "5"}05
+            %option{value: "6"}06
+            %option{value: "7"}07
+            %option{value: "8"}08
+            %option{value: "9"}09
+            %option{value: "10"}10
+            %option{value: "11"}11
+            %option{value: "12"}12
+          .content-credit__form__days__deadline__month
+            月
+          %select#exp_year{name: "exp_year", type: "text"}
+            %option{value: "2020"}20
+            %option{value: "2021"}21
+            %option{value: "2022"}22
+            %option{value: "2023"}23
+            %option{value: "2024"}24
+            %option{value: "2025"}25
+            %option{value: "2026"}26
+            %option{value: "2027"}27
+            %option{value: "2028"}28
+            %option{value: "2029"}29
+            %option{value: "2030"}30
+          .content-credit__form__days__deadline__year
+            年
+      .content-credit__form__security
+        .content-credit__form__security__title
+          %label セキュリティーコード
+          %span.check 必須
+        .content-credit__form__security__code
+          = text_field_tag "cvc", "", class: "content-credit__form__security__code__input", type: "text", id: "cvc", maxlength: "4", placeholder: "例)1234"
+      .content-credit__form__btn
+        #card_token
+          = submit_tag "登録", class: "content-credit__form__btn__submit", id: "token_submit", type: 'button'
+  .content-bottom
+    %nav.mypage-menuy 
+      設定
+      %ul.mypage-menuy__list
+        %li 
+          = link_to "マイページ", user_path(current_user)
+        %li
+          = link_to "ログアウト", "/users/:id/logout"
+.main
+  %section.mainBanner
+    .inner
+      %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text 今すぐ無料ダウンロード！
+      .inner__icon
+        = link_to image_tag("pict/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class:"aBtn"), "/"
+        = link_to image_tag("pict/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class:"gBtn"), "/"
+= render "items/footer"

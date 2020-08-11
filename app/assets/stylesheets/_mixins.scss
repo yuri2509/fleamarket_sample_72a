@@ -61,3 +61,24 @@
   text-decoration: none;
   display: block;
 }
+
+@mixin check-color {
+  background-color: $sub-color;
+  color: $form-color;
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 12px;
+  margin: 0 0 0 8px;
+}
+
+@mixin exp_form {
+  height: 48px;
+  width: calc(50% - 38px);
+  padding: 0 16px;
+}
+
+@mixin link_form {
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}

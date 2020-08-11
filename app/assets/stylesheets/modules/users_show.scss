@@ -1,0 +1,58 @@
+.content {
+  margin: 24px auto 0;
+  width: 700px;
+  .content-box {
+    background-color: #3ccace;
+    &__mypage {
+      height: 200px;
+      text-align: center;
+      line-height: 100px;
+      &__name {
+        font-size: 30px;
+      }
+      &__number {
+        font-size: 30px;
+      }
+    }
+  }
+  .content-bottom {
+    margin: 40px 0 0;
+    .mypage-menuy {
+      font-weight: bold;
+      &__list {
+        margin: 8px 0 0;
+        background-color: $form-color;
+        a {
+          @include link_form;
+          color: $footer-color;
+        }
+      }
+      a {
+        @include link_form;
+        color: $footer-color;
+        border-top: 1px solid #eeeeee;
+        background-color: $form-color;
+        padding: 16px;
+      }
+    }
+  }
+  .content-form {
+    background-color: $form-color;
+    &__logbox {
+      padding: 64px;
+      &__out {
+        margin: 0 auto;
+        max-width: 320px;
+        a {
+          color: $form-color;
+          background-color: $sub-color;
+          border: 1px solid $sub-color;
+          text-align: center;
+          line-height: 48px;
+          border-radius: 4px;
+          @include link_form;
+        }
+      }
+    }
+  }
+}
