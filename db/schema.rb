@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200801101720) do
+ActiveRecord::Schema.define(version: 20200811095611) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20200801101720) do
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                         null: false
-    t.integer  "status",                       null: false
-    t.integer  "cost",                         null: false
-    t.integer  "day",                          null: false
+    t.string   "status",                       null: false
+    t.string   "cost",                         null: false
+    t.string   "day",                          null: false
     t.integer  "price",                        null: false
     t.integer  "trading_status",               null: false
     t.text     "description",    limit: 65535, null: false
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 20200801101720) do
     t.datetime "updated_at",                   null: false
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+  end
+
+  create_table "purchases", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchases_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_purchases_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -96,4 +105,6 @@ ActiveRecord::Schema.define(version: 20200801101720) do
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "users"
 end
