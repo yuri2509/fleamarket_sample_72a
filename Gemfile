@@ -75,4 +75,4 @@ gem 'turbolinks', '~> 5'
 gem 'rails-i18n'
 gem 'fog-aws'
 gem 'enum_help'
-
+gem 'payjp'

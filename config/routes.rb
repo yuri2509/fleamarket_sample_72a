@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -6,6 +7,12 @@ Rails.application.routes.draw do
     get 'destinations', to: 'users/registrations#new_destination'
     post 'destinations', to: 'users/registrations#create_destination'
   end
+
+  get 'users/:id/logout', to: 'users#logout'
+
+  resources :users, only: [:show]
+  resources :cards, only: [:new, :create, :destroy, :show]
+
   root to: 'messages#index'
   resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     collection do
