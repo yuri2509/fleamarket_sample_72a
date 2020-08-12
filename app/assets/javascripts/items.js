@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
-    const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
-                  <div data-index="${num}" class="js-file_group">
-                  <input class="js-file" type="file" name="product[images_attributes][${num}][src]" id="product_images_attributes_${num}_src"><br></div>`;
+    const html = `<div data-index="${num}" class="js-file_group">
+                  <input class="js-file" type="file" name="item[images_attributes][${num}][src]" id="item_images_attributes_${num}_src"><br></div>`;
     return html;
   }
+  
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `<div class="img-preview"><img data-index="${index}" src="${url}" width="120px" height="150px"><div class="js-remove">削除</div></div>`;
@@ -18,7 +18,6 @@ $(document).on('turbolinks:load', ()=> {
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
-
 
   // 余裕があればアイコンクリックで画像投稿できるようにすること
   // コメントアウトしているdisplay:none;でファイルを選択を消す
@@ -40,6 +39,17 @@ $(document).on('turbolinks:load', ()=> {
       $('.img-preview:last').before(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       a = $('.fa-camera').hide()
+
+    // $('.img-preview').length;
+    // if(img-preview.items.length > 4){
+    //   return false;
+    // }
+
+      // var count = $('.img-preview').length;
+      // if (count == 4) {
+      //   $('.label-content').show();
+      // }
+
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
