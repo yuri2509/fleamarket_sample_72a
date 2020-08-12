@@ -2,6 +2,9 @@ class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
 
+  def index
+  end
+
   def new
     @card = Card.new
     redirect_to card_path(current_user.id) if @card.nil?
@@ -60,6 +63,6 @@ class CardsController < ApplicationController
   private
 
   def set_card
-    @card = Card.find_by(user_id: current_user.id) if Card.find_by(user_id: current_user.id).present?
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 end
