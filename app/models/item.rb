@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :name, :price, :description, :status, :cost, :day, :prefecture_id, :category, :user, presence: true
 
   validates_associated :images
-  validates :images, presence: {message: "を最低1枚選択してください"}, on: :create
+  validates :images, presence: {message: "を最低1枚選択してください"}
 
   validates_numericality_of :price, message: "は半角数字を入力してください"
 

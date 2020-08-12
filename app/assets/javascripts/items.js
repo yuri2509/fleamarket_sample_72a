@@ -19,9 +19,6 @@ $(document).on('turbolinks:load', ()=> {
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
 
-  // 余裕があればアイコンクリックで画像投稿できるようにすること
-  // コメントアウトしているdisplay:none;でファイルを選択を消す
-  // 削除ボタンで一旦登録された投稿画像の保存も消せるようにする
   $('.img-box-form').on('click', function() {
     $('item_images_attributes_0_src').trigger('click');
   });
