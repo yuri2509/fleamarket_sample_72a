@@ -26,7 +26,7 @@
                   .js-file_group{"data-index": "#{image.index}"}
                     = image.file_field :src, class: 'js-file'
           
-                  - if @item.persisted?
+                  - if image.object.persisted?
                     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                       
             %hr.image-under-line
