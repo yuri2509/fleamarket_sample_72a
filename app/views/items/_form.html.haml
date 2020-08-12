@@ -20,6 +20,15 @@
                       = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
                       .js-remove 
                         削除
+
+              - if @item.new_record?
+                .img-preview
+                  - @item.images.each_with_index do |image, i|
+                    - if image.persisted?
+                      = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
+                      .js-remove 
+                        削除
+
               #image-box
                 %i.fas.fa-camera.camera-icon.fa-2x
                 = f.fields_for :images do |image|

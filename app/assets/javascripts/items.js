@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
-    const html = `<div data-index="${num}" class="js-file_group">
+    const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
+                  <div data-index="${num}" class="js-file_group">
                   <input class="js-file" type="file" name="item[images_attributes][${num}][src]" id="item_images_attributes_${num}_src"><br></div>`;
     return html;
   }
