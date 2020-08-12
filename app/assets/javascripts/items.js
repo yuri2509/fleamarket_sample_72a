@@ -1,8 +1,7 @@
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
-    const html = `<i class="fas fa-camera camera-icon fa-2x"></i>
-                  <div data-index="${num}" class="js-file_group">
+    const html = `<div data-index="${num}" class="js-file_group">
                   <input class="js-file" type="file" name="item[images_attributes][${num}][src]" id="item_images_attributes_${num}_src"><br></div>`;
     return html;
   }
@@ -40,16 +39,6 @@ $(document).on('turbolinks:load', ()=> {
       $('.img-preview:last').before(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       a = $('.fa-camera').hide()
-
-    // $('.img-preview').length;
-    // if(img-preview.items.length > 4){
-    //   return false;
-    // }
-
-      // var count = $('.img-preview').length;
-      // if (count == 4) {
-      //   $('.label-content').show();
-      // }
 
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();

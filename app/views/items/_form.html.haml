@@ -10,7 +10,7 @@
           %span.image-title__must
             必須
         .furima-item__input-form__image-fhoto
-          最大5枚までアップロードできます
+          ファイルを選択をクリックでアップロードできます
           .furima-item__input-form__image-fhoto__box
             .img-box-form
               - if @item.persisted?
@@ -70,10 +70,10 @@
                       =f.select :category_id, options_for_select( @category_parent_array.map{|c| [c[:name], c[:id]]}, selected: @parent.id),{include_blank: "選択してください"}, { class: "parent_category_box", id: "parent_category"}
                     / 子カテゴリ(初期値およびカスタム属性data-categoryも設定)
                     .pulldown.item_input__body__category__children#children_box
-                      =f.select :category_id, options_for_select( @category_children_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }] }, selected: @child.id),{include_blank: "選択してください"}, { class: "item_input__body__category__children--select", id: "children_category"}
+                      =f.select :category_id, options_for_select( @category_children_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }] }, selected: @child.id),{include_blank: "選択してください"}, { class: "item_input__body__category__children--select", id: "children_wrapper"}
                     / 孫カテゴリ(初期値およびカスタム属性data-categoryも設定)
                     .pulldown.item_input__body__category__grandchildren#grandchildren_box
-                      =f.select :category_id, options_for_select( @category_grandchildren_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }]}, selected: @grandchild.id),{include_blank: "選択してください"}, { class: "item_input__body__category__grandchildren--select", id: "grandchildren_category"}
+                      =f.select :category_id, options_for_select( @category_grandchildren_array.map{|c| [c[:name], c[:id], {data: {category: c[:id] } }]}, selected: @grandchild.id),{include_blank: "選択してください"}, { class: "item_input__body__category__grandchildren--select", id: "grandchildren_wrapper"}
                   - else
                     / newアクションで呼び出すカテゴリ選択
                     / 親カテゴリ
