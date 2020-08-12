@@ -1,0 +1,13 @@
+.notification {
+  .notice {
+    background-color: $link-color;
+    color: $form-color;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: #F35500;
+    color: $form-color;
+    text-align: center;
+  }
+}
