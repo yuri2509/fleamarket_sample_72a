@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
         customer: current_user.card.customer_id,
         currency: 'jpy'
       )
-      redirect_to root_path
+      redirect_to root_path, notice: "購入が完了しました"
     end
   end
 
