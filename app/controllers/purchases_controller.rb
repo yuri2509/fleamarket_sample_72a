@@ -7,7 +7,7 @@ class PurchasesController < ApplicationController
 
   def create
     if current_user.card.nil?
-      redirect_to new_card_path
+      redirect_to new_card_path, alert: "クレジットカード情報を登録してください"
     else
       @item = Item.find(params[:item_id])
       @purchase = Purchase.new
@@ -31,5 +31,5 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase).merge(user_id: current_user.id, item_id: params[:item_id])
   end
-  
+
 end
