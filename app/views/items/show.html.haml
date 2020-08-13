@@ -80,7 +80,7 @@
           %span.purchaseBtn__text
            = icon('fas', 'trash-alt fa-2x')
            削除する
-       - elsif @item.trading_status == "出品中"
+       - elsif @item.trading_status == "syuppintyu"
         %li.optionalBtnlikeBtn
          = link_to new_item_purchase_path(@item) do
           %span.purchaseBtn__text
