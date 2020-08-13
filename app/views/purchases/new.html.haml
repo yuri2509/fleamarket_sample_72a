@@ -18,6 +18,10 @@
           支払い金額
         .purchase__content__bottom__pay__price
           = "¥#{@item.price.to_s(:delimited, delimiter: ",")}"
+    - if user_signed_in?
       .purchase__content__bottom__submit
-        = link_to "購入する", item_purchases_path(@item), method: :post, class: "purchase__content__bottom__submit__buy" 
+        = link_to "購入する", item_purchases_path(@item), method: :post, class: "purchase__content__bottom__submit__buy"
+    - else
+      .purchase__content__bottom__submit
+        = link_to "購入する",  new_user_session_path, class: "purchase__content__bottom__submit__buy"
 = render "devise/shared/footer"

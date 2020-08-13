@@ -45,18 +45,20 @@
           margin-right: 150px;
         }
       }
-      &__submit__buy {
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 70px;
-        text-align: center;
-        background-color: #3CCACE;
-        width: 170px;
-        height: 60px;
-        color: $form-color;
-        font-size: 20px;
-        line-height: 60px;
-        border-radius: 4px;
+      &__submit{
+        &__buy {
+          text-decoration: none;
+          display: inline-block;
+          margin: 70px 280px 50px;
+          text-align: center;
+          background-color: #3CCACE;
+          width: 170px;
+          height: 60px;
+          color: $form-color;
+          font-size: 20px;
+          line-height: 60px;
+          border-radius: 4px;
+        }
       }
     }
   }
