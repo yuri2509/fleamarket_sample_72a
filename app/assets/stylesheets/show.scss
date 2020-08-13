@@ -319,6 +319,16 @@
                     text-decoration: none;
                 }
             }
+            .optionalBtnsoldBtn {
+                margin-right: auto;
+                margin-left: 10px;
+                padding: 10px 16px;
+                color: #fff;
+                background-color: $sub-color;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 20px;
+            }
         }
 
         ul.optional{
@@ -344,151 +354,7 @@
         }
       }
     }
-    // 今後実装
-    // .commentBox{
-    //     padding: 24px;
-    //     background-color: #fff;
-    //     margin: 10px 0;
-    //     text-align: center;
-    // ul{
-    //     list-style: none;
-    // }
-    // form{
-    //     input{
-    //         font-family: inherit;
-    //         font-size: inherit;
-    //         font-weight: inherit;
-    //     }
-    //     textarea{
-    //         width: 100%;
-    //         min-height: 104px;
-    //         padding: 10px;
-    //     }
-    //   p{
-    //     padding: 8px;
-    //     font-size: 14px;
-    //     background-color: #f8f8f8;
-    //     margin: 10px 0;
-    //     text-align: left;
-    //  }
-    //  button{
-    //     line-height: 48px;
-    //     background: #3CCACE;
-    //     border: 1px solid #3CCACE;
-    //     color: #fff;
-    //     width: 60%;
-    //     font-size: 18px;
-    //     border-radius: 100px;
-    //     i.fas.fa-comment{
-    //         display: inline-block;
-    //         font-size: inherit;
-    //         text-rendering: auto;
-    //         -webkit-font-smoothing: antialiased;
-    //     }
-    //   }
-    //  }
-    // }
     }
-//    .links{
-//         list-style: none;
-        
-//         li.left{
-//             float: left;
-//             a{
-//                 text-decoration: none;
-//                 color: #3CCACE;
-//                 i{
-//                     display: inline-block;
-//                     font-size: inherit;
-//                     text-rendering: auto;
-//                     -webkit-font-smoothing: antialiased;
-//                 }
-//             }
-//         }
-//         li.right{
-//             float: right;
-//             a{
-//                 text-decoration: none;
-//                 color: #3CCACE;
-//              i{
-//                 display: inline-block; 
-//                 font-size: inherit;
-//                 text-rendering: auto;
-//                 -webkit-font-smoothing: antialiased;
-//              }
-//             }
-//         }
-//     }
-//     .relatedItems{
-//       a{
-//         display: block;
-//         margin: 24px 0 8px;
-//         color: #3CCACE;
-//         text-decoration: none;
-//         font-weight: bold;
-//         font-size: 22px;
-//         position: relative;
-//       }
-//       .productLists{
-          
-//         .productList{
-//             margin: 0 0 10px;
-//             float: left;
-//             width: calc(100% / 3);
-            
-//                 .productList--img{
-//                     background-color: #fff;
-//                     height: 150px;
-//                     position: relative;
-//                     overflow: hidden;
-//                     margin: 0;
-//                     z-index: auto;
-//                    img{
-//                         position: absolute;
-//                         top: 0;
-//                         left: 0;
-//                         right: 0;
-//                         bottom: 0;
-//                         width: 100%;
-//                         z-index: auto;
-//                         height: 150px;
-//                         object-fit: cover;
-//                    }
-//                 }
-//                 .productList--body{
-//                     background-color: white;
-//                     color: #333;
-//                     padding: 16px;
-//                     h3{
-//                         overflow: hidden;
-//                         line-height: 1.5;
-//                         font-size: 16px;
-//                         text-align: left;
-//                     }
-//                     .details{
-//                         font-size: 16px;
-//                         ul{
-//                             display: flex;
-//                             align-items: center;
-//                             justify-content: space-between
-//                         }  
-//                           i{
-//                             display: inline-block;
-//                             font-size: inherit;
-//                             text-rendering: auto;
-//                             -webkit-font-smoothing: antialiased;
-//                           }
-                        
-                        
-//                         p{
-//                             font-size: 10px;
-//                             text-align: left;
-//                         }
-//                     }
-//                 }
-//         }
-//       }
-    // }
   }
  }
 }
