@@ -82,7 +82,7 @@
            削除する
        - else
         %li.optionalBtnlikeBtn
-         = link_to "#" do
+         = link_to new_item_purchase_path(@item) do
           %span.purchaseBtn__text
            = icon('fas', 'cart-arrow-down fa-2x')
            購入する
