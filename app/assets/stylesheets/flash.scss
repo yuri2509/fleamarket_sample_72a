@@ -1,0 +1,17 @@
+body {
+  background-color: #f8f8f8;
+  .notification {
+  text-align: center; 
+    .notice {
+      background-color: $link-color;
+      color: $form-color;
+      text-align: center;
+    }
+
+    .alert {
+      background-color: #F35500;
+      color: $form-color;
+      text-align: center;
+    }
+  }
+}
