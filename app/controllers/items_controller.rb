@@ -43,8 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @item.user_id
-      @item.destroy
+    if current_user.id == @item.user_id && @item.destroy
       redirect_to root_path, notice: "削除しました"
     else 
       render action: :show, alert: "削除に失敗しました"
