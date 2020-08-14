@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20200811100430) do
     t.integer  "price",                        null: false
     t.integer  "trading_status",               null: false
     t.text     "description",    limit: 65535, null: false
-    t.text     "judgment",       limit: 65535
     t.text     "brand",          limit: 65535
     t.integer  "prefecture_id",                null: false
     t.integer  "category_id",                  null: false

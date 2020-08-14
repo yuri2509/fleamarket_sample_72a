@@ -95,5 +95,4 @@ class ItemsController < ApplicationController
     @child = @grandchild.parent
     @parent = @child.parent
   end
-
 end

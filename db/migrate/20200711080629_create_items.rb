@@ -8,7 +8,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :price,            null: false
       t.integer	:trading_status,   null: false
       t.text :description,         null: false
-      t.text :judgment
       t.text :brand  
       t.integer :prefecture_id,    null: false
       t.references :category,      null: false, foreign_key: true
