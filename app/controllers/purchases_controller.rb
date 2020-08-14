@@ -1,15 +1,14 @@
 class PurchasesController < ApplicationController
   require "payjp"
+   before_action :set_item
 
   def new
-    @item = Item.find(params[:item_id])
   end
 
   def create
     if current_user.card.nil?
       redirect_to new_card_path, alert: "クレジットカード情報を登録してください"
     else
-      @item = Item.find(params[:item_id])
       @purchase = Purchase.new
       @purchase.item_id = @item.id
       @purchase.user_id = current_user.id
@@ -30,6 +29,10 @@ class PurchasesController < ApplicationController
 
   def purchase_params
     params.require(:purchase).merge(user_id: current_user.id, item_id: params[:item_id])
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end
