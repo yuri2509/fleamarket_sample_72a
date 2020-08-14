@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('turbolinks:load', function(){
   Payjp.setPublicKey ('pk_test_8444f02a03411a8548760003')
   var submit = document.getElementById("token_submit");
   submit.addEventListener('click', function(e){
