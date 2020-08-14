@@ -1,16 +1,23 @@
 require 'rails_helper'
 
 describe Purchase do
-  describe '#create' do
-    context '有効なテスト' do
-      it '全項目の入力' do
-        user = create(:user)
-        item = create(:item)
-        purchase = build(:purchase, user_id: user.id, item_id: item.id)
-        expect(purchase).to be_vaild
-      end
+
+  context '有効なテスト' do
+    it '全項目の入力' do
+      purchase = build(:purchase)
+      expect(purchase).to be_valid
     end
-    context '無効なテスト' do
+  end
+  context '無効なテスト' do
+    it 'ユーザーがログインしていない' do
+      purchase = build(:purchase, user_id: nil)
+      purchase.valid?
+      expect(purchase.errors[:user_id]).to include()
+    end
+    it '商品が存在しない' do
+      purchase = build(:purchase, item_id: nil)
+      purchase.valid?
+      expect(purchase.errors[:item_id]).to include()
     end
   end
 end
