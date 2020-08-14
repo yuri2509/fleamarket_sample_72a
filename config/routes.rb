@@ -21,7 +21,4 @@ Rails.application.routes.draw do
     end
     resources :purchases, only: [:new, :create]
   end
-
-  
-  
 end
