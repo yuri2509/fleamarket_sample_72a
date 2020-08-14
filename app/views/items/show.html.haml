@@ -17,9 +17,6 @@
        - @item.images.each do |image|
         = image_tag image.src.url, size:'52x52'
 
-      -#  - @item.images.each_with_index do |image, i|
-      -#   = image_tag image.src.url, size:'52x52', class: "itemBox__body_sub--child"
-         
       %span
        = "#{@item.price.to_s(:delimited, delimiter: ",")}"
       .itemBox__price-detail
