@@ -4,7 +4,8 @@ describe Card do
   describe '#create' do
     context '有効なテスト' do
       it '全項目の入力' do
-        card = build(:card)
+        user = create(:user)
+        card = build(:card, user_id: user.id)
         expect(card).to be_valid
       end
     end
