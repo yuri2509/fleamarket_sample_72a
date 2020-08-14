@@ -73,7 +73,7 @@
 
      .optionalArea
       %ul
-       - if user_signed_in? && current_user.id = @item.id
+       - if user_signed_in? && current_user.id == @item.user_id
         %li.optionalBtnlikeBtn
          = link_to edit_item_path(@item) do
           %span.purchaseBtn__text
