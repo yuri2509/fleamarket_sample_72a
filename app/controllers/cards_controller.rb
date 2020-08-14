@@ -2,9 +2,6 @@ class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
 
-  def index
-  end
-
   def new
     @card = Card.new
     redirect_to card_path(current_user.id) if @card.nil?
