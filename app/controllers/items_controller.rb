@@ -1,13 +1,10 @@
 class ItemsController < ApplicationController
+  before_action :set_items, only: [:edit, :update, :destroy, :show]
   before_action :set_category, only: [:edit, :update]
   before_action :set_category_child, only: [:edit, :update]
   before_action :set_category_grandchild, only: [:edit, :update]
   before_action :set_category_id, only: [:edit, :update]
   before_action :set_product, except: [@products, :index, :new, :create, :show, :edit, :update, :destroy, :get_category_children,:get_category_grandchildren]
-
-  def set_product
-    @products = Category.where(ancestry: nil)
-  end
 
   def new
     @category_parent_array =  Category.where(ancestry: nil)    
@@ -29,12 +26,10 @@ class ItemsController < ApplicationController
 
   def edit
     @category_parent_array =  Category.where(ancestry: nil)
-    @item = Item.find(params[:id])
     @item.images.new
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -43,13 +38,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @user = User.find(@item.user_id)
     @category = Category.find(params[:id])
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
@@ -70,8 +63,12 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :status, :cost, :day, :price, :description, :prefecture_id, :category_id, :brand, :user, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id, trading_status: 1)
   end
 
-  def set_product
+  def set_items
     @item = Item.find(params[:id])
+  end
+
+  def set_product
+    @products = Category.where(ancestry: nil)
   end
 
   def set_category
