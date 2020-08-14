@@ -53,7 +53,7 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
       if @card.destroy
-        redirect_to user_path(current_user.id)
+        redirect_to user_path(current_user.id), notice: "削除しました。"
       else
         redirect_to card_path(current_user.id), alert: "削除できませんでした。"
       end
