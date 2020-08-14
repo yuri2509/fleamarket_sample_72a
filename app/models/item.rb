@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   
-  has_many :images
+  has_many :images , dependent: :destroy
   belongs_to :user
   belongs_to :category
 
@@ -30,7 +30,7 @@ class Item < ApplicationRecord
     zyoutaigawarui:6,
   }, _prefix:true
   validates :status,
-  format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
+  format: {with: /\A(?!sentaku)/ , message: "を選択してください"}
 
   # 出品状況
   enum trading_status: {
@@ -46,7 +46,7 @@ class Item < ApplicationRecord
     tyakubarai:2,
   }, _prefix:true
   validates :cost,
-  format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
+  format: {with: /\A(?!sentaku)/ , message: "を選択してください"}
 
   # 発送までの日数
   enum day: {
@@ -56,5 +56,5 @@ class Item < ApplicationRecord
     yokka:3,
   }, _prefix:true
   validates :day,
-  format: {with: /\A(?!選択してください)/ , message: "を選択してください"}
+  format: {with: /\A(?!sentaku)/ , message: "を選択してください"}
 end
