@@ -1,7 +1,8 @@
 @import "reset";
-@import "show";
 @import "variables";
 @import "mixins";
+@import "flash";
+@import "show";
 @import "users";
 @import "modules/newitems";
 @import "font-awesome-sprockets";
@@ -9,3 +10,4 @@
 @import "messages";
 @import "modules/users_show";
 @import "card";
+@import "modules/purchase";

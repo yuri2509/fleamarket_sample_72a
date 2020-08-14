@@ -16,6 +16,7 @@
 - has_one :card
 - has_many :items
 - has_one :destination
+- has_many :purchases
 
 
 ## itemsテーブル
@@ -41,6 +42,7 @@ active_hashのgemを使う
 - belongs_to :user
 - has_many :images
 - belongs_to :category
+- has_many :purchases
 
 ## cards
 |Column|Type|Options|
@@ -97,6 +99,15 @@ has_ancestry
 ### ancestryについて
 ancestryのgemを使う
 
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 
 # README

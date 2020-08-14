@@ -1,0 +1,65 @@
+.purchase {
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  &__content {
+    background-color: $form-color;
+    &__top {
+      text-align: center;
+      padding: 32px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    &__bottom {
+      border-top: solid 1px $main-color;
+      padding: 40px 40px 64px;
+      &__center {
+        max-width: 343px;
+        margin: auto;
+        display: flex;
+        &__left {
+          width: 120px;
+        }
+        &__right {
+          height: 110px;
+          &__name {
+            margin-left: 20px;
+            font-size: 20px;
+          }
+          &__price {
+            margin-left: 35px;
+            width: 300px;
+            font-size: 12px;
+            margin-top: 20px;
+          }
+        }
+      }
+      &__pay {
+        margin-top: 100px;
+        &__name {
+          float: left;
+          margin-left: 150px;
+        }
+        &__price {
+          float: right;
+          margin-right: 150px;
+        }
+      }
+      &__submit{
+        &__buy {
+          text-decoration: none;
+          display: inline-block;
+          margin: 70px 280px 50px;
+          text-align: center;
+          background-color: #3CCACE;
+          width: 170px;
+          height: 60px;
+          color: $form-color;
+          font-size: 20px;
+          line-height: 60px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
