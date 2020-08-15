@@ -9,12 +9,12 @@
 ## 説明
   フリマーケットサイトの模擬サイトです。
   実際に販売等はできませんが、以下の機能を動かすことができます。
-    - ユーザー登録・ログイン
-    - 商品出品
-    - 出品した商品情報の編集
-    - 出品した商品の削除
-    - 商品の詳細情報の確認
-    - 商品の購入
+  - ユーザー登録・ログイン
+  - 商品出品
+  - 出品した商品情報の編集
+  - 出品した商品の削除
+  - 商品の詳細情報の確認
+  - 商品の購入
     - クレジットカードの登録
 
 ## 使い方
@@ -23,12 +23,12 @@
   - 購入はログインとクレジットカード登録が必要です
 
 ## 構築
-  $ git clone https://github.com/yuri2509/fleamarket_sample_72a
-  $ cd fleamarket_sample_72a
-  $ bundle install
-  $ rails db:create
-  $ rails db:migrate
-  $ rails s
+  $ git clone https://github.com/yuri2509/fleamarket_sample_72a<br>
+  $ cd fleamarket_sample_72a<br>
+  $ bundle install<br>
+  $ rails db:create<br>
+  $ rails db:migrate<br>
+  $ rails s<br>
   http://localhost:3000
 
 # サイトの閲覧はご自由にどうぞ
