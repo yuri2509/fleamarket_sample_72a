@@ -46,7 +46,6 @@
 |family_name_reading|string|null: false|
 |first_name_reading|string|null: false|
 |birth_day|integer|null: false|
-|introduction|text||
 
 ### Association
 - has_one :card
@@ -80,7 +79,7 @@ active_hashのgemを使う
 - belongs_to :category
 - has_many :purchases
 
-## cards
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, unique: true|
