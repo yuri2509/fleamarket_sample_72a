@@ -1,3 +1,40 @@
+# README
+
+## アプリ名
+  FURIMA
+
+## URL
+  http://54.250.71.53/
+
+## 説明
+  フリマーケットサイトの模擬サイトです。
+  実際に販売等はできませんが、以下の機能を動かすことができます。
+    - ユーザー登録・ログイン
+    - 商品出品
+    - 出品した商品情報の編集
+    - 出品した商品の削除
+    - 商品の詳細情報の確認
+    - 商品の購入
+    - クレジットカードの登録
+
+## 使い方
+  - トップページ・商品詳細ページの閲覧のみであればログインは不要です
+  - 出品・編集・削除はログインが必要です
+  - 購入はログインとクレジットカード登録が必要です
+
+## 構築
+  $ git clone https://github.com/yuri2509/fleamarket_sample_72a
+  $ cd fleamarket_sample_72a
+  $ bundle install
+  $ rails db:create
+  $ rails db:migrate
+  $ rails s
+  http://localhost:3000
+
+# サイトの閲覧はご自由にどうぞ
+
+
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -109,28 +146,3 @@ ancestryのgemを使う
 - belongs_to :user
 - belongs_to :item
 
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
