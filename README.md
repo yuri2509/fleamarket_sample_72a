@@ -46,7 +46,7 @@ Pass：2222<br><br>
 パスワード：aaaaaaa<br><br>
 
 ## :black_nib: 構築
-  $ git clone https://github.com/yuri2509/fleamarket_sample_72a<br>
+  $ git clone https://github.com/yuri2509/fleamarket_sample_72a.git<br>
   $ cd fleamarket_sample_72a<br>
   $ bundle install<br>
   $ rails db:create<br>
