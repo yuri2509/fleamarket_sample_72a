@@ -54,7 +54,7 @@ Pass：2222<br><br>
   $ rails s<br>
   http://localhost:3000
 
-## ライセンス
+## :warning:　ライセンス
 
 
 
