@@ -23,26 +23,23 @@
   - 購入はログインとクレジットカード登録が必要です
   
   
-■ Basic認証
-ID：admin
-Pass：2222
+■ Basic認証<br>
+ID：admin<br>
+Pass：2222<br><br>
 
-■ テスト用アカウント
-◯ 購入者用
-メールアドレス：kounyu@gmail.com
-パスワード：aaaaaaa
+■ テスト用アカウント<br>
+◯ 購入者用<br>
+メールアドレス：kounyu@gmail.com<br>
+パスワード：aaaaaaa<br><br>
 
-◯ 購入用カード情報
-番号：4242424242424242
-期限：01/23
-セキュリティカード：222
+◯ 購入用カード情報<br>
+番号：4242424242424242<br>
+期限：01/23<br>
+セキュリティカード：222<br><br>
 
-◯ 出品者用
-メールアドレス：a@a
-パスワード：aaaaaaa
-
-
-
+◯ 出品者用<br>
+メールアドレス：a@a<br>
+パスワード：aaaaaaa<br><br>
 
 ## 構築
   $ git clone https://github.com/yuri2509/fleamarket_sample_72a<br>
