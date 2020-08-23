@@ -1,16 +1,16 @@
-# :paw_prints:README
+# :paw_prints: README
 
 
-## :computer:アプリ名
-  FURIMA
+## :computer: アプリ名
+### FURIMA
   
 
   ![54 250 71 53_(iPad)](https://user-images.githubusercontent.com/62837444/90970173-4fedbb80-e53c-11ea-817f-e8c7bcf134d1.png)
 
-## URL
+## 🌐 URL
   http://54.250.71.53/
 
-## 説明
+## :beginner: 説明
   フリマーケットサイトの模擬サイトです。
   実際に販売等はできませんが、以下の機能を動かすことができます。
   - ユーザー登録・ログイン
@@ -21,12 +21,12 @@
   - 商品の購入
   - クレジットカードの登録
 
-## 使い方
+## :star2: 使い方
   - トップページ・商品詳細ページの閲覧のみであればログインは不要です
   - 出品・編集・削除はログインが必要です
   - 購入はログインとクレジットカード登録が必要です
   
-  
+## :lock: 閲覧用 
 ■ Basic認証<br>
 ID：admin<br>
 Pass：2222<br><br>
