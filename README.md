@@ -1,7 +1,11 @@
-# README
+# :paw_prints:README
 
-## アプリ名
+
+## :computer:アプリ名
   FURIMA
+  
+
+  ![54 250 71 53_(iPad)](https://user-images.githubusercontent.com/62837444/90970173-4fedbb80-e53c-11ea-817f-e8c7bcf134d1.png)
 
 ## URL
   http://54.250.71.53/
