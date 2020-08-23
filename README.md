@@ -3,12 +3,16 @@
 
 ## :computer: アプリ名
 ### FURIMA
-  
 
-  ![54 250 71 53_(iPad)](https://user-images.githubusercontent.com/62837444/90970173-4fedbb80-e53c-11ea-817f-e8c7bcf134d1.png)
 
 ## :globe_with_meridians: URL
-  http://54.250.71.53/
+http://54.250.71.53/<br>
+■ Basic認証<br>
+ID：admin<br>
+Pass：2222<br><br>
+
+## :balloon: トップページ
+  ![54 250 71 53_(iPad)](https://user-images.githubusercontent.com/62837444/90970173-4fedbb80-e53c-11ea-817f-e8c7bcf134d1.png)
   
 
 ## :bulb: 制作背景
@@ -32,10 +36,6 @@
   - 購入はログインとクレジットカード登録が必要です
   
 ## :lock: 閲覧用 
-■ Basic認証<br>
-ID：admin<br>
-Pass：2222<br><br>
-
 ■ テスト用アカウント<br>
 ◯ 購入者用<br>
 メールアドレス：kounyu@gmail.com<br>
