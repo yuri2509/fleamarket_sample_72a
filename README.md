@@ -45,7 +45,7 @@ Pass：2222<br><br>
 メールアドレス：a@a<br>
 パスワード：aaaaaaa<br><br>
 
-## 構築
+## :black_nib: 構築
   $ git clone https://github.com/yuri2509/fleamarket_sample_72a<br>
   $ cd fleamarket_sample_72a<br>
   $ bundle install<br>
@@ -54,9 +54,12 @@ Pass：2222<br><br>
   $ rails s<br>
   http://localhost:3000
 
-# サイトの閲覧はご自由にどうぞ
+## ライセンス
 
 
+
+
+## :pushpin: DB設計
 
 ## usersテーブル
 |Column|Type|Options|
