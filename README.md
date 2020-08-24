@@ -65,6 +65,12 @@ MIT
 
 ## :pushpin: DB設計
 
+
+## ER図
+
+
+![最終課題ER図](https://user-images.githubusercontent.com/62837444/90408215-83ff5180-e0e2-11ea-9df6-8f6f7ff5f302.png)
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
