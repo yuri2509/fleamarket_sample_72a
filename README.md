@@ -14,7 +14,16 @@ Pass：2222<br><br>
 ## :balloon: トップページ
   ![54 250 71 53_(iPad)](https://user-images.githubusercontent.com/62837444/90970173-4fedbb80-e53c-11ea-817f-e8c7bcf134d1.png)
   
-
+## :computer:開発環境
+Rails 5.2.4.4
+ruby 2.5.1
+Haml
+SCSS
+capistrano 3.14.1
+unicorn 5.7.0
+nginx
+AWS (EC2)
+  
 ## :bulb: 制作背景
 家にある使っていない物が、誰かにとって必要な物かもしれません。<br>
 シンプルで使いやすいフリマアプリがあれば気軽に初めることができ、必要な人の元へお届けしやすいのではと考えて制作しました。
